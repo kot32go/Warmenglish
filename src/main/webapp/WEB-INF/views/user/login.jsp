@@ -25,6 +25,9 @@
 			<sf:input type="password" class="form-control" path="password"
 				 placeholder="请输入密码" />
 			<sf:errors path="password" />
+			<div class="register">
+				<a href="register">注册>></a>
+			</div>
 			<input class="btn btn-lg btn-primary btn-block" type="submit"/>
 		</sf:form>
 
