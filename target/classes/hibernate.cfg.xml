@@ -5,9 +5,10 @@
 
 
 <hibernate-configuration>
+
+	<session-factory>
+		<mapping class="com.kot32.warmenglish.domain.User" />
+		<mapping class="com.kot32.warmenglish.domain.Class" />
+	</session-factory>
 	
-    <session-factory>
-        <mapping class="com.kot32.warmenglish.domain.User" />
-    </session-factory>
-	    
 </hibernate-configuration>

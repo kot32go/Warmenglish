@@ -1,12 +1,18 @@
 package com.kot32.warmenglish.domain;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+
+import antlr.collections.List;
 
 @Entity
 @Table(name="t_user")
@@ -17,6 +23,8 @@ public class User {
 	private String name;
 	private String username;
 	private String password;
+	@OneToMany( fetch=FetchType.EAGER, mappedBy = "user")
+	private Set<Class> classes;
 	
 	public int getId() {
 		return id;
@@ -43,6 +51,17 @@ public class User {
 	}
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	public Set<Class> getClasses() {
+		return classes;
+	}
+	public void setClasses(Set<Class> classes) {
+		this.classes = classes;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", username=" + username
+				+ ", password=" + password + ", classes=" + classes + "]";
 	}
 	
 	

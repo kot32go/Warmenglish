@@ -148,6 +148,9 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
               _005fjspx_005ftagPool_005fsf_005ferrors_0026_005fpath_005fnobody.reuse(_jspx_th_sf_005ferrors_005f1);
             }
             out.write("\n");
+            out.write("\t\t\t<div class=\"register\">\n");
+            out.write("\t\t\t\t<a href=\"register\">注册>></a>\n");
+            out.write("\t\t\t</div>\n");
             out.write("\t\t\t<input class=\"btn btn-lg btn-primary btn-block\" type=\"submit\"/>\n");
             out.write("\t\t");
             int evalDoAfterBody = _jspx_th_sf_005fform_005f0.doAfterBody();

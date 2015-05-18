@@ -14,23 +14,23 @@
 </head>
 <body>
     <div class="container">
-        <form>
+        <sf:form method="post"  modelAttribute="user">
             <div class="form-group">
                 <label for="InputName">真实姓名</label>
-                <input type="text" class="form-control" id="InputName" placeholder="Enter Name">
+                <sf:input type="text" class="form-control" id="InputName" placeholder="Enter Name" path="name"/>
             </div>
             <div class="form-group">
                 <lable for="InputUsername">用户名</lable>
-                <input type="text" class="form-control" id="InputUsername" placeholder="Enter Uesername">
+                <sf:input type="text" class="form-control" id="InputUsername" placeholder="Enter Uesername" path="username"/>
             </div>
             <div class="form-group">
                 <label for="InputPassword">密码</label>
-                <input type="password" class="form-control" id="InputPassword" placeholder="Password">
+                <sf:input type="password" class="form-control" id="InputPassword" placeholder="Password" path="password"/>
             </div>
 
             <div class="form-group">
                 <button type="submit" class="btn btn-default btn-group-justified">注册</button>
             </div>
-        </form>
+        </sf:form>
     </div>
 </body>
