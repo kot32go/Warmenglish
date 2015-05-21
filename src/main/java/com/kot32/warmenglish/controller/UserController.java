@@ -37,7 +37,7 @@ public class UserController {
 		User u=userService.login(user.getUsername(), user.getPassword());
 		if(u!=null){
 			model.addAttribute("logined_user", u);
-			return "redirect:/control/main";
+			return "redirect:/control/index";
 		}else{
 			System.out.println("登录失败");
 		}

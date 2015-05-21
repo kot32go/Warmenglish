@@ -81,7 +81,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${logined_user.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write(" 老师</a>\n");
       out.write("\t\t</div>\n");
-      out.write("\t\t<div id=\"navbar\" class=\"navbar-collapse collapse\" background=\"transparent\">\n");
+      out.write("\t\t<div id=\"navbar\" class=\"navbar-collapse collapse\">\n");
       out.write("\t\t\t<ul class=\"nav navbar-nav\">\n");
       out.write("\t\t\t\t<li class=\"active\"><a href=\"#\">Home</a></li>\n");
       out.write("\t\t\t\t<li><a href=\"#about\">About</a></li>\n");
@@ -129,8 +129,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t</div>\n");
       out.write("\n");
       out.write("\t<div class=\"main\">\n");
-      out.write("\t\t<div class=\"col-md-4 col-sm-4\">\n");
-      out.write("\t\t\t<input type=\"image\" src=\"../resources/images/1.png\" width=\"200px\">\n");
+      out.write("\t\t<div class=\"col-md-4 col-sm-4\" >\n");
+      out.write("\t\t\t<a href=\"main\"><input type=\"image\" src=\"../resources/images/1.png\" width=\"200px\"></a>\n");
       out.write("\t\t\t<p>作业管理</p>\n");
       out.write("\t\t</div>\n");
       out.write("\t\t<div class=\"col-md-4 col-sm-4\">\n");

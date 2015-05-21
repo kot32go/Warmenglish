@@ -76,8 +76,8 @@
 	</div>
 
 	<div class="main">
-		<div class="col-md-4 col-sm-4">
-			<input type="image" src="../resources/images/1.png" width="200px">
+		<div class="col-md-4 col-sm-4" >
+			<a href="main"><input type="image" src="../resources/images/1.png" width="200px"></a>
 			<p>作业管理</p>
 		</div>
 		<div class="col-md-4 col-sm-4">

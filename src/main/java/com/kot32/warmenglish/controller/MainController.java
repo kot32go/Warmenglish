@@ -15,15 +15,25 @@ import com.kot32.warmenglish.domain.User;
 @SessionAttributes("logined_user")
 @RequestMapping("/control")
 public class MainController {
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	//跳转到主页
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String login(@ModelAttribute("logined_user")User user,Model model) {
 		
 		return "/control/index";
 	}
 	
+	//增加班级
 	@RequestMapping(value = "/add_class", method = RequestMethod.GET)
 	public String add_class(Model model){
 		model.addAttribute("cla", new Class());
 		return "/control/class/add_class";
 	}
+	
+	//跳转到控制面板
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String jump() {
+		
+		return "/control/main";
+	}
+	
 }
