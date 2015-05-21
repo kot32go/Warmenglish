@@ -1,12 +1,31 @@
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0;
+    margin: 0;
 }
+/* Navbar navigation */
 .navbar{
+    position: relative;
+    min-height: 50px;
     margin-bottom: 0;
 }
-
+.navbar-inverse .navbar-brand {
+    color: #FFF;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFF;
+}
+.nav {
+    padding-left: 20px;
+    margin-bottom: 0px;
+    list-style: outside none none;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 15px 30px;
+}
+/* thumb navigation */
 .thumb{
     width:100%;
     height:300px;

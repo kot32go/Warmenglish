@@ -1,0 +1,10 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-family: Arial, "Microsoft YaHei", "Î¢ÈíÑÅºÚ";
+}
+.form-inline{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

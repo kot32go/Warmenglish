@@ -15,7 +15,6 @@
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
@@ -27,53 +26,53 @@
             <a class="navbar-brand" href="#">欢迎，${logined_user.name} 老师</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a role="button">
-                        <span class="glyphicon glyphicon-off"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+			<ul class="nav navbar-nav">
+				<li><a role="button"><span class="glyphicon glyphicon-home"></span></a></li>
+				<li><a role="button"><span class="glyphicon glyphicon-user"></span></a></li>
+				<li><a role="button"><span class="glyphicon glyphicon-info-sign"></span></a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a role="button"><span class="glyphicon glyphicon-off"></span></a></li>
+			</ul>
+		</div>
 </nav>
 
-<div class="col-sm-3 col-md-2 sidebar">
-    <ul class="nav nav-sidebar">
-        <li>作业管理</li>
-        <li><a href="#">发布作业</a></li>
-        <li><a href="#">查看历史记录</a></li>
-        <li><a href="#">批改作业</a></li>
-    </ul>
-    <ul class="nav nav-sidebar">
-        <li>班级管理</li>
-        <li><a href="">添加班级</a></li>
-        <li><a href="">修改现有班级</a></li>
-        <li><a href="">删除班级</a></li>
-    </ul>
-    <ul class="nav nav-sidebar">
-        <li>通知管理</li>
-        <li><a href="">发布公告</a></li>
-        <li><a href="">查看历史公告</a></li>
-    </ul>
+<div class="content">
+    <div class="col-sm-3 col-md-2 sidebar">
+        <ul class="nav nav-sidebar">
+            <li>作业管理</li>
+            <li><a href="#">发布作业</a></li>
+            <li><a href="#">查看历史记录</a></li>
+            <li><a href="#">批改作业</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+            <li>班级管理</li>
+            <li><a id="addClass">添加班级</a></li>
+            <li><a href="">修改班级信息</a></li>
+            <li><a href="">删除班级</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+            <li>通知管理</li>
+            <li><a href="">发布公告</a></li>
+            <li><a href="">查看历史公告</a></li>
+        </ul>
+    </div>
+
+    <iframe class="myFrame col-md-10"></iframe>
 </div>
+<!--Bootstrap core JavaScript-->
+
+<!--Placed at the end of the document so the pages lo…-->
+
+<script src="../resources/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#addClass").click(function(){
+            $(".myFrame").attr("src","addClass.html");
+        })
+    });
+</script>
+<script src="../resources/js/bootstrap.min.js"></script>
 
 
 <!-- Bootstrap core JavaScript
