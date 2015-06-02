@@ -17,13 +17,13 @@
     <form class="form-inline">
         <div class="form-group">
             <label for="className">班级名称</label>
-            <input type="text" class="form-control" id="className" placeholder="软工2班">
+            <input type="text" class="form-control form-classname" id="className" placeholder="软工2班">
         </div>
     </form>
     <form class="form-inline">
         <div class="form-group">
             <label for="classDes">班级概述</label>
-            <input type="text" class="form-control" id="classDes" placeholder="输入班级概况">
+            <input type="text" class="form-control form-classdes" id="classDes" placeholder="输入班级概况">
         </div>
     </form>
     <button type="submit" class="btn btn-default">添加</button>
