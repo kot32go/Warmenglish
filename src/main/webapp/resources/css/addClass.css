@@ -15,7 +15,7 @@ body {
 }
 .form-inline .form-group {
     display: flex;
-    margin-bottom: 0;
+    margin-bottom: 50px;
     vertical-align: middle;
 }
 label {
