@@ -48,12 +48,11 @@
         <ul class="nav nav-sidebar">
             <li>班级管理</li>
             <li><a id="addClass">添加班级</a></li>
-            <li><a href="">修改班级信息</a></li>
-            <li><a href="">删除班级</a></li>
+            <<li><a id="setClass">管理班级信息</a></li>
         </ul>
         <ul class="nav nav-sidebar">
             <li>通知管理</li>
-            <li><a href="">发布公告</a></li>
+            <li><a id="addInfo">发布公告</a></li>
             <li><a href="">查看历史公告</a></li>
         </ul>
     </div>
@@ -69,6 +68,16 @@
     $(document).ready(function(){
         $("#addClass").click(function(){
             $(".myFrame").attr("src","addClass.html");
+        })
+    });
+	$(document).ready(function(){
+        $("#setClass").click(function(){
+            $(".myFrame").attr("src","setClass.html");
+        })
+    });
+    $(document).ready(function(){
+        $("#addInfo").click(function(){
+            $(".myFrame").attr("src","addInfo.html");
         })
     });
 </script>

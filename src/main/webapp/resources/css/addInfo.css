@@ -15,7 +15,7 @@ body {
 }
 .form-inline .form-group {
     display: flex;
-    margin-bottom: 0;
+    margin-bottom: 50px;
     vertical-align: middle;
 }
 label {
@@ -30,11 +30,10 @@ label {
     width: 400px;
     vertical-align: middle;
 }
-textarea.form-control {
-    height: 200px;
+.form-group .form-infoClass {
+    width: 200px;
 }
-.form-classdes{
-    width: 400px;
+textarea.form-control {
     height: 200px;
 }
 .btn-default {

@@ -23,7 +23,8 @@
     <form class="form-inline">
         <div class="form-group">
             <label for="classDes">班级概述</label>
-            <input type="text" class="form-control" id="classDes" placeholder="输入班级概况">
+           <textarea type="text" class="form-control form-classdes" id="classDes" placeholder="输入班级概况">
+            </textarea>
         </div>
     </form>
     <button type="submit" class="btn btn-default">添加</button>
