@@ -54,14 +54,14 @@ public class UserController {
 	public String register(@Validated User user, BindingResult br)
 			throws UserException {
 		if (br.hasErrors()) {
-			return "/user/register";
+			return "/user/login";
 		}
 		if (userService.register(user)) {
 			System.out.println("注册成功");
 			return "/user/login";
 		} else {
 			System.out.println("注册失败");
-			return "/user/register";
+			return "/user/login";
 		}
 
 	}

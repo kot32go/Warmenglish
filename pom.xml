@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.kot32</groupId>
 	<artifactId>warmenglish</artifactId>
@@ -105,6 +105,7 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 			<scope>provided</scope>
+
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
@@ -185,6 +186,16 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- 信鸽推送 -->
+		<dependency>
+			<groupId>com.tencent.xinge</groupId>
+			<artifactId>XingeApp</artifactId>
+			<version>1.1.5</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/XingeApp.jar
+   			</systemPath>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -222,7 +233,7 @@
 					<mainClass>org.test.int1.Main</mainClass>
 				</configuration>
 			</plugin>
-			 
+
 		</plugins>
 	</build>
 </project>

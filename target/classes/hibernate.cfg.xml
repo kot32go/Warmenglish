@@ -9,6 +9,7 @@
 	<session-factory>
 		<mapping class="com.kot32.warmenglish.domain.User" />
 		<mapping class="com.kot32.warmenglish.domain.Class" />
+		<mapping class="com.kot32.warmenglish.domain.Student" />
 	</session-factory>
 	
 </hibernate-configuration>

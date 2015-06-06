@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,60 +10,51 @@
 <link href="../resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="../resources/css/setClass.css" rel="stylesheet">
-<title>管理班级信息</title>
+<title>娣诲姞鐝骇</title>
 </head>
 <body>
-<div class="container">
-    <h2>管理班级信息<br/><small>你可以在这里删除或修改班级名称和描述</small></h2>
-    <hr/>
-    <div class="table-responsive">
-        <table class="table table-hover table-striped">
-            <thead>
-            <tr>
-                <th class="col-md-4">班级名称</th>
-                <th class="col-md-5">班级描述</th>
-                <th class="col-md-3"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>软工2班</td>
-                <td>2012级40人</td>
-                <td>
-                    <button class="actions btn btn-default btn-primary">编辑</button>
-                    <button class="actions btn btn-default btn-danger">删除</button>
-                </td>
-            </tr>
-            <tr>
-                <td>计科1班</td>
-                <td>2013级34人</td>
-                <td>
-                    <button class="actions btn btn-default btn-primary">编辑</button>
-                    <button class="actions btn btn-default btn-danger">删除</button>
-                </td>
-            </tr>
-            <tr>
-                <td>自动化2班</td>
-                <td>2013级45人</td>
-                <td>
-                    <button class="actions btn btn-default btn-primary">编辑</button>
-                    <button class="actions btn btn-default btn-danger">删除</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-        </div>
-</div>
-<script src="../resources/js/jquery.min.js"></script>
-<script>
-    $('table').on('mouseenter', 'tr', function(){
-        $(this).addClass('hover');
-        $('.btn-danger').click(function(){
-            alert("你确定要删除这个班级吗？");
-        })
-    }).on('mouseleave', 'tr', function(){
-        $(this).removeClass('hover');
-    })
-</script>
+	<div class="container">
+		<h2>
+			绠＄悊鐝骇淇℃伅<br /> <small>浣犲彲浠ュ湪杩欓噷鍒犻櫎鎴栦慨鏀圭彮绾у悕绉板拰鎻忚堪</small>
+		</h2>
+		<hr />
+		<div class="table-responsive">
+			<table class="table table-hover table-striped">
+				<thead>
+					<tr>
+						<th class="col-md-4">鐝骇鍚嶇О</th>
+						<th class="col-md-5">鐝骇鎻忚堪</th>
+						<th class="col-md-3"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${classes}" var="class">
+						<tr>
+							<td>${class.name}</td>
+							<td>${class.des}</td>
+							<td>
+								<button class="actions btn btn-default btn-primary">缂栬緫</button>
+								<button class="actions btn btn-default btn-danger">鍒犻櫎</button>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script src="../resources/js/jquery.min.js"></script>
+	<script>
+		$('table').on('mouseenter', 'tr', function() {
+			$(this).addClass('hover');
+			$('.btn-danger').click(function() {
+				alert("浣犵‘瀹氳鍒犻櫎杩欎釜鐝骇鍚楋紵");
+			})
+		}).on('mouseleave', 'tr', function() {
+			$(this).removeClass('hover');
+		})
+	</script>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="../resources/js/jquery.min.js"></script>
+	<script src="../resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

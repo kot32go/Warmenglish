@@ -49,7 +49,7 @@
 			</beans:map>
 		</beans:property>
 		<!-- 用于开启 /userinfo/123?format=json 的支持，false为关闭之,我更喜欢.json的方式，因为可以少敲几次键盘 -->
-		<beans:property name="favorParameter" value="false" />
+		<beans:property name="favorParameter" value="true" />
 
 		<beans:property name="defaultViews">
 			<beans:list>

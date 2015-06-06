@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="../resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
-<link href="../resources/css/main.css" rel="stylesheet">
+<link href="../resources/css/control_main.css" rel="stylesheet">
 
 <title>控制面板</title>
 </head>
@@ -49,11 +49,11 @@
         <ul class="nav nav-sidebar">
             <li>班级管理</li>
             <li><a id="addClass">添加班级</a></li>
-            <<li><a id="setClass">管理班级信息</a></li>
+            <li><a id="setClass">管理班级信息</a></li>
         </ul>
         <ul class="nav nav-sidebar">
             <li>通知管理</li>
-            <li><a id="addInfo">发布公告</a></li>
+            <li><a id="sendMessage">发布公告</a></li>
             <li><a href="">查看历史公告</a></li>
         </ul>
     </div>
@@ -63,27 +63,23 @@
 <!--Bootstrap core JavaScript-->
 
 <!--Placed at the end of the document so the pages lo…-->
-
 <script src="../resources/js/jquery.min.js"></script>
 <script>
    $(document).ready(function(){
         $("#addClass").click(function(){
-            $(".myFrame").attr("src","addClass.html");
+            $(".myFrame").attr("src","../control/add_class");
         });
         $("#setClass").click(function(){
-            $(".myFrame").attr("src","setClass.html");
+            $(".myFrame").attr("src","../control/set_class");
         });
-        $("#addInfo").click(function(){
-            $(".myFrame").attr("src","addInfo.html");
-        })
+        $("#sendMessage").click(function(){
+            $(".myFrame").attr("src","../control/send_message");
+        });
         $("#point").click(function(){
-            $(".myFrame").attr("src","point.html");
-        })
+            $(".myFrame").attr("src","../control/point");
+        });
     });
 </script>
-<script src="../resources/js/bootstrap.min.js"></script>
-
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->

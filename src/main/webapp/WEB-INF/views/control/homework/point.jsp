@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,71 +8,78 @@
 <link href="../resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="../resources/css/point.css" rel="stylesheet">
-<title>²é¿´Ñ§Éú³É¼¨</title>
+<title>æŸ¥çœ‹æˆç»©</title>
 </head>
 <body>
-<div class="container">
-    <h2>²é¿´Ñ§Éú³É¼¨<br/><small>Äã¿ÉÒÔÔÚÕâÀï²é¿´Ñ§Éúµ½Ä¿Ç°ÎªÖ¹µÄ³É¼¨Í³¼Æ</small></h2>
-    <hr/>
-        <div class="row">
-            <div class="col-md-5">
-                <div class="form-inline">
-                    <label for="pointClass">°à¼¶</label>
-                    <select class="form-control form-pointClass" id="pointClass">
-                        <option value="volvo">2012¼¶Èí¹¤2°à</option>
-                        <option value="saab">¼Æ¿Æ1°à</option>
-                        <option value="fiat">×Ô¶¯»¯1°à</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-3" style="float: right">
-                <div class="input-group">
-                    <input type="text" class="form-control">
-               <span class="input-group-btn">
-                  <button class="btn btn-default btn-primary" type="button">
-                      <span class="glyphicon glyphicon-search"></span>
-                  </button>
-               </span>
-                </div>
-            </div>
-        </div>
-    <div class="table-responsive">
-        <table class="table table-hover table-striped">
-            <thead>
-            <tr>
-                <th class="col-md-3">Ñ§ÉúĞÕÃû</th>
-                <th class="col-md-3">½»×÷Òµ´ÎÊı</th>
-                <th class="col-md-3">×îºóÌá½»Ê±¼ä</th>
-                <th class="col-md-3"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>¹ØÒÕÖñ</td>
-                <td>5</td>
-                <td>2015-6-5</td>
-                <td>
-                    <button class="actions btn btn-default btn-primary">²é¿´³É¼¨</button>
-                </td>
-            </tr>
-            <tr>
-                <td>Íõ¿Â</td>
-                <td>6</td>
-                <td>2015-6-1</td>
-                <td>
-                    <button class="actions btn btn-default btn-primary">²é¿´³É¼¨</button>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-<script src="../resources/js/jquery.min.js"></script>
-<script>
-    $('table').on('mouseenter', 'tr', function(){
-        $(this).addClass('hover')
-    }).on('mouseleave', 'tr', function(){
-        $(this).removeClass('hover');
-    })
-</script>
+	<div class="container">
+		<h2>
+			æŸ¥çœ‹å­¦ç”Ÿæˆç»©<br /> <small>ä½ å¯ä»¥åœ¨è¿™é‡ŒæŸ¥çœ‹å­¦ç”Ÿåˆ°ç›®å‰ä¸ºæ­¢çš„æˆç»©ç»Ÿè®¡</small>
+		</h2>
+		<hr />
+		<div class="row">
+			<div class="col-md-5">
+				<div class="form-inline">
+					<label for="pointClass">ç­çº§</label> <select
+						class="form-control form-pointClass" id="pointClass">
+						<option value="volvo">2012çº§è½¯å·¥2ç­</option>
+						<option value="saab">è®¡ç§‘1ç­</option>
+						<option value="fiat">è‡ªåŠ¨åŒ–1ç­</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md-3" style="float: right">
+				<div class="input-group">
+					<input type="text" class="form-control"> <span
+						class="input-group-btn">
+						<button class="btn btn-default btn-primary" type="button">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-hover table-striped">
+				<thead>
+					<tr>
+						<th class="col-md-3">å­¦ç”Ÿå§“å</th>
+						<th class="col-md-3">äº¤ä½œä¸šæ¬¡æ•°</th>
+						<th class="col-md-3">æœ€åæäº¤æ—¶é—´</th>
+						<th class="col-md-3"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>å…³è‰ºç«¹</td>
+						<td>5</td>
+						<td>2015-6-5</td>
+						<td>
+							<button class="actions btn btn-default btn-primary">æŸ¥çœ‹æˆç»©</button>
+						</td>
+					</tr>
+					<tr>
+						<td>ç‹æŸ¯</td>
+						<td>6</td>
+						<td>2015-6-1</td>
+						<td>
+							<button class="actions btn btn-default btn-primary">æŸ¥çœ‹æˆç»©</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<script src="../resources/js/jquery.min.js"></script>
+	<script>
+		$('table').on('mouseenter', 'tr', function() {
+			$(this).addClass('hover')
+		}).on('mouseleave', 'tr', function() {
+			$(this).removeClass('hover');
+
+		})
+	</script>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="../resources/js/jquery.min.js"></script>
+	<script src="../resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
+</html>
