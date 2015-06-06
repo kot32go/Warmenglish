@@ -15,37 +15,53 @@
     <h2>管理班级信息<br/><small>你可以在这里删除或修改班级名称和描述</small></h2>
     <hr/>
     <div class="table-responsive">
-        <table class="table table-striped">
+        <table class="table table-hover table-striped">
             <thead>
             <tr>
                 <th class="col-md-4">班级名称</th>
-                <th class="col-md-8">班级描述</th>
+                <th class="col-md-5">班级描述</th>
+                <th class="col-md-3"></th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>软工2班</td>
                 <td>2012级40人</td>
+                <td>
+                    <button class="actions btn btn-default btn-primary">编辑</button>
+                    <button class="actions btn btn-default btn-danger">删除</button>
+                </td>
             </tr>
             <tr>
                 <td>计科1班</td>
                 <td>2013级34人</td>
+                <td>
+                    <button class="actions btn btn-default btn-primary">编辑</button>
+                    <button class="actions btn btn-default btn-danger">删除</button>
+                </td>
             </tr>
             <tr>
                 <td>自动化2班</td>
                 <td>2013级45人</td>
-            </tr>
-            <tr>
-                <td>1,006</td>
-                <td>nibh</td>
-            </tr>
-            <tr>
-                <td>1,011</td>
-                <td>eget</td>
+                <td>
+                    <button class="actions btn btn-default btn-primary">编辑</button>
+                    <button class="actions btn btn-default btn-danger">删除</button>
+                </td>
             </tr>
             </tbody>
         </table>
         </div>
 </div>
+<script src="../resources/js/jquery.min.js"></script>
+<script>
+    $('table').on('mouseenter', 'tr', function(){
+        $(this).addClass('hover');
+        $('.btn-danger').click(function(){
+            alert("你确定要删除这个班级吗？");
+        })
+    }).on('mouseleave', 'tr', function(){
+        $(this).removeClass('hover');
+    })
+</script>
 </body>
 </html>

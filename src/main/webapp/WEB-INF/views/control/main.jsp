@@ -44,6 +44,7 @@
             <li><a href="#">发布作业</a></li>
             <li><a href="#">查看历史记录</a></li>
             <li><a href="#">批改作业</a></li>
+            <li><a id="point">查看学生成绩</a></li>
         </ul>
         <ul class="nav nav-sidebar">
             <li>班级管理</li>
@@ -65,19 +66,18 @@
 
 <script src="../resources/js/jquery.min.js"></script>
 <script>
-    $(document).ready(function(){
+   $(document).ready(function(){
         $("#addClass").click(function(){
             $(".myFrame").attr("src","addClass.html");
-        })
-    });
-	$(document).ready(function(){
+        });
         $("#setClass").click(function(){
             $(".myFrame").attr("src","setClass.html");
-        })
-    });
-    $(document).ready(function(){
+        });
         $("#addInfo").click(function(){
             $(".myFrame").attr("src","addInfo.html");
+        })
+        $("#point").click(function(){
+            $(".myFrame").attr("src","point.html");
         })
     });
 </script>
