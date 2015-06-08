@@ -216,6 +216,9 @@
             event.stopPropagation(); 
         });
     });
+	$('tr.main').on('mouseleave', function(){
+        $(this).removeClass('hover');
+    });
 	</script>
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="../resources/js/jquery.min.js"></script>
