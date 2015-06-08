@@ -44,11 +44,12 @@
             <li><a href="#">发布作业</a></li>
             <li><a href="#">查看历史记录</a></li>
             <li><a href="#">批改作业</a></li>
-            <li><a id="point">查看学生成绩</a></li>
+            <li><a id="grade">查看学生成绩</a></li>
         </ul>
         <ul class="nav nav-sidebar">
             <li>班级管理</li>
             <li><a id="addClass">添加班级</a></li>
+            <li><a id="addGroup">添加分组</a></li>
             <li><a id="setClass">管理班级信息</a></li>
         </ul>
         <ul class="nav nav-sidebar">
@@ -67,20 +68,23 @@
 <script>
    $(document).ready(function(){
         $("#addClass").click(function(){
-            $(".myFrame").attr("src","../control/add_class");
+            $(".myFrame").attr("src","add_Class.html");
+        });
+        $("#addGroup").click(function(){
+            $(".myFrame").attr("src","add_group.html");
         });
         $("#setClass").click(function(){
-            $(".myFrame").attr("src","../control/set_class");
+            $(".myFrame").attr("src","set_Class.html");
         });
         $("#sendMessage").click(function(){
-            $(".myFrame").attr("src","../control/send_message");
-        });
-		$("#listMessage").click(function(){
-            $(".myFrame").attr("src","../control/list_messagel");
+            $(".myFrame").attr("src","send_message.html");
         })
-        $("#point").click(function(){
-            $(".myFrame").attr("src","../control/point");
-        });
+        $("#listMessage").click(function(){
+            $(".myFrame").attr("src","list_message.html");
+        })
+        $("#grade").click(function(){
+            $(".myFrame").attr("src","grade.html");
+        })
     });
 </script>
 <!-- Bootstrap core JavaScript

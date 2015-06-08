@@ -80,8 +80,9 @@
         $(this).addClass('hover');
         $(this).click(function() {
             $(this).next("tr.child").slideToggle();
-            event.stopPropagation();
+            event.cancelBubble();
         });
+		event.cancelBubble();
     });
 
     $('table').on('mouseleave', 'tr', function(){

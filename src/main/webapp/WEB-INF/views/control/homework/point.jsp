@@ -58,8 +58,8 @@
             <tr class="child">
                 <td class="col-md-8 taber" colspan="4">
                     <ul id="myTab1" class="nav nav-pills" style="margin: 0 100px">
-                        <li class="active"><a href="#homework" data-toggle="tab">作业情况</a></li>
-                        <li><a href="#count" data-toggle="tab">统计</a></li>
+                        <li class="active"><a href="#homework1" data-toggle="tab">作业情况</a></li>
+                        <li><a href="#count1" data-toggle="tab">统计</a></li>
                     </ul>
                     <div id="myTabContent1" class="tab-content">
                         <div class="tab-pane fade in active" id="homework1">
@@ -106,7 +106,7 @@
                                         </tr>
                                         <tr>
                                             <td>4.</td>
-                                            <td>作文</td></td>
+                                            <td>作文</td>
                                             <td>
                                                 <div class="progress xs progress-striped active">
                                                     <div class="progress-bar progress-bar-success" style="width: 90%"></div>
@@ -134,12 +134,12 @@
             </tr>
             <tr class="child">
                 <td class="col-md-8 taber" colspan="4">
-                    <ul id="myTab" class="nav nav-pills" style="margin: 0 100px">
-                        <li class="active"><a href="#homework" data-toggle="tab">作业情况</a></li>
-                        <li><a href="#count" data-toggle="tab">统计</a></li>
+                    <ul id="myTab2" class="nav nav-pills" style="margin: 0 100px">
+                        <li class="active"><a href="#homework2" data-toggle="tab">作业情况</a></li>
+                        <li><a href="#count2" data-toggle="tab">统计</a></li>
                     </ul>
-                    <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade in active" id="homework">
+                    <div id="myTabContent2" class="tab-content">
+                        <div class="tab-pane fade in active" id="homework2">
                             <div class="box-body" style="margin:0 150px">
                                 <table class="table">
                                     <thead>
@@ -183,7 +183,7 @@
                                     </tr>
                                     <tr>
                                         <td>4.</td>
-                                        <td>作文</td></td>
+                                        <td>作文</td>
                                         <td>
                                             <div class="progress xs progress-striped active">
                                                 <div class="progress-bar progress-bar-success" style="width: 90%"></div>
@@ -195,7 +195,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="count">
+                        <div class="tab-pane fade" id="count2">
 
                         </div>
                     </div>
@@ -205,21 +205,23 @@
         </table>
     </div>
 </div>
-<script src="js/jquery.min.js"></script>
+<script src="../resources/js/jquery.min.js"></script>.js"></script>
 <script>
 
+    
     $("tr.main").on('mouseenter',function(){
         $(this).addClass('hover');
         $(this).click(function() {
             $(this).next("tr.child").slideToggle();
-            event.stopPropagation(); 
+            event.cancelBubble();
         });
+        event.cancelBubble();
     });
 
     $('table').on('mouseleave', 'tr', function(){
         $(this).removeClass('hover');
     });
 </script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

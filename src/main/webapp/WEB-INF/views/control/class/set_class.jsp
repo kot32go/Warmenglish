@@ -44,14 +44,17 @@
 	</div>
 	<script src="../resources/js/jquery.min.js"></script>
 	<script>
-		$('table').on('mouseenter', 'tr', function() {
-			$(this).addClass('hover');
-			$('.btn-danger').click(function() {
-				alert("你确定要删除这个班级吗？");
-			})
-		}).on('mouseleave', 'tr', function() {
-			$(this).removeClass('hover');
-		})
+		$('table').on('mouseenter', 'tr', function(){
+        $(this).addClass('hover');
+        $('.btn-danger').click(function(){
+            alert("你确定要删除这个班级吗？");
+            event.cancelBubble();
+
+        });
+        event.cancelBubble();
+    }).on('mouseleave', 'tr', function(){
+        $(this).removeClass('hover');
+    })
 	</script>
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="../resources/js/jquery.min.js"></script>
