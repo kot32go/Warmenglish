@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kot32.warmenglish.domain.Student;
+import com.kot32.warmenglish.exception.UserException;
 import com.kot32.warmenglish.service.APPService;
 
 @Controller
@@ -18,8 +19,8 @@ public class APPController {
 	// 注册
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView register(String username, String password) {
-		System.out.println("接收到请求");		
-		// 暂时不设置姓名，老师，班级等属性
+		
+		// 暂时不设置其他属性
 		Student student = new Student();
 		student.setUsername(username);
 		student.setPassword(password);
@@ -36,4 +37,27 @@ public class APPController {
 		}
 		return mv;
 	}
+
+	// 登录
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(String username, String password) {
+		System.out.println("登录");
+		ModelAndView mv = new ModelAndView();
+		Student student=null;
+		try {
+			student=service.login(username, password);
+		} catch (UserException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(null==student){
+			mv.addObject("status","error");
+		}else{
+			mv.addObject("status","success");
+		}
+		mv.addObject("student",student);
+		
+		return mv;
+	}
+
 }

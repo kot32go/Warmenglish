@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kot32.warmenglish.domain.Class;
+import com.kot32.warmenglish.domain.Group;
 import com.kot32.warmenglish.domain.User;
 
 @Repository
@@ -16,7 +17,9 @@ public class ClassDAO {
 	private SessionFactory sessionFactory;
 
 	public boolean addClass(User teacher,com.kot32.warmenglish.domain.Class c) {
-		// TODO Auto-generated method stub
+		//先从低到高一个一个保存对象
+		//首先默认保存小组
+		
 		teacher.getClasses().add(c);
 		Session session = sessionFactory.getCurrentSession();
 		session.save(c);

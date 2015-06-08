@@ -1,8 +1,14 @@
 package com.kot32.warmenglish.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -15,10 +21,17 @@ public class Student {
 	private String name;
 	private String username;
 	private String password;
-	@OneToOne
+
+	@ManyToOne
 	private Class clazz;
-	@OneToOne
+	@ManyToOne
 	private User user;
+	@ManyToOne
+	private Group group;
+	// 学生有很多次成绩
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "student")
+	private Set<Grade> homeworks = new HashSet<Grade>();
+
 	public int getId() {
 		return id;
 	}
@@ -58,5 +71,37 @@ public class Student {
 	public void setClazz(Class clazz) {
 		this.clazz = clazz;
 	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Group getGroup() {
+		return group;
+	}
+
+	public void setGroup(Group group) {
+		this.group = group;
+	}
 	
+	public Set<Grade> getHomeworks() {
+		return homeworks;
+	}
+
+	public void setHomeworks(Set<Grade> homeworks) {
+		this.homeworks = homeworks;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", username="
+				+ username + ", password=" + password + ", clazz=" + clazz
+				+ ", user=" + user + ", group=" + group + ", homeworks="
+				+ homeworks + "]";
+	}
+
 }

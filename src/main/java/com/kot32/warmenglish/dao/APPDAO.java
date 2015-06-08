@@ -14,19 +14,19 @@ public class APPDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public User login(String username, String password) {
+	public Student login(String username, String password) {
 		Query query = sessionFactory
 				.getCurrentSession()
 				.createQuery(
 						"from Student u where u.username=:username and u.password=:password");
 		query.setParameter("username", username);
 		query.setParameter("password", password);
-		System.out.println(query.getQueryString());
+		Student student=null;
 		int size = query.list().size();
 		if (size > 0) {
-			return (User)query.list().get(0);
+			student= (Student)query.list().get(0);
 		}
-		return null;
+		return student;
 	}
 
 	public boolean register(Student student) {

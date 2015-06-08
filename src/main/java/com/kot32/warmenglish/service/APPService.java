@@ -15,7 +15,7 @@ public class APPService {
 	APPDAO appdao;
 	
 	@Transactional
-	public User login(String username,String password) throws UserException{
+	public Student login(String username,String password) throws UserException{
 		return appdao.login(username, password);
 	}
 	

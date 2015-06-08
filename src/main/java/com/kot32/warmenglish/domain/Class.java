@@ -1,5 +1,8 @@
 package com.kot32.warmenglish.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -22,6 +26,19 @@ public class Class {
 	@ManyToOne
 	private User user;
 	private String des;
+	// 一个班级很多小组
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "clazz")
+	private Set<Group> groups = new HashSet<Group>();
+	// 一个班级推送消息
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "clazz")
+	private Set<Message> messages = new HashSet<Message>();
+
+	@Override
+	public String toString() {
+		return "Class [id=" + id + ", name=" + name + ", uuid=" + uuid
+				+ ", user=" + user + ", des=" + des + ", groups=" + groups
+				+ ", messages=" + messages + "]";
+	}
 
 	public int getId() {
 		return id;
@@ -63,11 +80,20 @@ public class Class {
 		this.des = des;
 	}
 
-	@Override
-	public String toString() {
-		return "Class [id=" + id + ", name=" + name + ", uuid=" + uuid
-				+ ", user=" + user + ", des=" + des + "]";
+	public Set<Group> getGroups() {
+		return groups;
 	}
 
-	
+	public void setGroups(Set<Group> groups) {
+		this.groups = groups;
+	}
+
+	public Set<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(Set<Message> messages) {
+		this.messages = messages;
+	}
+
 }
