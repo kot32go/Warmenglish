@@ -53,8 +53,8 @@
         </ul>
         <ul class="nav nav-sidebar">
             <li>通知管理</li>
-            <li><a id="sendMessage">发布公告</a></li>
-            <li><a href="">查看历史公告</a></li>
+            <li><a id="sendMessage">发布通知</a></li>
+            <li><a id="listMessage">查看历史通知</a></li>
         </ul>
     </div>
 
@@ -75,6 +75,9 @@
         $("#sendMessage").click(function(){
             $(".myFrame").attr("src","../control/send_message");
         });
+		$("#listMessage").click(function(){
+            $(".myFrame").attr("src","../control/list_messagel");
+        })
         $("#point").click(function(){
             $(".myFrame").attr("src","../control/point");
         });

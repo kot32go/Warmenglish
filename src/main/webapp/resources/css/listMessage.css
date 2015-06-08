@@ -9,7 +9,7 @@ body {
     text-align: left;
 }
 table tr .actions{
-    display: none;
+    display:none;
 }
 table tr.hover .actions{
     display:inline-block;
@@ -18,6 +18,12 @@ table tr.hover .actions{
     display: inline-block;
     width: 200px;
     vertical-align: middle;
+}
+.content{
+    margin: 20px 100px;
+}
+.content .btn .btn-default .btn-primary{
+    position: absolute;
 }
 .table-responsive {
     min-height: 0.01%;

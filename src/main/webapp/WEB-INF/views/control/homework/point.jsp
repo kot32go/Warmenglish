@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="../resources/bootstrap/css/bootstrap.min.css"
-	rel="stylesheet">
+<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../resources/css/AdminLTE.css" rel="stylesheet">
 <link href="../resources/css/point.css" rel="stylesheet">
 <title>查看成绩</title>
 </head>
@@ -49,34 +49,173 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
+					<tr class="main">
 						<td>关艺竹</td>
 						<td>5</td>
 						<td>2015-6-5</td>
-						<td>
+						<td style="padding: 3px 0 0 0">
 							<button class="actions btn btn-default btn-primary">查看成绩</button>
 						</td>
 					</tr>
-					<tr>
+					<tr class="child">
+					<td class="col-md-8 taber" colspan="4">
+                    <ul id="myTab1" class="nav nav-pills" style="margin: 0 100px">
+                        <li class="active"><a href="#homework" data-toggle="tab">作业情况</a></li>
+                        <li><a href="#count" data-toggle="tab">统计</a></li>
+                    </ul>
+                    <div id="myTabContent1" class="tab-content">
+                        <div class="tab-pane fade in active" id="homework1">
+                            <div class="box-body" style="margin:0 150px">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th style="width: 150px">题型</th>
+                                            <th>正确率</th>
+                                            <th style="width: 100px">分数</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1.</td>
+                                            <td>选择题</td>
+                                            <td>
+                                                <div class="progress xs progress-striped active">
+                                                    <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-red">55%</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2.</td>
+                                            <td>阅读题</td>
+                                            <td>
+                                                <div class="progress xs progress-striped active">
+                                                    <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-yellow">70%</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>3.</td>
+                                            <td>完形填空</td>
+                                            <td>
+                                                <div class="progress xs progress-striped active">
+                                                    <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-light-blue">30%</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>4.</td>
+                                            <td>作文</td></td>
+                                            <td>
+                                                <div class="progress xs progress-striped active">
+                                                    <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-green">90%</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="count1">
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+					<tr class="main">
 						<td>王柯</td>
 						<td>6</td>
 						<td>2015-6-1</td>
-						<td>
+						<td style="padding: 3px 0 0 0">
 							<button class="actions btn btn-default btn-primary">查看成绩</button>
 						</td>
 					</tr>
+					<tr class="child">
+                <td class="col-md-8 taber" colspan="4">
+                    <ul id="myTab" class="nav nav-pills" style="margin: 0 100px">
+                        <li class="active"><a href="#homework" data-toggle="tab">作业情况</a></li>
+                        <li><a href="#count" data-toggle="tab">统计</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="homework">
+                            <div class="box-body" style="margin:0 150px">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th style="width: 150px">题型</th>
+                                        <th>正确率</th>
+                                        <th style="width: 100px">分数</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>选择题</td>
+                                        <td>
+                                            <div class="progress xs progress-striped active">
+                                                <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-red">55%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2.</td>
+                                        <td>阅读题</td>
+                                        <td>
+                                            <div class="progress xs progress-striped active">
+                                                <div class="progress-bar progress-bar-yellow" style="width: 70%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-yellow">70%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.</td>
+                                        <td>完形填空</td>
+                                        <td>
+                                            <div class="progress xs progress-striped active">
+                                                <div class="progress-bar progress-bar-primary" style="width: 30%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-light-blue">30%</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4.</td>
+                                        <td>作文</td></td>
+                                        <td>
+                                            <div class="progress xs progress-striped active">
+                                                <div class="progress-bar progress-bar-success" style="width: 90%"></div>
+                                            </div>
+                                        </td>
+                                        <td><span class="badge bg-green">90%</span></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+							</div>
+							<div class="tab-pane fade" id="count">
+
+							</div>
+                    </div>
+					</td>
+				</tr>
 				</tbody>
 			</table>
 		</div>
 	</div>
 	<script src="../resources/js/jquery.min.js"></script>
 	<script>
-		$('table').on('mouseenter', 'tr', function() {
-			$(this).addClass('hover')
-		}).on('mouseleave', 'tr', function() {
-			$(this).removeClass('hover');
-
-		})
+		$("tr.main").on('mouseenter',function(){
+        $(this).addClass('hover');
+        $(this).click(function() {
+            $(this).next("tr.child").slideToggle();
+            event.stopPropagation(); 
+        });
+    });
 	</script>
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="../resources/js/jquery.min.js"></script>
