@@ -10,55 +10,53 @@
 <link href="../resources/css/point.css" rel="stylesheet">
 <title>查看成绩</title>
 </head>
-<body>
-	<div class="container">
-		<h2>
-			查看学生成绩<br /> <small>你可以在这里查看学生到目前为止的成绩统计</small>
-		</h2>
-		<hr />
-		<div class="row">
-			<div class="col-md-5">
-				<div class="form-inline">
-					<label for="pointClass">班级</label> <select
-						class="form-control form-pointClass" id="pointClass">
-						<option value="volvo">2012级软工2班</option>
-						<option value="saab">计科1班</option>
-						<option value="fiat">自动化1班</option>
-					</select>
-				</div>
-			</div>
-			<div class="col-md-3" style="float: right">
-				<div class="input-group">
-					<input type="text" class="form-control"> <span
-						class="input-group-btn">
-						<button class="btn btn-default btn-primary" type="button">
-							<span class="glyphicon glyphicon-search"></span>
-						</button>
-					</span>
-				</div>
-			</div>
-		</div>
-		<div class="table-responsive">
-			<table class="table table-hover table-striped">
-				<thead>
-					<tr>
-						<th class="col-md-3">学生姓名</th>
-						<th class="col-md-3">交作业次数</th>
-						<th class="col-md-3">最后提交时间</th>
-						<th class="col-md-3"></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr class="main">
-						<td>关艺竹</td>
-						<td>5</td>
-						<td>2015-6-5</td>
-						<td style="padding: 3px 0 0 0">
-							<button class="actions btn btn-default btn-primary">查看成绩</button>
-						</td>
-					</tr>
-					<tr class="child">
-					<td class="col-md-8 taber" colspan="4">
+<<body>
+<div class="container">
+    <h2>查看学生成绩<br/><small>你可以在这里查看学生到目前为止的成绩统计</small></h2>
+    <hr/>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-inline">
+                    <label for="pointClass">班级</label>
+                    <select class="form-control form-pointClass" id="pointClass">
+                        <option value="volvo">2012级软工2班</option>
+                        <option value="saab">计科1班</option>
+                        <option value="fiat">自动化1班</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-3" style="float: right">
+                <div class="input-group">
+                    <input type="text" class="form-control">
+               <span class="input-group-btn">
+                  <button class="btn btn-default btn-primary" type="button">
+                      <span class="glyphicon glyphicon-search"></span>
+                  </button>
+               </span>
+                </div>
+            </div>
+        </div>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th class="col-md-3">学生姓名</th>
+                <th class="col-md-3">交作业次数</th>
+                <th class="col-md-3">最后提交时间</th>
+                <th class="col-md-3"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="main">
+                <td>关艺竹</td>
+                <td>5</td>
+                <td>2015-6-5</td>
+                <td style="padding: 3px 0 0 0">
+                    <button class="actions btn btn-default btn-primary">查看成绩</button>
+                </td>
+            </tr>
+            <tr class="child">
+                <td class="col-md-8 taber" colspan="4">
                     <ul id="myTab1" class="nav nav-pills" style="margin: 0 100px">
                         <li class="active"><a href="#homework" data-toggle="tab">作业情况</a></li>
                         <li><a href="#count" data-toggle="tab">统计</a></li>
@@ -126,15 +124,15 @@
                     </div>
                 </td>
             </tr>
-					<tr class="main">
-						<td>王柯</td>
-						<td>6</td>
-						<td>2015-6-1</td>
-						<td style="padding: 3px 0 0 0">
-							<button class="actions btn btn-default btn-primary">查看成绩</button>
-						</td>
-					</tr>
-					<tr class="child">
+            <tr class="main">
+                <td>王柯</td>
+                <td>6</td>
+                <td>2015-6-1</td>
+                <td style="padding: 3px 0 0 0">
+                    <button class="actions btn btn-default btn-primary">查看成绩</button>
+                </td>
+            </tr>
+            <tr class="child">
                 <td class="col-md-8 taber" colspan="4">
                     <ul id="myTab" class="nav nav-pills" style="margin: 0 100px">
                         <li class="active"><a href="#homework" data-toggle="tab">作业情况</a></li>
@@ -196,32 +194,32 @@
                                     </tbody>
                                 </table>
                             </div>
-							</div>
-							<div class="tab-pane fade" id="count">
+                        </div>
+                        <div class="tab-pane fade" id="count">
 
-							</div>
+                        </div>
                     </div>
-					</td>
-				</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	<script src="../resources/js/jquery.min.js"></script>
-	<script>
-		$("tr.main").on('mouseenter',function(){
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script>
+
+    $("tr.main").on('mouseenter',function(){
         $(this).addClass('hover');
         $(this).click(function() {
             $(this).next("tr.child").slideToggle();
             event.stopPropagation(); 
         });
     });
-	$('tr.main').on('mouseleave', function(){
+
+    $('table').on('mouseleave', 'tr', function(){
         $(this).removeClass('hover');
     });
-	</script>
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="../resources/js/jquery.min.js"></script>
-	<script src="../resources/bootstrap/js/bootstrap.min.js"></script>
+</script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
