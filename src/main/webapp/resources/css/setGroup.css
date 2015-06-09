@@ -9,18 +9,10 @@ body {
     text-align: left;
 }
 table tr .actions{
-    display:none;
+    display: none;
 }
 table tr.hover .actions{
     display:inline-block;
-}
-.form-inline .form-control {
-    display: inline-block;
-    width: 200px;
-    vertical-align: middle;
-}
-.content{
-    margin: 20px 100px;
 }
 .table-responsive {
     min-height: 0.01%;
@@ -30,4 +22,12 @@ table tr.hover .actions{
 .child{
     height: 300px;
     display: none;
+}
+.content{
+    margin: 20px 100px;
+}
+.member{
+    float: right;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }

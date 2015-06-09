@@ -15,7 +15,7 @@ body {
 }
 .form-inline .form-group {
     display: flex;
-    margin-bottom: 0;
+    margin-bottom: 50px;
     vertical-align: middle;
 }
 label {
@@ -57,8 +57,7 @@ textarea.form-control {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 6px;
-    padding: 6px 30px;
-    margin-top: 20px;
+    margin-top: 0;
 }
 /**/
 .container{

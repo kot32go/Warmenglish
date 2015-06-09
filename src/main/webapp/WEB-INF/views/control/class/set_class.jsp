@@ -47,9 +47,11 @@
 		$('table').on('mouseenter', 'tr', function(){
         $(this).addClass('hover');
         $('.btn-danger').click(function(){
-            alert("你确定要删除这个班级吗？");
+            if(window.confirm("确认删除这个班级吗？")){
+                window.location="/"
+            }
+            else{}
             event.cancelBubble();
-
         });
         event.cancelBubble();
     }).on('mouseleave', 'tr', function(){

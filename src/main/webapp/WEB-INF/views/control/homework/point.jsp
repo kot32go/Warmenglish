@@ -207,12 +207,10 @@
 </div>
 <script src="../resources/js/jquery.min.js"></script>.js"></script>
 <script>
-
-    
-    $("tr.main").on('mouseenter',function(){
+	$("tr.main").on('mouseenter',function(){
         $(this).addClass('hover');
-        $(this).click(function() {
-            $(this).next("tr.child").slideToggle();
+        $('.btn-primary').click(function() {
+            $(this).parents('.main').next("tr.child").slideToggle();
             event.cancelBubble();
         });
         event.cancelBubble();

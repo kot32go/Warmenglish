@@ -51,6 +51,7 @@
             <li><a id="addClass">添加班级</a></li>
             <li><a id="addGroup">添加分组</a></li>
             <li><a id="setClass">管理班级信息</a></li>
+			  <li><a id="setGroup">管理分组信息</a></li>
         </ul>
         <ul class="nav nav-sidebar">
             <li>通知管理</li>
@@ -67,6 +68,9 @@
 <script src="../resources/js/jquery.min.js"></script>
 <script>
    $(document).ready(function(){
+        $("#grade").click(function(){
+            $(".myFrame").attr("src","grade.html");
+        })
         $("#addClass").click(function(){
             $(".myFrame").attr("src","add_Class.html");
         });
@@ -76,14 +80,14 @@
         $("#setClass").click(function(){
             $(".myFrame").attr("src","set_Class.html");
         });
+        $("#setGroup").click(function(){
+            $(".myFrame").attr("src","set_group.html");
+        });
         $("#sendMessage").click(function(){
             $(".myFrame").attr("src","send_message.html");
         })
         $("#listMessage").click(function(){
             $(".myFrame").attr("src","list_message.html");
-        })
-        $("#grade").click(function(){
-            $(".myFrame").attr("src","grade.html");
         })
     });
 </script>

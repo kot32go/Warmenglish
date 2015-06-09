@@ -10,7 +10,7 @@
 <link href="../resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="../resources/css/sendMessage.css" rel="stylesheet">
-<title>发送通知</title>
+<title>发布通知</title>
 </head>
 <body>
 	<div class="container">

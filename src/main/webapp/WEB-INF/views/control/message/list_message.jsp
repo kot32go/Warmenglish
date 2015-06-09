@@ -78,14 +78,14 @@
 
     $("tr.main").on('mouseenter',function(){
         $(this).addClass('hover');
-        $(this).click(function() {
-            $(this).next("tr.child").slideToggle();
+        $('.btn-primary').click(function() {
+            $(this).parents('.main').next("tr.child").slideToggle();
             event.cancelBubble();
         });
-		event.cancelBubble();
+        event.cancelBubble();
     });
 
-    $('table').on('mouseleave', 'tr', function(){
+    $('tr.main').on('mouseleave', function(){
         $(this).removeClass('hover');
     });
 </script>

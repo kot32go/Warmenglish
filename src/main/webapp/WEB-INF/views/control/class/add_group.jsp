@@ -27,6 +27,10 @@
             <label for="groupName">组名</label>
             <input type="text" class="form-control" id="groupName" placeholder="输入组名">
         </div>
+		<div class="form-group">
+            <label for="groupTip">备注</label>
+            <input type="text" class="form-control" id="groupTip" placeholder="输入备注">
+        </div>
     </form>
     <button type="submit" class="btn btn-default">添加 </button>
 </div>
