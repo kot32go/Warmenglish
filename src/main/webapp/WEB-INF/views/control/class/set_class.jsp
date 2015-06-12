@@ -22,8 +22,9 @@
 			<table class="table table-hover table-striped">
 				<thead>
 					<tr>
-						<th class="col-md-4">班级名称</th>
-						<th class="col-md-5">班级描述</th>
+						<th class="col-md-2">班级名称</th>
+						<th class="col-md-3">班级编码</th>
+						<th class="col-md-4">班级描述</th>
 						<th class="col-md-3"></th>
 					</tr>
 				</thead>
@@ -31,8 +32,9 @@
 					<c:forEach items="${classes}" var="class">
 						<tr>
 							<td>${class.name}</td>
+							<td id="uuid">${class.uuid}</td>
 							<td>${class.des}</td>
-							<td>
+							<td style="padding: 3px 0 0 0">
 								<button class="actions btn btn-default btn-primary">编辑</button>
 								<button class="actions btn btn-default btn-danger">删除</button>
 							</td>
@@ -44,19 +46,20 @@
 	</div>
 	<script src="../resources/js/jquery.min.js"></script>
 	<script>
-		$('table').on('mouseenter', 'tr', function(){
-        $(this).addClass('hover');
-        $('.btn-danger').click(function(){
-            if(window.confirm("确认删除这个班级吗？")){
-                window.location="/"
-            }
-            else{}
-            event.cancelBubble();
-        });
-        event.cancelBubble();
-    }).on('mouseleave', 'tr', function(){
-        $(this).removeClass('hover');
-    })
+		$('table').on('mouseenter', 'tr', function() {
+			$(this).addClass('hover');
+			$('.btn-danger').click(function() {
+				var uuid = $(this).parents().children('#uuid').text();
+				if (window.confirm("确认删除这个班级吗？")) {
+					window.location = "delete_class?uuid=" + uuid;
+				} else {
+				}
+				event.cancelBubble();
+			});
+			event.cancelBubble();
+		}).on('mouseleave', 'tr', function() {
+			$(this).removeClass('hover');
+		})
 	</script>
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="../resources/js/jquery.min.js"></script>

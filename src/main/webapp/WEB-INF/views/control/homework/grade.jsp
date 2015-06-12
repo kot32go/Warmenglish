@@ -5,17 +5,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../resources/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
 <link href="../resources/css/AdminLTE.css" rel="stylesheet">
-<link href="../resources/css/point.css" rel="stylesheet">
+<link href="../resources/css/grade.css" rel="stylesheet">
 <title>查看成绩</title>
 </head>
-<<body>
+<body>
 <div class="container">
     <h2>查看学生成绩<br/><small>你可以在这里查看学生到目前为止的成绩统计</small></h2>
     <hr/>
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-5">
                 <div class="form-inline">
                     <label for="pointClass">班级</label>
                     <select class="form-control form-pointClass" id="pointClass">
@@ -25,7 +26,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" style="float: right">
                 <div class="input-group">
                     <input type="text" class="form-control">
                <span class="input-group-btn">
@@ -205,7 +206,7 @@
         </table>
     </div>
 </div>
-<script src="../resources/js/jquery.min.js"></script>.js"></script>
+<script src="../resources/js/jquery.min.js"></script>
 <script>
 	$("tr.main").on('mouseenter',function(){
         $(this).addClass('hover');

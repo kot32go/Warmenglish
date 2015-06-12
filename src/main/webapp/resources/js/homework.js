@@ -1,59 +1,59 @@
 /**
  * Created by Administrator on 2015/6/11 0011.
  */
-//Ìí¼ÓÌâ¸É
+//æ·»åŠ é¢˜å¹²
 function main(name,number){
     var newformgroup=document.createElement('div');
     newformgroup.setAttribute("class","form-group");
-    var str="<label>ÌâÄ¿"+number+"</label><textarea type='text' class='form-control form-choosemain' name='"+name+"Main' placeholder='ÇëÊäÈëÌâ¸É'></textarea>"
+    var str="<label>é¢˜ç›®"+number+"</label><textarea type='text' class='form-control form-choosemain' name='"+name+"Main' placeholder='è¯·è¾“å…¥é¢˜å¹²'></textarea>"
     newformgroup.innerHTML = str;
     return newformgroup;
 }
 
-//Ìí¼ÓÑ¡Ïî(Î´½âÎö,²»´ø±àºÅ)
+//æ·»åŠ é€‰é¡¹(æœªè§£æ,ä¸å¸¦ç¼–å·)
 function select(name){
     var newformgroup=document.createElement('div');
     newformgroup.setAttribute("class","form-group");
-    var str="<label>Ñ¡Ïî</label><textarea type='text' class='form-control form-choosemain' name='"+name+"Select' placeholder='ÇëÊäÈëÑ¡Ïî'></textarea>"
+    var str="<label>é€‰é¡¹</label><textarea type='text' class='form-control form-choosemain' name='"+name+"Select' placeholder='è¯·è¾“å…¥é€‰é¡¹'></textarea>"
     newformgroup.innerHTML = str;
     return newformgroup;
 }
-//Ìí¼ÓÑ¡Ïî(Î´½âÎö£¬´ø±àºÅ)
+//æ·»åŠ é€‰é¡¹(æœªè§£æï¼Œå¸¦ç¼–å·)
 function selectNumber(name,number){
     var newformgroup=document.createElement('div');
     newformgroup.setAttribute("class","form-group");
-    var str="<label>Ñ¡Ïî"+number+"</label><textarea type='text' class='form-control form-choosemain' name='"+name+"Select' placeholder='ÇëÊäÈëÑ¡Ïî'></textarea>"
+    var str="<label>é€‰é¡¹"+number+"</label><textarea type='text' class='form-control form-choosemain' name='"+name+"Select' placeholder='è¯·è¾“å…¥é€‰é¡¹'></textarea>"
     newformgroup.innerHTML = str;
     return newformgroup;
 }
-//Ìí¼ÓÎÄÕÂ
+//æ·»åŠ æ–‡ç« 
 function article(name,number){
     var newformgroup=document.createElement('div');
     newformgroup.setAttribute("class","form-group");
-    var str="<label>ÎÄÕÂ"+number+"</label><textarea type='text' class='form-control form-readingmain' name='"+name+"Article' placeholder='ÇëÊäÈëÎÄÕÂ'></textarea>"
+    var str="<label>æ–‡ç« "+number+"</label><textarea type='text' class='form-control form-readingmain' name='"+name+"Article' placeholder='è¯·è¾“å…¥æ–‡ç« '></textarea>"
     newformgroup.innerHTML = str;
     return newformgroup;
 }
-//Ìí¼Ó½âÎöÑ¡Ïî°´Å¥
+//æ·»åŠ è§£æé€‰é¡¹æŒ‰é’®
 function button(){
     var newbutton=document.createElement('button');
     newbutton.setAttribute("class","btn btn-primary");
     newbutton.setAttribute("style","float: right");
-    newbutton.innerHTML="½âÎöÑ¡Ïî";
+    newbutton.innerHTML="è§£æé€‰é¡¹";
     return newbutton;
 }
-//Ìí¼ÓÇå³ı¸¡¶¯div
+//æ·»åŠ æ¸…é™¤æµ®åŠ¨div
 function clear(){
     var newclear=document.createElement('div');
     newclear.setAttribute("class","clearfix");
     return newclear;
 }
-//Ìí¼Ó·Ö¸îÏß
+//æ·»åŠ åˆ†å‰²çº¿
 function hr(){
     var newhr=document.createElement('hr');
     return newhr;
 }
-//Ìí¼ÓÑ¡Ïî(ÒÑ½âÎö£¬Ñ¡Ôñ£¬ÍêĞÎÌî¿Õ£¬ÔÄ¶Á)
+//æ·»åŠ é€‰é¡¹(å·²è§£æï¼Œé€‰æ‹©ï¼Œå®Œå½¢å¡«ç©ºï¼Œé˜…è¯»)
 function selectChoose(name){
     var newrow1=document.createElement('div');
     newrow1.setAttribute("class","row");

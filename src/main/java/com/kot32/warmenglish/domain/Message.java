@@ -68,6 +68,10 @@ public class Message {
 				+ content + ", date=" + date + ", user=" + user + ", clazz="
 				+ clazz + "]";
 	}
+	
+	public Message() {
+		// TODO Auto-generated constructor stub
+	}
 	public Message( String title, String content, Date date, User user,
 			Class clazz) {
 		super();

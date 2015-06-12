@@ -23,4 +23,14 @@ public class APPService {
 	public boolean register(Student student) throws UserException{
 		return appdao.register(student);
 	}
+	@Transactional
+	public String query_class(String class_uuid) {
+		// TODO Auto-generated method stub
+		return appdao.query_class(class_uuid) ;
+	}
+	@Transactional
+	public boolean updateInfo(String student_id, String class_uuid, String email) {
+		// TODO Auto-generated method stub
+		return appdao.updateInfo(student_id,class_uuid,email);
+	}
 }

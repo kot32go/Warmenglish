@@ -10,18 +10,18 @@
 <link href="../resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="../resources/css/sendMessage.css" rel="stylesheet">
-<title>发布通知</title>
+<title>发送通知</title>
 </head>
 <body>
 	<div class="container">
 		<h2>
-			发布通知<br />
-			<small>你可以在这里编写通知并选择相应的班级</small>
+			发布通知<br /> <small>你可以在这里编写通知并选择相应的班级</small>
 		</h2>
 		<hr />
 		<form class="form-inline" method="post">
 			<div class="form-group">
-				<label for="infoClass">发布班级</label> <select name="class_uuid"
+				<label for="infoClass">发布班级</label> 
+				<select name="class_uuid"
 					class="form-control form-infoClass" id="infoClass">
 					<c:forEach items="${classes}" var="class">
 						<option value="${class.uuid}">${class.name}</option>
@@ -29,11 +29,10 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="infoDes">通知标题</label>
-				<input type="text" name="title"
-					class="form-control form-infoDes" id="infoDes" placeholder="输入通知标题"/>
+				<label for="infoDes">通知标题</label> <input type="text" name="title"
+					class="form-control form-infoDes" id="infoDes" placeholder="输入通知标题" />
 			</div>
-			
+
 			<div class="form-group">
 				<label for="infoDes">通知内容</label>
 				<textarea type="text" name="content"

@@ -48,6 +48,7 @@ body {
         overflow-x: hidden;
         overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
         background-color: #f5f5f5;
+        height:100%
     }
 }
 .nav-sidebar {
@@ -73,5 +74,4 @@ body {
     margin-left: 226px;
     height: 650px;
     border: none;
-	width:100%;
 }

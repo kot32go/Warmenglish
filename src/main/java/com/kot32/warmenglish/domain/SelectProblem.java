@@ -20,6 +20,8 @@ public class SelectProblem {
 	private String answers[]=new String[4];
 	//正确答案
 	private String answer;
+	//学生的答案
+	private String student_answer;
 	//属于哪一次作业的
 	@ManyToOne
 	private Homework homework;
@@ -53,11 +55,19 @@ public class SelectProblem {
 	public void setHomework(Homework homework) {
 		this.homework = homework;
 	}
+	
+	public String getStudent_answer() {
+		return student_answer;
+	}
+	public void setStudent_answer(String student_answer) {
+		this.student_answer = student_answer;
+	}
 	@Override
 	public String toString() {
 		return "SelectProblem [id=" + id + ", des=" + des + ", answers="
 				+ Arrays.toString(answers) + ", answer=" + answer
-				+ ", homework=" + homework + "]";
+				+ ", student_answer=" + student_answer + ", homework="
+				+ homework + "]";
 	}
 	
 	

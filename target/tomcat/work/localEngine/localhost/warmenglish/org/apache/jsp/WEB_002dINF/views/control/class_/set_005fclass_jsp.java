@@ -77,8 +77,9 @@ public final class set_005fclass_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t<table class=\"table table-hover table-striped\">\n");
       out.write("\t\t\t\t<thead>\n");
       out.write("\t\t\t\t\t<tr>\n");
-      out.write("\t\t\t\t\t\t<th class=\"col-md-4\">班级名称</th>\n");
-      out.write("\t\t\t\t\t\t<th class=\"col-md-5\">班级描述</th>\n");
+      out.write("\t\t\t\t\t\t<th class=\"col-md-2\">班级名称</th>\n");
+      out.write("\t\t\t\t\t\t<th class=\"col-md-3\">班级编码</th>\n");
+      out.write("\t\t\t\t\t\t<th class=\"col-md-4\">班级描述</th>\n");
       out.write("\t\t\t\t\t\t<th class=\"col-md-3\"></th>\n");
       out.write("\t\t\t\t\t</tr>\n");
       out.write("\t\t\t\t</thead>\n");
@@ -96,8 +97,14 @@ public final class set_005fclass_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t$('table').on('mouseenter', 'tr', function() {\n");
       out.write("\t\t\t$(this).addClass('hover');\n");
       out.write("\t\t\t$('.btn-danger').click(function() {\n");
-      out.write("\t\t\t\talert(\"你确定要删除这个班级吗？\");\n");
-      out.write("\t\t\t})\n");
+      out.write("\t\t\t\tvar uuid = $(this).parents().children('#uuid').text();\n");
+      out.write("\t\t\t\tif (window.confirm(\"确认删除这个班级吗？\")) {\n");
+      out.write("\t\t\t\t\twindow.location = \"delete_class?uuid=\" + uuid;\n");
+      out.write("\t\t\t\t} else {\n");
+      out.write("\t\t\t\t}\n");
+      out.write("\t\t\t\tevent.cancelBubble();\n");
+      out.write("\t\t\t});\n");
+      out.write("\t\t\tevent.cancelBubble();\n");
       out.write("\t\t}).on('mouseleave', 'tr', function() {\n");
       out.write("\t\t\t$(this).removeClass('hover');\n");
       out.write("\t\t})\n");
@@ -127,9 +134,9 @@ public final class set_005fclass_jsp extends org.apache.jasper.runtime.HttpJspBa
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/views/control/class/set_class.jsp(31,5) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_class.jsp(31,5) '${classes}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${classes}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/views/control/class/set_class.jsp(31,5) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/control/class/set_class.jsp(32,5) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_class.jsp(32,5) '${classes}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${classes}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/views/control/class/set_class.jsp(32,5) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("class");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -141,10 +148,13 @@ public final class set_005fclass_jsp extends org.apache.jasper.runtime.HttpJspBa
           out.write("\t\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${class.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\n");
+          out.write("\t\t\t\t\t\t\t<td id=\"uuid\">");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${class.uuid}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\n");
           out.write("\t\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${class.des}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\n");
-          out.write("\t\t\t\t\t\t\t<td>\n");
+          out.write("\t\t\t\t\t\t\t<td style=\"padding: 3px 0 0 0\">\n");
           out.write("\t\t\t\t\t\t\t\t<button class=\"actions btn btn-default btn-primary\">编辑</button>\n");
           out.write("\t\t\t\t\t\t\t\t<button class=\"actions btn btn-default btn-danger\">删除</button>\n");
           out.write("\t\t\t\t\t\t\t</td>\n");

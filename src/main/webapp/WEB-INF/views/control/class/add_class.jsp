@@ -22,8 +22,6 @@
 					class="form-control" id="className" name="className"
 					placeholder="软工2班">
 			</div>
-			<br />
-			<br />
 			<div class="form-group">
 				<label for="classDes">班级概述</label>
 				<textarea type="text" class="form-control" id="classDes"

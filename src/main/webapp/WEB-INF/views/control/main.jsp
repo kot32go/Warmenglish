@@ -62,36 +62,34 @@
 
     <iframe class="myFrame col-md-10"></iframe>
 </div>
-<!--Bootstrap core JavaScript-->
-
 <!--Placed at the end of the document so the pages lo…-->
 <script src="../resources/js/jquery.min.js"></script>
 <script>
    $(document).ready(function(){
-		$("#homework").click(function(){
-            $(".myFrame").attr("src","homework.html");
-        })
-        $("#grade").click(function(){
-            $(".myFrame").attr("src","grade.html");
-        })
         $("#addClass").click(function(){
-            $(".myFrame").attr("src","add_Class.html");
+            $(".myFrame").attr("src","../control/add_class");
         });
-        $("#addGroup").click(function(){
-            $(".myFrame").attr("src","add_group.html");
+        $("#homework").click(function(){
+            $(".myFrame").attr("src","../control/homework");
         });
         $("#setClass").click(function(){
-            $(".myFrame").attr("src","set_Class.html");
-        });
-        $("#setGroup").click(function(){
-            $(".myFrame").attr("src","set_group.html");
+            $(".myFrame").attr("src","../control/set_class");
         });
         $("#sendMessage").click(function(){
-            $(".myFrame").attr("src","send_message.html");
+            $(".myFrame").attr("src","../control/send_message");
+        });
+		$("#listMessage").click(function(){
+            $(".myFrame").attr("src","../control/list_message");
         })
-        $("#listMessage").click(function(){
-            $(".myFrame").attr("src","list_message.html");
-        })
+        $("#grade").click(function(){
+            $(".myFrame").attr("src","../control/grade");
+        });
+		$("#addGroup").click(function(){
+            $(".myFrame").attr("src","../control/add_group.html");
+        });
+		$("#setGroup").click(function(){
+            $(".myFrame").attr("src","../control/set_group.html");
+        });
     });
 </script>
 <!-- Bootstrap core JavaScript

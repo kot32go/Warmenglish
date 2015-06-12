@@ -27,10 +27,10 @@ public class User {
 	private String username;
 	private String password;
 	//一个老师管理很多班级
-	@OneToMany(fetch = FetchType.EAGER,mappedBy="user")
+	@OneToMany(fetch = FetchType.EAGER,mappedBy="user",cascade={CascadeType.ALL})
 	private Set<Class> classes = new HashSet<Class>();
 	//一个老师发出很多消息
-	@OneToMany(fetch = FetchType.EAGER,mappedBy="user")
+	@OneToMany(fetch = FetchType.EAGER,mappedBy="user",cascade={CascadeType.ALL})
 	private Set<Message> messages = new HashSet<Message>();
 	
 	

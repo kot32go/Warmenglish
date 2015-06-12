@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,31 +9,34 @@
 <link href="../resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="../resources/css/addGroup.css" rel="stylesheet">
-<title>添加分组</title>
+<title>娣诲姞鍒嗙粍</title>
 </head>
 <body>
-<div class="container">
-    <h2>添加分组<br/><small>你可以在这里编写分组信息</small></h2>
-    <hr/>
-    <form class="form-inline">
-        <div class="form-group">
-            <label for="groupClass">班级</label>
-            <select class="form-control form-groupClass" id="groupClass">
-                <option value="volvo">软工2班</option>
-                <option value="saab">自动化1班</option>
-                <option value="fiat">计科1班</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="groupName">组名</label>
-            <input type="text" class="form-control" id="groupName" placeholder="输入组名">
-        </div>
-		<div class="form-group">
-            <label for="groupTip">备注</label>
-            <input type="text" class="form-control" id="groupTip" placeholder="输入备注">
-        </div>
-    </form>
-    <button type="submit" class="btn btn-default">添加 </button>
-</div>
+	<div class="container">
+		<h2>
+			娣诲姞鍒嗙粍<br /> <small>浣犲彲浠ュ湪杩欓噷缂栧啓鍒嗙粍淇℃伅</small>
+		</h2>
+		<hr />
+		<form class="form-inline" method="post">
+			<div class="form-group">
+				<label for="groupClass">鐝骇</label> <select name="class_uuid"
+					class="form-control form-infoClass" id="groupClass">
+					<c:forEach items="${classes}" var="class">
+						<option value="${class.uuid}">${class.name}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="groupName">缁勫悕</label> <input type="text"
+					class="form-control" id="groupName" placeholder="杈撳叆缁勫悕" name="name" />
+			</div>
+			<div class="form-group">
+				<label for="groupTip">澶囨敞</label> <input type="text"
+					class="form-control" id="groupTip" placeholder="杈撳叆澶囨敞" name="tips" />
+			</div>
+			<button type="submit" class="btn btn-default">娣诲姞</button>
+		</form>
+
+	</div>
 </body>
 </html>

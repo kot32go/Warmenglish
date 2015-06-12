@@ -73,8 +73,6 @@ public final class add_005fclass_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t\t\tclass=\"form-control\" id=\"className\" name=\"className\"\n");
       out.write("\t\t\t\t\tplaceholder=\"软工2班\">\n");
       out.write("\t\t\t</div>\n");
-      out.write("\t\t\t<br />\n");
-      out.write("\t\t\t<br />\n");
       out.write("\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t<label for=\"classDes\">班级概述</label>\n");
       out.write("\t\t\t\t<textarea type=\"text\" class=\"form-control\" id=\"classDes\"\n");

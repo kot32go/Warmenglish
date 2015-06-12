@@ -70,13 +70,13 @@ public final class send_005fmessage_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("<body>\n");
       out.write("\t<div class=\"container\">\n");
       out.write("\t\t<h2>\n");
-      out.write("\t\t\t发布通知<br />\n");
-      out.write("\t\t\t<small>你可以在这里编写通知并选择相应的班级</small>\n");
+      out.write("\t\t\t发布通知<br /> <small>你可以在这里编写通知并选择相应的班级</small>\n");
       out.write("\t\t</h2>\n");
       out.write("\t\t<hr />\n");
       out.write("\t\t<form class=\"form-inline\" method=\"post\">\n");
       out.write("\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t<label for=\"infoClass\">发布班级</label> <select name=\"class_uuid\"\n");
+      out.write("\t\t\t\t<label for=\"infoClass\">发布班级</label> \n");
+      out.write("\t\t\t\t<select name=\"class_uuid\"\n");
       out.write("\t\t\t\t\tclass=\"form-control form-infoClass\" id=\"infoClass\">\n");
       out.write("\t\t\t\t\t");
       if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
@@ -85,11 +85,10 @@ public final class send_005fmessage_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\t\t\t</select>\n");
       out.write("\t\t\t</div>\n");
       out.write("\t\t\t<div class=\"form-group\">\n");
-      out.write("\t\t\t\t<label for=\"infoDes\">通知标题</label>\n");
-      out.write("\t\t\t\t<input type=\"text\" name=\"title\"\n");
-      out.write("\t\t\t\t\tclass=\"form-control form-infoDes\" id=\"infoDes\" placeholder=\"输入通知标题\"/>\n");
+      out.write("\t\t\t\t<label for=\"infoDes\">通知标题</label> <input type=\"text\" name=\"title\"\n");
+      out.write("\t\t\t\t\tclass=\"form-control form-infoDes\" id=\"infoDes\" placeholder=\"输入通知标题\" />\n");
       out.write("\t\t\t</div>\n");
-      out.write("\t\t\t\n");
+      out.write("\n");
       out.write("\t\t\t<div class=\"form-group\">\n");
       out.write("\t\t\t\t<label for=\"infoDes\">通知内容</label>\n");
       out.write("\t\t\t\t<textarea type=\"text\" name=\"content\"\n");

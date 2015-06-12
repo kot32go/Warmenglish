@@ -3,6 +3,7 @@ package com.kot32.warmenglish.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -21,7 +22,7 @@ public class Student {
 	private String name;
 	private String username;
 	private String password;
-
+	private String adult_email;
 	@ManyToOne
 	private Class clazz;
 	@ManyToOne
@@ -29,7 +30,7 @@ public class Student {
 	@ManyToOne
 	private Group group;
 	// 学生有很多次成绩
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "student")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "student",cascade={CascadeType.ALL})
 	private Set<Grade> homeworks = new HashSet<Grade>();
 
 	public int getId() {
@@ -95,13 +96,21 @@ public class Student {
 	public void setHomeworks(Set<Grade> homeworks) {
 		this.homeworks = homeworks;
 	}
+	
+	public String getAdult_email() {
+		return adult_email;
+	}
+
+	public void setAdult_email(String adult_email) {
+		this.adult_email = adult_email;
+	}
 
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", username="
-				+ username + ", password=" + password + ", clazz=" + clazz
-				+ ", user=" + user + ", group=" + group + ", homeworks="
-				+ homeworks + "]";
+				+ username + ", password=" + password + ", adult_email="
+				+ adult_email + ", clazz=" + clazz + ", user=" + user
+				+ ", group=" + group + ", homeworks=" + homeworks + "]";
 	}
 
 }

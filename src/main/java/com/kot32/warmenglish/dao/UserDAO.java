@@ -14,8 +14,8 @@ public class UserDAO {
 	private SessionFactory sessionFactory;
 
 	public User login(String username, String password) {
-		Query query = sessionFactory
-				.getCurrentSession()
+		Session session=sessionFactory.getCurrentSession();
+		Query query = session
 				.createQuery(
 						"from User u where u.username=:username and u.password=:password");
 		query.setParameter("username", username);

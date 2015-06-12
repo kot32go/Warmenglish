@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Homework {
 	//布置的时间
 	private Date date;
 	//选择题
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "homework")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "homework",cascade={CascadeType.ALL})
 	private Set<SelectProblem> selectProblems = new HashSet<SelectProblem>();
 	
 	public int getId() {
@@ -65,6 +66,17 @@ public class Homework {
 		return "Homework [id=" + id + ", des=" + des + ", group=" + group
 				+ ", date=" + date + ", selectProblems=" + selectProblems + "]";
 	}
+	
+	public Homework() {
+		// TODO Auto-generated constructor stub
+	}
+	public Homework(String des, Group group, Date date) {
+		super();
+		this.des = des;
+		this.group = group;
+		this.date = date;
+	}
+	
 	
 	
 }

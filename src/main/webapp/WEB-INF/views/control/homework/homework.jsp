@@ -1,370 +1,400 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="../resources/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
 <link href="../resources/css/homework.css" rel="stylesheet">
-<title>·¢²¼×÷Òµ</title>
+<title>æŸ¥çœ‹æˆç»©</title>
 </head>
-<body>
 <div class="container">
-    <h2>·¢²¼×÷Òµ<br/><small>Äã¿ÉÒÔÔÚÕâÀï·¢²¼Ñ¡ÔñÌâ£¬ÔÄ¶Á£¬ÍêĞÎÌî¿ÕºÍ×÷ÎÄÕâĞ©ÌâĞÍ</small></h2>
-    <hr/>
-    <!--Ñ¡Ôñ°à¼¶ºÍĞ¡×é-->
-    <div class="row">
-        <div class="col-md-4">
-                <label for="homeworkClass">°à¼¶</label>
-                <select class="form-control form-homeworkClass" id="homeworkClass">
-                    <option value="volvo">2012¼¶Èí¹¤2°à</option>
-                    <option value="saab">¼Æ¿Æ1°à</option>
-                    <option value="fiat">×Ô¶¯»¯1°à</option>
-                </select>
-        </div>
-        <div class="col-md-4">
-                <label for="homeworkGroup">Ğ¡×é</label>
-                <select class="form-control form-homeworkGroup" id="homeworkGroup">
-                    <option value="volvo">µÚÒ»×é</option>
-                    <option value="saab">µÚ¶ş×é</option>
-                    <option value="fiat">µÚÈı×é</option>
-                </select>
-        </div>
-    </div>
-    <!--µ¼º½À¸-->
-    <ul id="myTab1" class="nav nav-pills"  style="margin-top: 20px">
-        <li class="active"><a href="#choose" data-toggle="tab">Ñ¡ÔñÌâ</a></li>
-        <li><a href="#reading" data-toggle="tab">ÔÄ¶ÁÌâ</a></li>
-        <li><a href="#cloze" data-toggle="tab">ÍêĞÎÌî¿Õ</a></li>
-        <li><a href="#essay" data-toggle="tab">×÷ÎÄ</a></li>
-    </ul>
-    <!--µ¼º½Ò³Ãæ-->
-    <div id="myTabContent1" class="tab-content">
-        <!--Ñ¡ÔñÌâ-->
-        <div class="tab-pane fade in active" id="choose">
-            <div class="content">
-                <div class="chooseContent">
-                    <form class="form-inline" id="choose1" name="choose1">
-                        <div class="form-group">
-                            <label>ÌâÄ¿1</label>
-                            <textarea type="text" class="form-control form-choosemain" name="chooseMain" placeholder="ÇëÊäÈëÌâ¸É">
+	<h2>
+		å‘å¸ƒä½œä¸š<br /> <small>ä½ å¯ä»¥åœ¨è¿™é‡Œå‘å¸ƒé€‰æ‹©é¢˜ï¼Œé˜…è¯»ï¼Œå®Œå½¢å¡«ç©ºå’Œä½œæ–‡è¿™äº›é¢˜å‹</small>
+	</h2>
+	<hr />
+	<!--é€‰æ‹©ç­çº§å’Œå°ç»„-->
+	<div class="row">
+		<div class="col-md-4">
+			<label for="homeworkClass">ç­çº§</label> <select
+				class="form-control form-homeworkClass" id="homeworkClass">
+				<c:forEach items="${classes}" var="class">
+					<option id="sss" value=${class.id }>${class.name}</option>
+				</c:forEach>
+			</select>
+		</div>
+		<div class="col-md-4">
+			<label for="homeworkGroup">å°ç»„</label> <select
+				class="form-control form-homeworkGroup" id="homeworkGroup">
+				
+			</select>
+		</div>
+	</div>
+	<!--å¯¼èˆªæ -->
+	<ul id="myTab1" class="nav nav-pills" style="margin-top: 20px">
+		<li class="active"><a href="#choose" data-toggle="tab">é€‰æ‹©é¢˜</a></li>
+		<li><a href="#reading" data-toggle="tab">é˜…è¯»é¢˜</a></li>
+		<li><a href="#cloze" data-toggle="tab">å®Œå½¢å¡«ç©º</a></li>
+		<li><a href="#essay" data-toggle="tab">ä½œæ–‡</a></li>
+	</ul>
+	<!--å¯¼èˆªé¡µé¢-->
+	<div id="myTabContent1" class="tab-content">
+		<!--é€‰æ‹©é¢˜-->
+		<div class="tab-pane fade in active" id="choose">
+			<div class="content">
+				<div class="chooseContent">
+					<form class="form-inline" id="choose1" name="choose1">
+						<div class="form-group">
+							<label>é¢˜ç›®1</label>
+							<textarea type="text" class="form-control form-choosemain"
+								name="chooseMain" placeholder="è¯·è¾“å…¥é¢˜å¹²">
                             </textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Ñ¡Ïî</label>
-                            <textarea type="text" class="form-control form-choosemain" name="chooseSelect" placeholder="ÇëÊäÈëÑ¡Ïî">
+						</div>
+						<div class="form-group">
+							<label>é€‰é¡¹</label>
+							<textarea type="text" class="form-control form-choosemain"
+								name="chooseSelect" placeholder="è¯·è¾“å…¥é€‰é¡¹">
                             </textarea>
-                        </div>
-                        <button class="btn btn-primary" style="float: right">½âÎöÑ¡Ïî</button>
-                        <div class="clearfix"></div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="radio" name="option1">
-                                </span>
-                                    <input type="text" class="form-control" name="optionAchoose">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="radio" name="option1">
-                                </span>
-                                    <input type="text" class="form-control" name="optionBchoose">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="radio" name="option1">
-                                </span>
-                                    <input type="text" class="form-control" name="optionCchoose">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="radio" name="option1">
-                                </span>
-                                    <input type="text" class="form-control" name="optionDchoose">
-                                </div>
-                            </div>
-                        </div>
-                        <hr/>
-                    </form>
-                </div>
-                <!--Ìá½»°´Å¥-->
-                <div class="clearfix"></div>
-                <div class=" row col-lg-6">
-                    <button class="btn-lg btn-primary" id="addChoose">¼ÌĞøÌí¼ÓÑ¡ÔñÌâ</button>
-                    <button class="btn-lg btn-default">Ìí¼ÓÍê±Ï</button>
-                </div>
-            </div>
-        </div>
-        <!--ÔÄ¶ÁÌâ-->
-        <div class="tab-pane fade" id="reading">
-            <div class="content">
-                <div class="readingContent">
-                    <form class="form-inline" name="reading1" id="reading1">
-                        <div class="form-group">
-                            <label>ÎÄÕÂ1</label>
-                            <textarea type="text" class="form-control form-readingmain" name="readingMain" placeholder="ÇëÊäÈëÎÄÕÂ">
+						</div>
+						<button class="btn btn-primary" style="float: right">è§£æé€‰é¡¹</button>
+						<div class="clearfix"></div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option1">
+									</span> <input type="text" class="form-control" name="optionAchoose">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option1">
+									</span> <input type="text" class="form-control" name="optionBchoose">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option1">
+									</span> <input type="text" class="form-control" name="optionCchoose">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option1">
+									</span> <input type="text" class="form-control" name="optionDchoose">
+								</div>
+							</div>
+						</div>
+						<hr />
+					</form>
+				</div>
+				<!--æäº¤æŒ‰é’®-->
+				<div class="clearfix"></div>
+				<div class=" row col-lg-6">
+					<button class="btn-lg btn-primary" id="addChoose">ç»§ç»­æ·»åŠ é€‰æ‹©é¢˜</button>
+					<button class="btn-lg btn-default">æ·»åŠ å®Œæ¯•</button>
+				</div>
+			</div>
+		</div>
+		<!--é˜…è¯»é¢˜-->
+		<div class="tab-pane fade" id="reading">
+			<div class="content">
+				<div class="readingContent">
+					<form class="form-inline" name="reading1" id="reading1">
+						<div class="form-group">
+							<label>æ–‡ç« 1</label>
+							<textarea type="text" class="form-control form-readingmain"
+								name="readingMain" placeholder="è¯·è¾“å…¥æ–‡ç« ">
                             </textarea>
-                        </div>
-                        <hr/>
-                        <div class="form-group">
-                            <label>ÌâÄ¿1</label>
-                            <textarea type="text" class="form-control form-choosemain" name="readingChoose" placeholder="ÇëÊäÈëÌâ¸É">
+						</div>
+						<hr />
+						<div class="form-group">
+							<label>é¢˜ç›®1</label>
+							<textarea type="text" class="form-control form-choosemain"
+								name="readingChoose" placeholder="è¯·è¾“å…¥é¢˜å¹²">
                             </textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Ñ¡Ïî</label>
-                            <textarea type="text" class="form-control form-choosemain" name="readingSelect" placeholder="ÇëÊäÈëÑ¡Ïî">
+						</div>
+						<div class="form-group">
+							<label>é€‰é¡¹</label>
+							<textarea type="text" class="form-control form-choosemain"
+								name="readingSelect" placeholder="è¯·è¾“å…¥é€‰é¡¹">
                             </textarea>
-                        </div>
-                        <button class="btn btn-primary" style="float: right">½âÎöÑ¡Ïî</button>
-                        <div class="clearfix"></div>
-                        <!--Ñ¡Ïî-->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="radio" name="option2">
-                                </span>
-                                    <input type="text" class="form-control" name="optionAreading">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="radio" name="option2">
-                                </span>
-                                    <input type="text" class="form-control" name="optionBreading">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="radio" name="option2">
-                                </span>
-                                    <input type="text" class="form-control" name="optionCreading">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                <span class="input-group-addon">
-                                    <input type="radio" name="option2">
-                                </span>
-                                    <input type="text" class="form-control" name="optionDreading">
-                                </div>
-                            </div>
-                        </div>
-                        <hr/>
-                    </form>
-                </div>
-                <!--Èı¸ö°´Å¥-->
-                <div class="clearfix"></div>
-                <div class=" row col-lg-10">
-                    <button class="btn-lg btn-primary" id="addReadingChoose">¼ÌĞøÌí¼ÓÑ¡ÔñÌâ</button>
-                    <button class="btn-lg btn-success" id="addReading">¼ÌĞøÌí¼ÓÔÄ¶ÁÌâ</button>
-                    <button class="btn-lg btn-default">Ìí¼ÓÍê±Ï</button>
-                </div>
-            </div>
-        </div>
-        <!--ÍêĞÎÌî¿Õ-->
-        <div class="tab-pane fade" id="cloze">
-            <div class="content">
-                <div class="clozeContent">
-                    <form class="form-inline" name="cloze1" id="cloze1">
-                        <div class="form-group">
-                            <label>ÎÄÕÂ1</label>
-                            <textarea type="text" class="form-control form-readingmain" name="clozeMain" placeholder="ÇëÊäÈëÎÄÕÂ">
+						</div>
+						<button class="btn btn-primary" style="float: right">è§£æé€‰é¡¹</button>
+						<div class="clearfix"></div>
+						<!--é€‰é¡¹-->
+						<div class="row">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option2">
+									</span> <input type="text" class="form-control" name="optionAreading">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option2">
+									</span> <input type="text" class="form-control" name="optionBreading">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option2">
+									</span> <input type="text" class="form-control" name="optionCreading">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option2">
+									</span> <input type="text" class="form-control" name="optionDreading">
+								</div>
+							</div>
+						</div>
+						<hr />
+					</form>
+				</div>
+				<!--ä¸‰ä¸ªæŒ‰é’®-->
+				<div class="clearfix"></div>
+				<div class=" row col-lg-10">
+					<button class="btn-lg btn-primary" id="addReadingChoose">ç»§ç»­æ·»åŠ é€‰æ‹©é¢˜</button>
+					<button class="btn-lg btn-success" id="addReading">ç»§ç»­æ·»åŠ é˜…è¯»é¢˜</button>
+					<button class="btn-lg btn-default">æ·»åŠ å®Œæ¯•</button>
+				</div>
+			</div>
+		</div>
+		<!--å®Œå½¢å¡«ç©º-->
+		<div class="tab-pane fade" id="cloze">
+			<div class="content">
+				<div class="clozeContent">
+					<form class="form-inline" name="cloze1" id="cloze1">
+						<div class="form-group">
+							<label>æ–‡ç« 1</label>
+							<textarea type="text" class="form-control form-readingmain"
+								name="clozeMain" placeholder="è¯·è¾“å…¥æ–‡ç« ">
                             </textarea>
-                        </div>
-                        <hr/>
-                        <div class="form-group">
-                            <label>Ñ¡Ïî1</label>
-                            <textarea type="text" class="form-control form-choosemain" name="clozeSelect" placeholder="ÇëÊäÈëÑ¡Ïî">
+						</div>
+						<hr />
+						<div class="form-group">
+							<label>é€‰é¡¹1</label>
+							<textarea type="text" class="form-control form-choosemain"
+								name="clozeSelect" placeholder="è¯·è¾“å…¥é€‰é¡¹">
                             </textarea>
-                        </div>
-                        <button class="btn btn-primary" style="float: right">½âÎöÑ¡Ïî</button>
-                        <div class="clearfix"></div>
-                        <!--Ñ¡Ïî-->
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio" name="option3">
-                                    </span>
-                                    <input type="text" class="form-control" name="optionAcloze">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio" name="option3">
-                                    </span>
-                                    <input type="text" class="form-control" name="optionBcloze">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio" name="option3">
-                                    </span>
-                                    <input type="text" class="form-control" name="optionCcloze">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <input type="radio" name="option3">
-                                    </span>
-                                    <input type="text" class="form-control" name="optionDcloze">
-                                </div>
-                            </div>
-                        </div>
-                        <hr/>
-                   </form>
-                </div>
-                <div class="clearfix"></div>
-                <div class=" row col-lg-10">
-                    <button class="btn-lg btn-primary" id="addClozeChoose">¼ÌĞøÌí¼ÓÑ¡ÔñÌâ</button>
-                    <button class="btn-lg btn-success" id="addCloze">¼ÌĞøÌí¼ÓÍêĞÎÌî¿Õ</button>
-                    <button class="btn-lg btn-default">Ìí¼ÓÍê±Ï</button>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="essay">
-
-        </div>
-    </div>
+						</div>
+						<button class="btn btn-primary" style="float: right">è§£æé€‰é¡¹</button>
+						<div class="clearfix"></div>
+						<!--é€‰é¡¹-->
+						<div class="row">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option3">
+									</span> <input type="text" class="form-control" name="optionAcloze">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option3">
+									</span> <input type="text" class="form-control" name="optionBcloze">
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option3">
+									</span> <input type="text" class="form-control" name="optionCcloze">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-group">
+									<span class="input-group-addon"> <input type="radio"
+										name="option3">
+									</span> <input type="text" class="form-control" name="optionDcloze">
+								</div>
+							</div>
+						</div>
+						<hr />
+					</form>
+				</div>
+				<div class="clearfix"></div>
+				<div class=" row col-lg-10">
+					<button class="btn-lg btn-primary" id="addClozeChoose">ç»§ç»­æ·»åŠ é€‰æ‹©é¢˜</button>
+					<button class="btn-lg btn-success" id="addCloze">ç»§ç»­æ·»åŠ å®Œå½¢å¡«ç©º</button>
+					<button class="btn-lg btn-default">æ·»åŠ å®Œæ¯•</button>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="essay"></div>
+	</div>
 </div>
 <script src="../resources/js/jquery.min.js"></script>
 <script src="../resources/js/homework.js"></script>
 <script>
-    var choose=1;
-    var reading=1;
-    var readingChoice=1;
-    var cloze=1;
-    var clozeSelect=1;
-    $("#addChoose").click(function addchoose() {
-//        Ìí¼ÓĞÂµÄform-inlineµ½chooseContent
-        choose++;
-        var newform=document.createElement('form');
-        newform.setAttribute("class","form-inline");
-        newform.setAttribute("name","choose"+choose);
-        newform.setAttribute("id","choose"+choose);
-        var newmain=main('choose',choose);
-        var newselect=select('choose');
-        var newbutton=button();
-        var newclear=clear();
-        var newrow=selectChoose('choose');
-        var newhr=hr();
-        newform.appendChild(newmain);
-        newform.appendChild(newselect);
-        newform.appendChild(newbutton);
-        newform.appendChild(newclear);
-        newform.appendChild(newrow.newRow1);
-        newform.appendChild(newrow.newRow2);
-        newform.appendChild(newhr);
-        $(".chooseContent").append(newform);
-    });
+	var choose = 1;
+	var reading = 1;
+	var readingChoice = 1;
+	var cloze = 1;
+	var clozeSelect = 1;
+	$("#addChoose").click(function addchoose() {
+		//        æ·»åŠ æ–°çš„form-inlineåˆ°chooseContent
+		choose++;
+		var newform = document.createElement('form');
+		newform.setAttribute("class", "form-inline");
+		newform.setAttribute("name", "choose" + choose);
+		newform.setAttribute("id", "choose" + choose);
+		var newmain = main('choose', choose);
+		var newselect = select('choose');
+		var newbutton = button();
+		var newclear = clear();
+		var newrow = selectChoose('choose');
+		var newhr = hr();
+		newform.appendChild(newmain);
+		newform.appendChild(newselect);
+		newform.appendChild(newbutton);
+		newform.appendChild(newclear);
+		newform.appendChild(newrow.newRow1);
+		newform.appendChild(newrow.newRow2);
+		newform.appendChild(newhr);
+		$(".chooseContent").append(newform);
+	});
 
+	$("#addReadingChoose").click(function() {
+		//        æ·»åŠ æ–°çš„form-groupåˆ°form-inline
+		readingChoice++;
+		var newmain = main('reading', readingChoice);
+		var newselect = select('reading');
+		var newbutton = button();
+		var newclear = clear();
+		var newrow = selectChoose('reading');
+		var newhr = hr();
+		$("#reading" + reading).append(newmain);
+		$("#reading" + reading).append(newselect);
+		$("#reading" + reading).append(newbutton);
+		$("#reading" + reading).append(newclear);
+		$("#reading" + reading).append(newrow.newRow1);
+		$("#reading" + reading).append(newrow.newRow2);
+		$("#reading" + reading).append(newhr);
+	});
 
-    $("#addReadingChoose").click(function() {
-//        Ìí¼ÓĞÂµÄform-groupµ½form-inline
-        readingChoice++;
-        var newmain = main('reading',readingChoice);
-        var newselect = select('reading');
-        var newbutton = button();
-        var newclear = clear();
-        var newrow = selectChoose('reading');
-        var newhr = hr();
-        $("#reading" + reading).append(newmain);
-        $("#reading" + reading).append(newselect);
-        $("#reading" + reading).append(newbutton);
-        $("#reading" + reading).append(newclear);
-        $("#reading" + reading).append(newrow.newRow1);
-        $("#reading" + reading).append(newrow.newRow2);
-        $("#reading" + reading).append(newhr);
-    });
+	$("#addReading").click(function() {
+		//        æ·»åŠ æ–°çš„form-inlineåˆ°readingContent
+		reading++;
+		readingChoice = 1;
+		var newform = document.createElement('form');
+		newform.setAttribute("class", "form-inline");
+		newform.setAttribute("name", "reading" + reading);
+		newform.setAttribute("id", "reading" + reading);
+		var newarticle = article('reading', reading);
+		var newmain = main('reading', readingChoice);
+		var newselect = select('reading');
+		var newbutton = button();
+		var newclear = clear();
+		var newrow = selectChoose('reading');
+		var newhr = hr();
+		newform.appendChild(newarticle);
+		newform.appendChild(newmain);
+		newform.appendChild(newselect);
+		newform.appendChild(newbutton);
+		newform.appendChild(newclear);
+		newform.appendChild(newrow.newRow1);
+		newform.appendChild(newrow.newRow2);
+		newform.appendChild(newhr);
+		$(".readingContent").append(newform);
+	})
 
-    $("#addReading").click(function(){
-//        Ìí¼ÓĞÂµÄform-inlineµ½readingContent
-        reading++;
-        readingChoice=1;
-        var newform=document.createElement('form');
-        newform.setAttribute("class","form-inline");
-        newform.setAttribute("name","reading"+reading);
-        newform.setAttribute("id","reading"+reading);
-        var newarticle=article('reading',reading);
-        var newmain=main('reading',readingChoice);
-        var newselect=select('reading');
-        var newbutton=button();
-        var newclear=clear();
-        var newrow=selectChoose('reading');
-        var newhr=hr();
-        alert(newform.id,newform.name);
-        newform.appendChild(newarticle);
-        newform.appendChild(newmain);
-        newform.appendChild(newselect);
-        newform.appendChild(newbutton);
-        newform.appendChild(newclear);
-        newform.appendChild(newrow.newRow1);
-        newform.appendChild(newrow.newRow2);
-        newform.appendChild(newhr);
-        $(".readingContent").append(newform);
-    })
+	$("#addClozeChoose").click(function() {
+		//        æ·»åŠ æ–°çš„form-groupåˆ°form-inline
+		clozeSelect++;
+		var newselect = selectNumber('cloze', clozeSelect);
+		var newbutton = button();
+		var newclear = clear();
+		var newrow = selectChoose('cloze');
+		var newhr = hr();
+		$("#cloze" + cloze).append(newselect);
+		$("#cloze" + cloze).append(newbutton);
+		$("#cloze" + cloze).append(newclear);
+		$("#cloze" + cloze).append(newrow.newRow1);
+		$("#cloze" + cloze).append(newrow.newRow2);
+		$("#cloze" + cloze).append(newhr);
+	});
 
-    $("#addClozeChoose").click(function(){
-//        Ìí¼ÓĞÂµÄform-groupµ½form-inline
-        clozeSelect++;
-        var newselect = selectNumber('cloze',clozeSelect);
-        var newbutton = button();
-        var newclear = clear();
-        var newrow = selectChoose('cloze');
-        var newhr = hr();
-        $("#cloze" + cloze).append(newselect);
-        $("#cloze" + cloze).append(newbutton);
-        $("#cloze" + cloze).append(newclear);
-        $("#cloze" + cloze).append(newrow.newRow1);
-        $("#cloze" + cloze).append(newrow.newRow2);
-        $("#cloze" + cloze).append(newhr);
-    });
-
-    $("#addCloze").click(function(){
-//        Ìí¼ÓĞÂµÄform-inlineµ½clozeContent
-        cloze++;
-        clozeSelect=1;
-        var newform=document.createElement('form');
-        newform.setAttribute("class","form-inline");
-        newform.setAttribute("name","cloze"+cloze);
-        newform.setAttribute("id","cloze"+cloze);
-        var newarticle=article('cloze',cloze);
-        var newselect=selectNumber('cloze',clozeSelect);
-        var newbutton=button();
-        var newclear=clear();
-        var newrow=selectChoose('cloze');
-        var newhr=hr();
-        alert(newform.id,newform.name);
-        newform.appendChild(newarticle);
-        newform.appendChild(newselect);
-        newform.appendChild(newbutton);
-        newform.appendChild(newclear);
-        newform.appendChild(newrow.newRow1);
-        newform.appendChild(newrow.newRow2);
-        newform.appendChild(newhr);
-        $(".clozeContent").append(newform);
-    });
+	$("#addCloze").click(function() {
+		//        æ·»åŠ æ–°çš„form-inlineåˆ°clozeContent
+		cloze++;
+		clozeSelect = 1;
+		var newform = document.createElement('form');
+		newform.setAttribute("class", "form-inline");
+		newform.setAttribute("name", "cloze" + cloze);
+		newform.setAttribute("id", "cloze" + cloze);
+		var newarticle = article('cloze', cloze);
+		var newselect = selectNumber('cloze', clozeSelect);
+		var newbutton = button();
+		var newclear = clear();
+		var newrow = selectChoose('cloze');
+		var newhr = hr();
+		newform.appendChild(newarticle);
+		newform.appendChild(newselect);
+		newform.appendChild(newbutton);
+		newform.appendChild(newclear);
+		newform.appendChild(newrow.newRow1);
+		newform.appendChild(newrow.newRow2);
+		newform.appendChild(newhr);
+		$(".clozeContent").append(newform);
+	});
+	var class_id;
+	var group_id;
+	$(document).ready(function(){
+		class_id=$("#homeworkClass").val();
+		myAjax();
+	});  
+	$("#homeworkClass").change(function() {
+		class_id = $(this).val();
+		$("#homeworkGroup option").remove();
+		myAjax();
+	});
+	$("#homeworkGroup").change(function() {
+		group_id = $(this).val();
+	});
+	function myAjax() {
+		$.ajax({
+			url : "../homework/list_groups", //è¯·æ±‚çš„urlåœ°å€
+			dataType : "json", //è¿”å›æ ¼å¼ä¸ºjson
+			async : true, //è¯·æ±‚æ˜¯å¦å¼‚æ­¥
+			data : {
+				"class_id" : class_id,
+				"format" : "json"
+			}, //å‚æ•°å€¼
+			type : "GET", //è¯·æ±‚æ–¹å¼
+			success : function(msg) {
+				$.each(msg.groups, function(index, item) {
+					$("#homeworkGroup").append("<option value='" + item.id+"'>"+item.name+"</option>");
+					if(index==0){
+						group_id=item.id;
+					}
+				})
+				
+			},
+			error : function() {
+				alert("error")
+			}
+		});
+	}
 </script>
 <script src="../resources/bootstrap/js/bootstrap.min.js"></script>
 </body>

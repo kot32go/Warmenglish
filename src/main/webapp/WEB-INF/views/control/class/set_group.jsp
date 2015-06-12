@@ -10,7 +10,7 @@
 <link href="../resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link href="../resources/css/setGroup.css" rel="stylesheet">
-<title>¹ÜÀí·Ö×éÐÅÏ¢</title>
+<title>ç®¡ç†åˆ†ç»„ä¿¡æ¯</title>
 </head>
 <body>
 <div class="modal fade" id="addMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -18,14 +18,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Ìí¼ÓÐ¡×é³ÉÔ±</h4>
+                <h4 class="modal-title" id="myModalLabel">æ·»åŠ å°ç»„æˆå‘˜</h4>
             </div>
             <div class="modal-body">
                 ...
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Ìí¼Ó</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">È¡Ïû</button>
+                <button type="button" class="btn btn-primary">æ·»åŠ </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">å–æ¶ˆ</button>
             </div>
         </div>
     </div>
@@ -35,29 +35,29 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabe2">É¾³ýÐ¡×é³ÉÔ±</h4>
+                <h4 class="modal-title" id="myModalLabe2">åˆ é™¤å°ç»„æˆå‘˜</h4>
             </div>
             <div class="modal-body">
                 ...
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">É¾³ý</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">È¡Ïû</button>
+                <button type="button" class="btn btn-primary">åˆ é™¤</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">å–æ¶ˆ</button>
             </div>
         </div>
     </div>
 </div>
 <div class="container">
-    <h2>¹ÜÀí·Ö×éÐÅÏ¢<br/><small>Äã¿ÉÒÔÔÚÕâÀïÉ¾³ý»òÐÞ¸ÄÐ¡×éÃû³ÆºÍ±¸×¢£¬»òÕß¹ÜÀíÐ¡×é³ÉÔ±</small></h2>
+    <h2>ç®¡ç†åˆ†ç»„ä¿¡æ¯<br/><small>ä½ å¯ä»¥åœ¨è¿™é‡Œåˆ é™¤æˆ–ä¿®æ”¹å°ç»„åç§°å’Œå¤‡æ³¨ï¼Œæˆ–è€…ç®¡ç†å°ç»„æˆå‘˜</small></h2>
     <hr/>
     <div class="row">
         <div class="col-md-5">
             <div class="form-inline">
-                <label for="groupClass">°à¼¶</label>
+                <label for="groupClass">ç­çº§</label>
                 <select class="form-control" id="groupClass">
-                    <option value="volvo">2012¼¶Èí¹¤2°à</option>
-                    <option value="saab">¼Æ¿Æ1°à</option>
-                    <option value="fiat">×Ô¶¯»¯1°à</option>
+                    <option value="volvo">2012çº§è½¯å·¥2ç­</option>
+                    <option value="saab">è®¡ç§‘1ç­</option>
+                    <option value="fiat">è‡ªåŠ¨åŒ–1ç­</option>
                 </select>
             </div>
         </div>
@@ -66,77 +66,77 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th class="col-md-4">Ð¡×éÃû³Æ</th>
-                <th class="col-md-4">±¸×¢</th>
+                <th class="col-md-4">å°ç»„åç§°</th>
+                <th class="col-md-4">å¤‡æ³¨</th>
                 <th class="col-md-4"></th>
             </tr>
             </thead>
             <tbody>
             <tr class="main">
-                <td>µÚÒ»×é</td>
-                <td>ºÃÑ§Éú</td>
+                <td>ç¬¬ä¸€ç»„</td>
+                <td>å¥½å­¦ç”Ÿ</td>
                 <td style="padding: 3px 0 0 0">
-                    <button class="actions btn btn-default btn-primary">±à¼­</button>
-                    <button class="actions btn btn-default btn-danger">É¾³ý</button>
-                    <button class="actions btn btn-default btn-info">¹ÜÀí³ÉÔ±</button>
+                    <button class="actions btn btn-default btn-primary">ç¼–è¾‘</button>
+                    <button class="actions btn btn-default btn-danger">åˆ é™¤</button>
+                    <button class="actions btn btn-default btn-info">ç®¡ç†æˆå‘˜</button>
                 </td>
             </tr>
             <tr class="child">
                 <td colspan="4">
                     <div class="content">
-                        <p>Ð¡×é³ÉÔ±£º</p>
+                        <p>å°ç»„æˆå‘˜ï¼š</p>
                         <table class="table ta">
                             <tr>
-                                <td>Íõ¿Â</td>
-                                <td>¹ØÒÕÖñ</td>
-                                <td>ÁõÎ¡</td>
-                                <td>ÕÅÔÆ½à</td>
-                                <td>·¶Äþ</td>
-                                <td>µÚÁùÃû</td>
+                                <td>çŽ‹æŸ¯</td>
+                                <td>å…³è‰ºç«¹</td>
+                                <td>åˆ˜å·</td>
+                                <td>å¼ äº‘æ´</td>
+                                <td>èŒƒå®</td>
+                                <td>ç¬¬å…­å</td>
                             </tr>
                             <tr>
-                                <td>Ðí¼ÑÇå</td>
-                                <td>·¶Äþ</td>
+                                <td>è®¸ä½³æ¸…</td>
+                                <td>èŒƒå®</td>
                             </tr>
                         </table>
                     </div>
                     <div class="member">
-                        <a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">Ìí¼Ó³ÉÔ±</a>
-                        <a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">É¾³ý³ÉÔ±</a>
+                        <a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">æ·»åŠ æˆå‘˜</a>
+                        <a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">åˆ é™¤æˆå‘˜</a>
                     </div>
                 </td>
             </tr>
             <tr class="main">
-                <td>µÚ¶þ×é</td>
-                <td>²îÑ§Éú</td>
+                <td>ç¬¬äºŒç»„</td>
+                <td>å·®å­¦ç”Ÿ</td>
                 <td style="padding: 3px 0 0 0">
-                    <button class="actions btn btn-default btn-primary">±à¼­</button>
-                    <button class="actions btn btn-default btn-danger">É¾³ý</button>
-                    <button class="actions btn btn-default btn-info">¹ÜÀí³ÉÔ±</button>
+                    <button class="actions btn btn-default btn-primary">ç¼–è¾‘</button>
+                    <button class="actions btn btn-default btn-danger">åˆ é™¤</button>
+                    <button class="actions btn btn-default btn-info">ç®¡ç†æˆå‘˜</button>
                 </td>
             </tr>
             <tr class="child">
                 <td colspan="4">
                     <div class="content">
-                        <p>Ð¡×é³ÉÔ±£º</p>
+                        <p>å°ç»„æˆå‘˜ï¼š</p>
                         <table class="table ta">
                             <tr>
-                                <td>µÚÒ»Ãû</td>
-                                <td>µÚ¶þÃû</td>
-                                <td>µÚÈýÃû</td>
-                                <td>µÚËÄÃû</td>
-                                <td>µÚÎåÃû</td>
-                                <td>µÚÁùÃû</td>
+                                <td>ç¬¬ä¸€å</td>
+                                <td>ç¬¬äºŒå</td>
+                                <td>ç¬¬ä¸‰å</td>
+                                <td>ç¬¬å››å</td>
+                                <td>ç¬¬äº”å</td>
+                                <td>ç¬¬å…­å</td>
                             </tr>
                             <tr>
-                                <td>Ðí¼ÑÇå</td>
-                                <td>·¶Äþ</td>
+                                <td>è®¸ä½³æ¸…</td>
+                                <td>èŒƒå®</td>
                             </tr>
                         </table>
                     </div>
                     <div class="member">
-                        <a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">Ìí¼Ó³ÉÔ±</a>
-                        <a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">É¾³ý³ÉÔ±</a>
+                        <a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">æ·»åŠ æˆå‘˜</a>
+                        <a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">åˆ é™¤æˆå‘˜</a>
                     </div>
                 </td>
             </tr>
@@ -144,20 +144,20 @@
         </table>
     </div>
 </div>
-<scr<body>
+
 <div class="modal fade" id="addMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Ìí¼ÓÐ¡×é³ÉÔ±</h4>
+                <h4 class="modal-title" id="myModalLabel">æ·»åŠ å°ç»„æˆå‘˜</h4>
             </div>
             <div class="modal-body">
                 ...
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Ìí¼Ó</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">È¡Ïû</button>
+                <button type="button" class="btn btn-primary">æ·»åŠ </button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">å–æ¶ˆ</button>
             </div>
         </div>
     </div>
@@ -167,113 +167,16 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabe2">É¾³ýÐ¡×é³ÉÔ±</h4>
+                <h4 class="modal-title" id="myModalLabe2">åˆ é™¤å°ç»„æˆå‘˜</h4>
             </div>
             <div class="modal-body">
                 ...
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">É¾³ý</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">È¡Ïû</button>
+                <button type="button" class="btn btn-primary">åˆ é™¤</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">å–æ¶ˆ</button>
             </div>
         </div>
-    </div>
-</div>
-<div class="container">
-    <h2>¹ÜÀí·Ö×éÐÅÏ¢<br/><small>Äã¿ÉÒÔÔÚÕâÀïÉ¾³ý»òÐÞ¸ÄÐ¡×éÃû³ÆºÍ±¸×¢£¬»òÕß¹ÜÀíÐ¡×é³ÉÔ±</small></h2>
-    <hr/>
-    <div class="row">
-        <div class="col-md-5">
-            <div class="form-inline">
-                <label for="groupClass">°à¼¶</label>
-                <select class="form-control" id="groupClass">
-                    <option value="volvo">2012¼¶Èí¹¤2°à</option>
-                    <option value="saab">¼Æ¿Æ1°à</option>
-                    <option value="fiat">×Ô¶¯»¯1°à</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th class="col-md-4">Ð¡×éÃû³Æ</th>
-                <th class="col-md-4">±¸×¢</th>
-                <th class="col-md-4"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="main">
-                <td>µÚÒ»×é</td>
-                <td>ºÃÑ§Éú</td>
-                <td style="padding: 3px 0 0 0">
-                    <button class="actions btn btn-default btn-primary">±à¼­</button>
-                    <button class="actions btn btn-default btn-danger">É¾³ý</button>
-                    <button class="actions btn btn-default btn-info">¹ÜÀí³ÉÔ±</button>
-                </td>
-            </tr>
-            <tr class="child">
-                <td colspan="4">
-                    <div class="content">
-                        <p>Ð¡×é³ÉÔ±£º</p>
-                        <table class="table ta">
-                            <tr>
-                                <td>Íõ¿Â</td>
-                                <td>¹ØÒÕÖñ</td>
-                                <td>ÁõÎ¡</td>
-                                <td>ÕÅÔÆ½à</td>
-                                <td>·¶Äþ</td>
-                                <td>µÚÁùÃû</td>
-                            </tr>
-                            <tr>
-                                <td>Ðí¼ÑÇå</td>
-                                <td>·¶Äþ</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="member">
-                        <a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">Ìí¼Ó³ÉÔ±</a>
-                        <a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">É¾³ý³ÉÔ±</a>
-                    </div>
-                </td>
-            </tr>
-            <tr class="main">
-                <td>µÚ¶þ×é</td>
-                <td>²îÑ§Éú</td>
-                <td style="padding: 3px 0 0 0">
-                    <button class="actions btn btn-default btn-primary">±à¼­</button>
-                    <button class="actions btn btn-default btn-danger">É¾³ý</button>
-                    <button class="actions btn btn-default btn-info">¹ÜÀí³ÉÔ±</button>
-                </td>
-            </tr>
-            <tr class="child">
-                <td colspan="4">
-                    <div class="content">
-                        <p>Ð¡×é³ÉÔ±£º</p>
-                        <table class="table ta">
-                            <tr>
-                                <td>µÚÒ»Ãû</td>
-                                <td>µÚ¶þÃû</td>
-                                <td>µÚÈýÃû</td>
-                                <td>µÚËÄÃû</td>
-                                <td>µÚÎåÃû</td>
-                                <td>µÚÁùÃû</td>
-                            </tr>
-                            <tr>
-                                <td>Ðí¼ÑÇå</td>
-                                <td>·¶Äþ</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="member">
-                        <a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">Ìí¼Ó³ÉÔ±</a>
-                        <a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">É¾³ý³ÉÔ±</a>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
     </div>
 </div>
 <script src="../resources/js/jquery.min.js"></script>
@@ -285,7 +188,7 @@
             event.cancelBubble();
         });
         $('.actions.btn-danger').click(function(){
-            if(window.confirm("È·ÈÏÉ¾³ýÕâ¸ö°à¼¶Âð£¿")){
+            if(window.confirm("ç¡®è®¤åˆ é™¤è¿™ä¸ªåˆ†ç»„å—ï¼Ÿ")){
                 window.location="/"
             }
             else{}
@@ -300,4 +203,5 @@
 </script>
 <script src="../resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>

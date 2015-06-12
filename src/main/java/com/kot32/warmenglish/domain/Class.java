@@ -3,12 +3,12 @@ package com.kot32.warmenglish.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -27,10 +27,10 @@ public class Class {
 	private User user;
 	private String des;
 	// 一个班级很多小组
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "clazz")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "clazz", cascade = { CascadeType.ALL })
 	private Set<Group> groups = new HashSet<Group>();
 	// 一个班级推送消息
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "clazz")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "clazz", cascade = { CascadeType.ALL })
 	private Set<Message> messages = new HashSet<Message>();
 
 	@Override

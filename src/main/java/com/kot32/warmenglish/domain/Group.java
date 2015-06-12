@@ -3,6 +3,7 @@ package com.kot32.warmenglish.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,16 +19,17 @@ public class Group {
 	@GeneratedValue
 	private int id;
 	private String name;
-
+	
+	private String tips;
 	@ManyToOne
 	private Class clazz;
 	
 	// 一个组很多学生
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "group")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "group",cascade={CascadeType.ALL})
 	private Set<Student> students = new HashSet<Student>();
 	
 	// 一个组很多作业
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "group")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "group",cascade={CascadeType.ALL})
 	private Set<Homework> homeworks = new HashSet<Homework>();
 
 	public int getId() {
@@ -72,8 +74,18 @@ public class Group {
 
 	@Override
 	public String toString() {
-		return "Group [id=" + id + ", name=" + name + ", clazz=" + clazz
-				+ ", students=" + students + ", homeworks=" + homeworks + "]";
+		return "Group [id=" + id + ", name=" + name + ", tips=" + tips
+				+ ", clazz=" + clazz + ", students=" + students
+				+ ", homeworks=" + homeworks + "]";
+	}
+
+	
+	public String getTips() {
+		return tips;
+	}
+
+	public void setTips(String tips) {
+		this.tips = tips;
 	}
 
 	@Override
@@ -87,12 +99,17 @@ public class Group {
 		}
 	}
 
-	public Group(String name, Class clazz) {
+	public Group(String name,String tips, Class clazz) {
 		super();
 		this.name = name;
+		this.tips=tips;
 		this.clazz = clazz;
+	
 	}
 	
+	public Group() {
+		// TODO Auto-generated constructor stub
+	}
 	
 
 }

@@ -15,11 +15,10 @@ import com.kot32.warmenglish.service.APPService;
 public class APPController {
 	@Autowired
 	APPService service;
-
 	// 注册
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView register(String username, String password) {
-		
+
 		// 暂时不设置其他属性
 		Student student = new Student();
 		student.setUsername(username);
@@ -43,20 +42,45 @@ public class APPController {
 	public ModelAndView login(String username, String password) {
 		System.out.println("登录");
 		ModelAndView mv = new ModelAndView();
-		Student student=null;
+		Student student = null;
 		try {
-			student=service.login(username, password);
+			student = service.login(username, password);
 		} catch (UserException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(null==student){
-			mv.addObject("status","error");
-		}else{
-			mv.addObject("status","success");
+		if (null == student) {
+			mv.addObject("status", "error");
+		} else {
+			mv.addObject("status", "success");
 		}
-		mv.addObject("student",student);
-		
+		com.kot32.warmenglish.domain.appPojo.Student student2 = com.kot32.warmenglish.domain.appPojo.Student.copyFromStudent(student);
+		mv.addObject("student", student2);
+		return mv;
+	}
+
+	@RequestMapping(value = "/query_class", method = RequestMethod.GET)
+	public ModelAndView query_class(String class_uuid) {
+		ModelAndView mv = new ModelAndView();
+		String class_name = service.query_class(class_uuid);
+		if (null == class_name) {
+			mv.addObject("result", "error");
+		} else {
+			mv.addObject("result", class_name);
+		}
+
+		return mv;
+	}
+
+	@RequestMapping(value = "/update_info", method = RequestMethod.GET)
+	public ModelAndView update_info(String student_id, String class_uuid,
+			String email) {
+		ModelAndView mv = new ModelAndView();
+		if (service.updateInfo(student_id, class_uuid, email)) {
+			mv.addObject("result", "success");
+		} else {
+			mv.addObject("result", "error");
+		}
 		return mv;
 	}
 
