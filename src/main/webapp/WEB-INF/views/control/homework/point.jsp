@@ -15,7 +15,7 @@
     <h2>查看学生成绩<br/><small>你可以在这里查看学生到目前为止的成绩统计</small></h2>
     <hr/>
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-5">
                 <div class="form-inline">
                     <label for="pointClass">班级</label>
                     <select class="form-control form-pointClass" id="pointClass">
@@ -25,7 +25,7 @@
                     </select>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3" style="float: right">
                 <div class="input-group">
                     <input type="text" class="form-control">
                <span class="input-group-btn">
