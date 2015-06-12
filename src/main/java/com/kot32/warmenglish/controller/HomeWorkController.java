@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kot32.warmenglish.domain.Group;
 import com.kot32.warmenglish.service.HomeworkService;
+import com.kot32.warmenglish.util.AnswerFormatter;
 
 /*
  * 负责作业发布一系列AJAX操作
@@ -57,5 +58,13 @@ public class HomeWorkController {
 		mv.addObject("groups", groups);
 		return mv;
 	}
-
+	
+	@RequestMapping(value = "/formatAnswer", method = RequestMethod.POST)
+	public ModelAndView format_answer(String answer)  {
+		System.out.println("asd "+answer);
+		ModelAndView mv = new ModelAndView();
+		ArrayList<String> answers = AnswerFormatter.StringToAnswer(answer);
+		mv.addObject("answers", answers);
+		return mv;
+	}
 }

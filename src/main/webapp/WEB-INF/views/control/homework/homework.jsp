@@ -30,7 +30,7 @@
 		<div class="col-md-4">
 			<label for="homeworkGroup">小组</label> <select
 				class="form-control form-homeworkGroup" id="homeworkGroup">
-				
+
 			</select>
 		</div>
 	</div>
@@ -48,19 +48,20 @@
 			<div class="content">
 				<div class="chooseContent">
 					<form class="form-inline" id="choose1" name="choose1">
-						<div class="form-group">
+						<div class="form-group" >
 							<label>题目1</label>
 							<textarea type="text" class="form-control form-choosemain"
-								name="chooseMain" placeholder="请输入题干">
+								name="chooseMain">
                             </textarea>
 						</div>
-						<div class="form-group">
+						<div class="form-group" id="xuanxiang">
 							<label>选项</label>
 							<textarea type="text" class="form-control form-choosemain"
-								name="chooseSelect" placeholder="请输入选项">
+								id="chooseSelect">
                             </textarea>
 						</div>
-						<button class="btn btn-primary" style="float: right">解析选项</button>
+						<input class="btn btn-primary" id="analyzeChoose"
+							style="float: right" readonly="true" value="解析选项" />
 						<div class="clearfix"></div>
 						<div class="row">
 							<div class="col-md-6">
@@ -359,10 +360,10 @@
 	});
 	var class_id;
 	var group_id;
-	$(document).ready(function(){
-		class_id=$("#homeworkClass").val();
+	$(document).ready(function() {
+		class_id = $("#homeworkClass").val();
 		myAjax();
-	});  
+	});
 	$("#homeworkClass").change(function() {
 		class_id = $(this).val();
 		$("#homeworkGroup option").remove();
@@ -371,6 +372,11 @@
 	$("#homeworkGroup").change(function() {
 		group_id = $(this).val();
 	});
+	/* 进行选项解析 */
+	$("#analyzeChoose").click(function() {
+		myAjax_choose($(this).parent().child("#xuanxiang").child("#chooseSelect").val());
+	});
+
 	function myAjax() {
 		$.ajax({
 			url : "../homework/list_groups", //请求的url地址
@@ -383,12 +389,37 @@
 			type : "GET", //请求方式
 			success : function(msg) {
 				$.each(msg.groups, function(index, item) {
-					$("#homeworkGroup").append("<option value='" + item.id+"'>"+item.name+"</option>");
-					if(index==0){
-						group_id=item.id;
+					$("#homeworkGroup").append(
+							"<option value='" + item.id+"'>" + item.name
+									+ "</option>");
+					if (index == 0) {
+						group_id = item.id;
 					}
 				})
-				
+
+			},
+			error : function() {
+				alert("error")
+			}
+		});
+	}
+
+	function myAjax_choose(answer) {
+		$.ajax({
+			url : "../homework/formatAnswer", //请求的url地址
+			dataType : "json", //返回格式为json
+			async : true, //请求是否异步
+			data : {
+				"answer" : answer,
+				"format" : "json"
+			}, //参数值
+			type : "POST", //请求方式
+			contentType : "application/x-www-form-urlencoded; charset=utf-8",
+			success : function(msg) {
+				$.each(msg.answers, function(index, item) {
+					alert(item)
+				})
+
 			},
 			error : function() {
 				alert("error")
