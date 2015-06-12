@@ -8,6 +8,12 @@ body {
     margin-bottom: 10px;
     text-align: left;
 }
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: 35px;
+}
 .form-inline {
     margin-top: 30px;
 }
@@ -33,6 +39,9 @@ label {
 .col-md-6 .input-group{
     margin-top: 30px;
     margin-left: 40px
+}
+.row .col-md-6 .input-group{
+    margin-left: 80px;
 }
 
 /*±à¼­¿ò*/

@@ -71,6 +71,7 @@ body {
 /* frame navigation */
 .myFrame{
     margin-left: 226px;
-    height: 563px;
+    height: 650px;
     border: none;
+	width:100%;
 }
