@@ -99,10 +99,10 @@
                                 <td>范宁</td>
                             </tr>
                         </table>
-                    </div>
-                    <div class="member">
-                        <a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">添加成员</a>
-                        <a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">删除成员</a>
+							<div class="member">
+								<a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">添加成员</a>
+								<a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">删除成员</a>
+							</div>
                     </div>
                 </td>
             </tr>
@@ -133,10 +133,10 @@
                                 <td>范宁</td>
                             </tr>
                         </table>
-                    </div>
-                    <div class="member">
-                        <a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">添加成员</a>
-                        <a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">删除成员</a>
+							<div class="member">
+								<a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">添加成员</a>
+								<a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">删除成员</a>
+							</div>
                     </div>
                 </td>
             </tr>

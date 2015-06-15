@@ -42,7 +42,6 @@
         <ul class="nav nav-sidebar">
             <li>作业管理</li>
             <li><a id="homework">发布作业</a></li>
-            <li><a href="#">查看历史记录</a></li>
             <li><a href="#">批改作业</a></li>
             <li><a id="grade">查看学生成绩</a></li>
         </ul>
