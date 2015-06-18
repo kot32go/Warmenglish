@@ -35,7 +35,6 @@
 							<td id="uuid">${class.uuid}</td>
 							<td>${class.des}</td>
 							<td style="padding: 3px 0 0 0">
-								<button class="actions btn btn-default btn-primary">编辑</button>
 								<button class="actions btn btn-default btn-danger">删除</button>
 							</td>
 						</tr>

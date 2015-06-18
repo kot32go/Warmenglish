@@ -45,7 +45,7 @@ public class MessageDAO {
 		Query query = session.createQuery("from Class c where c.uuid=:uuid");
 		query.setParameter("uuid", class_uuid);
 		Class clazz = (Class)query.list().get(0);
-		query=session.createQuery("from Message m where m.clazz=:class");
+		query=session.createQuery("from Message m where m.clazz=:clazz");
 		query.setParameter("clazz", clazz);
 		ArrayList<Message> messages=(ArrayList<Message>) query.list();
 		System.out.println(messages.size());

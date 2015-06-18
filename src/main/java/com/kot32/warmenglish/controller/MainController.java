@@ -1,5 +1,6 @@
 package com.kot32.warmenglish.controller;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.kot32.warmenglish.dao.MessageDAO;
 import com.kot32.warmenglish.domain.Class;
+import com.kot32.warmenglish.domain.Group;
 import com.kot32.warmenglish.domain.User;
 import com.kot32.warmenglish.exception.ClassException;
 import com.kot32.warmenglish.service.ClassService;
+import com.kot32.warmenglish.service.HomeworkService;
 import com.kot32.warmenglish.service.MessageService;
 import com.kot32.warmenglish.util.Const;
 import com.kot32.warmenglish.util.Global;
@@ -100,7 +103,16 @@ public class MainController {
 	// 跳转到设置小组页面
 	@RequestMapping(value = "/set_group", method = RequestMethod.GET)
 	public String set_group(Model model) {
+		model.addAttribute("groups", classService.listAllGroup(logined_user));
+		model.addAttribute("classes", logined_user.getClasses());
+		return "/control/class/set_group";
+	}
+
+	// 根据所选班级列出小组
+	@RequestMapping(value = "/set_group", method = RequestMethod.POST)
+	public String list_group(Model model, String clazz) {
 		model.addAttribute("classes", classService.listClass(logined_user));
+		model.addAttribute("groups", classService.listGroup(clazz));
 		return "/control/class/set_group";
 	}
 
@@ -133,21 +145,16 @@ public class MainController {
 	// 列出指定某个班级的通知列表的逻辑
 	@RequestMapping(value = "/list_message", method = RequestMethod.POST)
 	public String list_message(Model model, String class_uuid) {
-
+		model.addAttribute("classes", logined_user.getClasses());
+		model.addAttribute("messages", messageService.listMessages(class_uuid));
 		return "/control/message/list_message";
 	}
 
 	// 跳转到成绩页面
 	@RequestMapping(value = "/grade", method = RequestMethod.GET)
 	public String point(Model model) {
+		model.addAttribute("classes",  classService.listClass(logined_user));
 		return "/control/homework/grade";
-	}
-
-	// 跳转到控制面板
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String jump() {
-
-		return "/control/main";
 	}
 
 	// 跳转到发布作业页面
@@ -157,4 +164,16 @@ public class MainController {
 		return "/control/homework/homework";
 	}
 
+	// 跳转到打分页面
+	@RequestMapping(value = "/mark", method = RequestMethod.GET)
+	public String mark(Model model) {
+		return "/control/homework/mark";
+	}
+
+	// 跳转到控制面板
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String jump() {
+
+		return "/control/main";
+	}
 }

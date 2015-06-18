@@ -14,7 +14,7 @@
 
 <title>温暖英语-主页</title>
 </head>
-<body>
+<body style="overflow:scroll;overflow-y:hidden;overflow-x: hidden">
 
 	<nav class="navbar navbar-inverse navbar-static-top">
         <div class="navbar-header">
@@ -55,11 +55,11 @@
 			<p>作业管理</p>
 		</div>
 		<div class="col-md-4 col-sm-4">
-			<input type="image" src="../resources/images/2.png" width="200px">
+			<a href="main"><input type="image" src="../resources/images/2.png" width="200px"></a>
 			<p>通知管理</p>
 		</div>
 		<div class="col-md-4 col-sm-4">
-			<input type="image" src="../resources/images/3.png" width="200px">
+			<a href="main"><input type="image" src="../resources/images/3.png" width="200px"></a>
 			<p>班级管理</p>
 		</div>
 	</div>

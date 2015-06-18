@@ -11,6 +11,8 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
 
   private static java.util.List _jspx_dependants;
 
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems;
+
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
 
@@ -19,11 +21,13 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
   }
 
   public void _jspInit() {
+    _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
+    _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -50,211 +54,115 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n");
-      out.write("<html>\n");
-      out.write("<head>\n");
-      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
-      out.write("<link href=\"../resources/bootstrap/css/bootstrap.min.css\"\n");
-      out.write("\trel=\"stylesheet\">\n");
-      out.write("<link href=\"../resources/css/setGroup.css\" rel=\"stylesheet\">\n");
-      out.write("<title>管理分组信息</title>\n");
-      out.write("</head>\n");
-      out.write("<body>\n");
-      out.write("<div class=\"modal fade\" id=\"addMember\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n");
-      out.write("    <div class=\"modal-dialog\">\n");
-      out.write("        <div class=\"modal-content\">\n");
-      out.write("            <div class=\"modal-header\">\n");
-      out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n");
-      out.write("                <h4 class=\"modal-title\" id=\"myModalLabel\">添加小组成员</h4>\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"modal-body\">\n");
-      out.write("                ...\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"modal-footer\">\n");
-      out.write("                <button type=\"button\" class=\"btn btn-primary\">添加</button>\n");
-      out.write("                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">取消</button>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
-      out.write("</div>\n");
-      out.write("<div class=\"modal fade\" id=\"deleteMember\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n");
-      out.write("    <div class=\"modal-dialog\">\n");
-      out.write("        <div class=\"modal-content\">\n");
-      out.write("            <div class=\"modal-header\">\n");
-      out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n");
-      out.write("                <h4 class=\"modal-title\" id=\"myModalLabe2\">删除小组成员</h4>\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"modal-body\">\n");
-      out.write("                ...\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"modal-footer\">\n");
-      out.write("                <button type=\"button\" class=\"btn btn-primary\">删除</button>\n");
-      out.write("                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">取消</button>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
-      out.write("</div>\n");
-      out.write("<div class=\"container\">\n");
-      out.write("    <h2>管理分组信息<br/><small>你可以在这里删除或修改小组名称和备注，或者管理小组成员</small></h2>\n");
-      out.write("    <hr/>\n");
-      out.write("    <div class=\"row\">\n");
-      out.write("        <div class=\"col-md-5\">\n");
-      out.write("            <div class=\"form-inline\">\n");
-      out.write("                <label for=\"groupClass\">班级</label>\n");
-      out.write("                <select class=\"form-control\" id=\"groupClass\">\n");
-      out.write("                    <option value=\"volvo\">2012级软工2班</option>\n");
-      out.write("                    <option value=\"saab\">计科1班</option>\n");
-      out.write("                    <option value=\"fiat\">自动化1班</option>\n");
-      out.write("                </select>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
-      out.write("    <div class=\"table-responsive\">\n");
-      out.write("        <table class=\"table table-striped\">\n");
-      out.write("            <thead>\n");
-      out.write("            <tr>\n");
-      out.write("                <th class=\"col-md-4\">小组名称</th>\n");
-      out.write("                <th class=\"col-md-4\">备注</th>\n");
-      out.write("                <th class=\"col-md-4\"></th>\n");
-      out.write("            </tr>\n");
-      out.write("            </thead>\n");
-      out.write("            <tbody>\n");
-      out.write("            <tr class=\"main\">\n");
-      out.write("                <td>第一组</td>\n");
-      out.write("                <td>好学生</td>\n");
-      out.write("                <td style=\"padding: 3px 0 0 0\">\n");
-      out.write("                    <button class=\"actions btn btn-default btn-primary\">编辑</button>\n");
-      out.write("                    <button class=\"actions btn btn-default btn-danger\">删除</button>\n");
-      out.write("                    <button class=\"actions btn btn-default btn-info\">管理成员</button>\n");
-      out.write("                </td>\n");
-      out.write("            </tr>\n");
-      out.write("            <tr class=\"child\">\n");
-      out.write("                <td colspan=\"4\">\n");
-      out.write("                    <div class=\"content\">\n");
-      out.write("                        <p>小组成员：</p>\n");
-      out.write("                        <table class=\"table ta\">\n");
-      out.write("                            <tr>\n");
-      out.write("                                <td>王柯</td>\n");
-      out.write("                                <td>关艺竹</td>\n");
-      out.write("                                <td>刘巍</td>\n");
-      out.write("                                <td>张云洁</td>\n");
-      out.write("                                <td>范宁</td>\n");
-      out.write("                                <td>第六名</td>\n");
-      out.write("                            </tr>\n");
-      out.write("                            <tr>\n");
-      out.write("                                <td>许佳清</td>\n");
-      out.write("                                <td>范宁</td>\n");
-      out.write("                            </tr>\n");
-      out.write("                        </table>\n");
-      out.write("                    </div>\n");
-      out.write("                    <div class=\"member\">\n");
-      out.write("                        <a  data-target=\"#addMember\" data-toggle='modal' class=\"btn btn-sm btn-primary\">添加成员</a>\n");
-      out.write("                        <a  data-target=\"#deleteMember\" data-toggle='modal' class=\"btn btn-sm btn-danger\">删除成员</a>\n");
-      out.write("                    </div>\n");
-      out.write("                </td>\n");
-      out.write("            </tr>\n");
-      out.write("            <tr class=\"main\">\n");
-      out.write("                <td>第二组</td>\n");
-      out.write("                <td>差学生</td>\n");
-      out.write("                <td style=\"padding: 3px 0 0 0\">\n");
-      out.write("                    <button class=\"actions btn btn-default btn-primary\">编辑</button>\n");
-      out.write("                    <button class=\"actions btn btn-default btn-danger\">删除</button>\n");
-      out.write("                    <button class=\"actions btn btn-default btn-info\">管理成员</button>\n");
-      out.write("                </td>\n");
-      out.write("            </tr>\n");
-      out.write("            <tr class=\"child\">\n");
-      out.write("                <td colspan=\"4\">\n");
-      out.write("                    <div class=\"content\">\n");
-      out.write("                        <p>小组成员：</p>\n");
-      out.write("                        <table class=\"table ta\">\n");
-      out.write("                            <tr>\n");
-      out.write("                                <td>第一名</td>\n");
-      out.write("                                <td>第二名</td>\n");
-      out.write("                                <td>第三名</td>\n");
-      out.write("                                <td>第四名</td>\n");
-      out.write("                                <td>第五名</td>\n");
-      out.write("                                <td>第六名</td>\n");
-      out.write("                            </tr>\n");
-      out.write("                            <tr>\n");
-      out.write("                                <td>许佳清</td>\n");
-      out.write("                                <td>范宁</td>\n");
-      out.write("                            </tr>\n");
-      out.write("                        </table>\n");
-      out.write("                    </div>\n");
-      out.write("                    <div class=\"member\">\n");
-      out.write("                        <a  data-target=\"#addMember\" data-toggle='modal' class=\"btn btn-sm btn-primary\">添加成员</a>\n");
-      out.write("                        <a  data-target=\"#deleteMember\" data-toggle='modal' class=\"btn btn-sm btn-danger\">删除成员</a>\n");
-      out.write("                    </div>\n");
-      out.write("                </td>\n");
-      out.write("            </tr>\n");
-      out.write("            </tbody>\n");
-      out.write("        </table>\n");
-      out.write("    </div>\n");
-      out.write("</div>\n");
-      out.write("\n");
-      out.write("<div class=\"modal fade\" id=\"addMember\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n");
-      out.write("    <div class=\"modal-dialog\">\n");
-      out.write("        <div class=\"modal-content\">\n");
-      out.write("            <div class=\"modal-header\">\n");
-      out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n");
-      out.write("                <h4 class=\"modal-title\" id=\"myModalLabel\">添加小组成员</h4>\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"modal-body\">\n");
-      out.write("                ...\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"modal-footer\">\n");
-      out.write("                <button type=\"button\" class=\"btn btn-primary\">添加</button>\n");
-      out.write("                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">取消</button>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
-      out.write("</div>\n");
-      out.write("<div class=\"modal fade\" id=\"deleteMember\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\n");
-      out.write("    <div class=\"modal-dialog\">\n");
-      out.write("        <div class=\"modal-content\">\n");
-      out.write("            <div class=\"modal-header\">\n");
-      out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n");
-      out.write("                <h4 class=\"modal-title\" id=\"myModalLabe2\">删除小组成员</h4>\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"modal-body\">\n");
-      out.write("                ...\n");
-      out.write("            </div>\n");
-      out.write("            <div class=\"modal-footer\">\n");
-      out.write("                <button type=\"button\" class=\"btn btn-primary\">删除</button>\n");
-      out.write("                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">取消</button>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
-      out.write("    </div>\n");
-      out.write("</div>\n");
-      out.write("<script src=\"../resources/js/jquery.min.js\"></script>\n");
-      out.write("<script>\n");
-      out.write("    $('table').on('mouseenter', 'tr', function(){\n");
-      out.write("        $(this).addClass('hover');\n");
-      out.write("        $('.actions.btn-info').click(function() {\n");
-      out.write("            $(this).parents('.main').next(\"tr.child\").slideToggle();\n");
-      out.write("            event.cancelBubble();\n");
-      out.write("        });\n");
-      out.write("        $('.actions.btn-danger').click(function(){\n");
-      out.write("            if(window.confirm(\"确认删除这个分组吗？\")){\n");
-      out.write("                window.location=\"/\"\n");
-      out.write("            }\n");
-      out.write("            else{}\n");
-      out.write("            event.cancelBubble();\n");
-      out.write("\n");
-      out.write("        });\n");
-      out.write("        event.cancelBubble();\n");
-      out.write("    });\n");
-      out.write("    $('table').on('mouseleave', 'tr', function(){\n");
-      out.write("        $(this).removeClass('hover');\n");
-      out.write("    });\n");
-      out.write("</script>\n");
-      out.write("<script src=\"../resources/bootstrap/js/bootstrap.min.js\"></script>\n");
-      out.write("</body>\n");
-      out.write("\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
+      out.write("<html>\r\n");
+      out.write("<head>\r\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n");
+      out.write("<link href=\"../resources/bootstrap/css/bootstrap.min.css\"\r\n");
+      out.write("\trel=\"stylesheet\">\r\n");
+      out.write("<link href=\"../resources/css/setGroup.css\" rel=\"stylesheet\">\r\n");
+      out.write("<title>管理分组信息</title>\r\n");
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+      out.write("<div class=\"modal fade\" id=\"addMember\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n");
+      out.write("    <div class=\"modal-dialog\">\r\n");
+      out.write("        <div class=\"modal-content\">\r\n");
+      out.write("            <div class=\"modal-header\">\r\n");
+      out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\r\n");
+      out.write("                <h4 class=\"modal-title\" id=\"myModalLabel\">添加小组成员</h4>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"modal-body\">\r\n");
+      out.write("                ...\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"modal-footer\">\r\n");
+      out.write("                <button type=\"button\" class=\"btn btn-primary\">添加</button>\r\n");
+      out.write("                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">取消</button>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<div class=\"modal fade\" id=\"deleteMember\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n");
+      out.write("    <div class=\"modal-dialog\">\r\n");
+      out.write("        <div class=\"modal-content\">\r\n");
+      out.write("            <div class=\"modal-header\">\r\n");
+      out.write("                <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\r\n");
+      out.write("                <h4 class=\"modal-title\" id=\"myModalLabe2\">删除小组成员</h4>\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"modal-body\">\r\n");
+      out.write("                ...\r\n");
+      out.write("            </div>\r\n");
+      out.write("            <div class=\"modal-footer\">\r\n");
+      out.write("                <button type=\"button\" class=\"btn btn-primary\">删除</button>\r\n");
+      out.write("                <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">取消</button>\r\n");
+      out.write("            </div>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<div class=\"container\">\r\n");
+      out.write("    <h2>管理分组信息<br/><small>你可以在这里删除或修改小组名称和备注，或者管理小组成员</small></h2>\r\n");
+      out.write("    <hr/>\r\n");
+      out.write("    <div class=\"row\">\r\n");
+      out.write("        <div class=\"col-md-5\">\r\n");
+      out.write("            <form method=\"post\" class=\"form-inline\">\r\n");
+      out.write("                <label for=\"groupClass\">班级</label>\r\n");
+      out.write("\t                <select class=\"form-control\" id=\"groupClass\" name=\"clazz\">\r\n");
+      out.write("\t                    ");
+      if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("\t                </select>\r\n");
+      out.write("\t                <button type=\"submit\" class=\"btn btn-default btn-primary\">选择</button>\r\n");
+      out.write("            </form>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <div class=\"table-responsive\">\r\n");
+      out.write("        <table class=\"table table-striped\">\r\n");
+      out.write("            <thead>\r\n");
+      out.write("            <tr>\r\n");
+      out.write("            \t<th class=\"col-md-3\">班级名称</th>\r\n");
+      out.write("                <th class=\"col-md-3\">小组名称</th>\r\n");
+      out.write("                <th class=\"col-md-3\">备注</th>\r\n");
+      out.write("                <th class=\"col-md-3\"></th>\r\n");
+      out.write("            </tr>\r\n");
+      out.write("            </thead>\r\n");
+      out.write("            <tbody>\r\n");
+      out.write("            ");
+      if (_jspx_meth_c_005fforEach_005f1(_jspx_page_context))
+        return;
+      out.write("\r\n");
+      out.write("            </tbody>\r\n");
+      out.write("        </table>\r\n");
+      out.write("    </div>\r\n");
+      out.write("</div>\r\n");
+      out.write("<script src=\"../resources/js/jquery.min.js\"></script>\r\n");
+      out.write("<script>\r\n");
+      out.write("    $('table').on('mouseenter', 'tr', function(){\r\n");
+      out.write("        $(this).addClass('hover');\r\n");
+      out.write("        $('.actions.btn-info').click(function() {\r\n");
+      out.write("            $(this).parents('.main').next(\"tr.child\").slideToggle();\r\n");
+      out.write("            event.cancelBubble();\r\n");
+      out.write("        });\r\n");
+      out.write("        $('.actions.btn-danger').click(function(){\r\n");
+      out.write("            if(window.confirm(\"确认删除这个分组吗？\")){\r\n");
+      out.write("                window.location=\"/\"\r\n");
+      out.write("            }\r\n");
+      out.write("            else{}\r\n");
+      out.write("            event.cancelBubble();\r\n");
+      out.write("\r\n");
+      out.write("        });\r\n");
+      out.write("        event.cancelBubble();\r\n");
+      out.write("    });\r\n");
+      out.write("    $('table').on('mouseleave', 'tr', function(){\r\n");
+      out.write("        $(this).removeClass('hover');\r\n");
+      out.write("    });\r\n");
+      out.write("</script>\r\n");
+      out.write("<script src=\"../resources/bootstrap/js/bootstrap.min.js\"></script>\r\n");
+      out.write("</body>\r\n");
+      out.write("\r\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
@@ -266,5 +174,127 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
     } finally {
       _jspxFactory.releasePageContext(_jspx_page_context);
     }
+  }
+
+  private boolean _jspx_meth_c_005fforEach_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fforEach_005f0.setParent(null);
+    // /WEB-INF/views/control/class/set_group.jsp(58,21) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_group.jsp(58,21) '${classes}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${classes}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/views/control/class/set_group.jsp(58,21) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setVar("class");
+    int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_005fforEach_005f0 = _jspx_th_c_005fforEach_005f0.doStartTag();
+      if (_jspx_eval_c_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t\t<option value=\"");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${class.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write('"');
+          out.write('>');
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${class.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</option>\r\n");
+          out.write("\t\t\t\t\t\t");
+          int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_005fforEach_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_005fforEach_005f0[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_005fforEach_005f0.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_005fforEach_005f0.doFinally();
+      _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.reuse(_jspx_th_c_005fforEach_005f0);
+    }
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005fforEach_005f1(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:forEach
+    org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
+    _jspx_th_c_005fforEach_005f1.setPageContext(_jspx_page_context);
+    _jspx_th_c_005fforEach_005f1.setParent(null);
+    // /WEB-INF/views/control/class/set_group.jsp(77,12) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f1.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_group.jsp(77,12) '${groups}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${groups}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/views/control/class/set_group.jsp(77,12) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f1.setVar("group");
+    int[] _jspx_push_body_count_c_005fforEach_005f1 = new int[] { 0 };
+    try {
+      int _jspx_eval_c_005fforEach_005f1 = _jspx_th_c_005fforEach_005f1.doStartTag();
+      if (_jspx_eval_c_005fforEach_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+        do {
+          out.write("\r\n");
+          out.write("\t\t\t\t\t\t<tr class=\"main\">\r\n");
+          out.write("\t\t\t\t\t\t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.clazz.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\r\n");
+          out.write("\t\t\t\t\t\t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\r\n");
+          out.write("\t\t\t\t\t\t\t<td>");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.tips}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("</td>\r\n");
+          out.write("\t\t\t\t\t\t\t<td style=\"padding: 3px 0 0 0\">\r\n");
+          out.write("                    \t\t\t<button class=\"actions btn btn-default btn-danger\">删除</button>\r\n");
+          out.write("                    \t\t\t<button class=\"actions btn btn-default btn-info\">管理成员</button>\r\n");
+          out.write("\t\t\t\t\t\t\t</td>\r\n");
+          out.write("\t\t\t\t\t\t</tr>\r\n");
+          out.write("\t\t\t\t\t\t<tr class=\"child\">\r\n");
+          out.write("\t\t\t\t\t\t\t<td colspan=\"4\">\r\n");
+          out.write("\t\t\t\t\t\t\t\t<div class=\"content\">\r\n");
+          out.write("\t\t\t\t\t\t\t\t\t<p>小组成员：</p>\r\n");
+          out.write("                        <table class=\"table ta\">\r\n");
+          out.write("                            <tr>\r\n");
+          out.write("                                <td>王柯</td>\r\n");
+          out.write("                                <td>关艺竹</td>\r\n");
+          out.write("                                <td>刘巍</td>\r\n");
+          out.write("                                <td>张云洁</td>\r\n");
+          out.write("                                <td>范宁</td>\r\n");
+          out.write("                                <td>第六名</td>\r\n");
+          out.write("                            </tr>\r\n");
+          out.write("                            <tr>\r\n");
+          out.write("                                <td>许佳清</td>\r\n");
+          out.write("                                <td>范宁</td>\r\n");
+          out.write("                            </tr>\r\n");
+          out.write("                        </table>\r\n");
+          out.write("\t\t\t\t\t\t\t<div class=\"member\">\r\n");
+          out.write("\t\t\t\t\t\t\t\t<a  data-target=\"#addMember\" data-toggle='modal' class=\"btn btn-sm btn-primary\">添加成员</a>\r\n");
+          out.write("\t\t\t\t\t\t\t\t<a  data-target=\"#deleteMember\" data-toggle='modal' class=\"btn btn-sm btn-danger\">删除成员</a>\r\n");
+          out.write("\t\t\t\t\t\t\t</div>\r\n");
+          out.write("\t\t\t\t\t\t\t\t</div>\r\n");
+          out.write("\t\t\t\t\t\t\t</td>\r\n");
+          out.write("\t\t\t\t\t\t</tr>\r\n");
+          out.write("\t\t\t\t\t");
+          int evalDoAfterBody = _jspx_th_c_005fforEach_005f1.doAfterBody();
+          if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+            break;
+        } while (true);
+      }
+      if (_jspx_th_c_005fforEach_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+        return true;
+      }
+    } catch (Throwable _jspx_exception) {
+      while (_jspx_push_body_count_c_005fforEach_005f1[0]-- > 0)
+        out = _jspx_page_context.popBody();
+      _jspx_th_c_005fforEach_005f1.doCatch(_jspx_exception);
+    } finally {
+      _jspx_th_c_005fforEach_005f1.doFinally();
+      _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.reuse(_jspx_th_c_005fforEach_005f1);
+    }
+    return false;
   }
 }

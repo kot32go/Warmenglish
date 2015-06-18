@@ -21,15 +21,16 @@
 		<hr />
 		<div class="row">
 			<div class="col-md-5">
-				<div class="form-inline">
+				<form class="form-inline" method="post">
 					<label for="pointClass">班级</label>
 					<select name="class_uuid"
 					class="form-control form-infoClass" id="pointClass">
 					<c:forEach items="${classes}" var="class">
 						<option value="${class.uuid}">${class.name}</option>
 					</c:forEach>
-				</select>
-				</div>
+					</select>
+					<button class="btn btn-default btn-primary" type="submit">选择</button>
+				</form>
 			</div>
 		</div>
 		<div class="table-responsive">

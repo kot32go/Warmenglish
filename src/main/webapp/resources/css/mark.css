@@ -15,7 +15,7 @@ body {
     margin-left: 35px;
 }
 table tr .actions{
-    display: none;
+    display:none;
 }
 table tr.hover .actions{
     display:inline-block;
@@ -23,6 +23,10 @@ table tr.hover .actions{
 .form-inline .form-control {
     display: inline-block;
     width: 200px;
+}
+.content{
+    margin: 20px 100px;
+    text-align: center;
     vertical-align: middle;
 }
 .table-responsive {
@@ -31,9 +35,15 @@ table tr.hover .actions{
     margin-top: 30px;
 }
 .child{
-    height: 300px;
+    height: 600px;
     display: none;
 }
-.box-body{
-	margin: 0 150px
+.homework{
+    margin-left: 150px;
+    border:solid 1px #dcdcdc;
+    height: 600px;
+    margin-bottom: 20px;
+}
+.content .btn{
+    margin-top: 20px;
 }

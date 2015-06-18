@@ -13,7 +13,7 @@
 
 <title>控制面板</title>
 </head>
-<body>
+<body style="overflow:scroll;overflow-y:hidden;overflow-x: hidden">
 <nav class="navbar navbar-inverse navbar-static-top">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -42,7 +42,7 @@
         <ul class="nav nav-sidebar">
             <li>作业管理</li>
             <li><a id="homework">发布作业</a></li>
-            <li><a href="#">批改作业</a></li>
+            <li><a id="mark">批改作业</a></li>
             <li><a id="grade">查看学生成绩</a></li>
         </ul>
         <ul class="nav nav-sidebar">
@@ -67,6 +67,9 @@
    $(document).ready(function(){
         $("#addClass").click(function(){
             $(".myFrame").attr("src","../control/add_class");
+        });
+        $("#mark").click(function(){
+            $(".myFrame").attr("src","../control/mark");
         });
         $("#homework").click(function(){
             $(".myFrame").attr("src","../control/homework");

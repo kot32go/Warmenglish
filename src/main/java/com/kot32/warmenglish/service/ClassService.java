@@ -1,5 +1,6 @@
 package com.kot32.warmenglish.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -9,12 +10,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.kot32.warmenglish.dao.ClassDAO;
 import com.kot32.warmenglish.domain.Class;
+import com.kot32.warmenglish.domain.Group;
+import com.kot32.warmenglish.domain.Message;
 import com.kot32.warmenglish.domain.User;
 
 @Service
 public class ClassService {
 	@Autowired
 	ClassDAO classDAO;
+	@Autowired
+	ClassDAO groupDAO;
 	@Transactional
 	public boolean addClass(User teacher,com.kot32.warmenglish.domain.Class c){
 		return classDAO.addClass(teacher,c);
@@ -33,5 +38,14 @@ public class ClassService {
 	public void addGroup(String class_uuid, String name, String tips) {
 		// TODO Auto-generated method stub
 		classDAO.addGroup(class_uuid,name,tips);
+	}
+	@Transactional
+	public List<Group> listGroup(String clazz) {
+		// TODO Auto-generated method stub
+		return classDAO.listGroup(clazz);
+	}
+	@Transactional
+	public List<Group> listAllGroup(User teacher){
+		return groupDAO.listAllGroup(teacher);
 	}
 }

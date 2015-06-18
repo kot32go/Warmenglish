@@ -1,6 +1,8 @@
 package com.kot32.warmenglish.dao;
 
 import java.nio.channels.SeekableByteChannel;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Repository;
 
 import com.kot32.warmenglish.domain.Class;
 import com.kot32.warmenglish.domain.Group;
+import com.kot32.warmenglish.domain.Message;
 import com.kot32.warmenglish.domain.User;
 import com.kot32.warmenglish.util.HibernateUtil;
 
@@ -83,6 +86,36 @@ public class ClassDAO {
 		session.save(group);
 		clazz.getGroups().add(group);
 		session.update(clazz);
+	}
+	
+	public List<Group> listGroup(String uuid) {
+		Session session = sessionFactory.getCurrentSession();
+		Class clazz = (Class) session
+				.createQuery("from Class c where uuid=:'" + uuid + "'").list()
+				.get(0);
+		Query query=session.createQuery("from Group g where g.clazz=:clazz");
+		query.setParameter("clazz", clazz);
+		return query.list();	
+	}
+	
+	public List<Group> listAllGroup(User teacher){
+		//先根据user找到class
+		//再根据class_id找到小组
+		List<Group> groups = null;
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("from Class c where c.user=:user");
+//		Query query = session.createQuery("from Group g");
+		query.setParameter("user", teacher);
+		List<Class> clazzs = query.list();
+		for (Class clazz : clazzs) {
+			query=session.createQuery("from Group g where g.clazz=:clazz");
+			query.setParameter("clazz", clazz);
+			groups.add((Group)query.list().get(0));
+		}
+//		query=session.createQuery("from Group g where g.clazz=:clazz");
+//		query.setParameter("clazz", clazz.);
+//		return query.list();
+		return groups;
 	}
 
 }
