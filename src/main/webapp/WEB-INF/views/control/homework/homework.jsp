@@ -119,6 +119,7 @@
 	                            </textarea>
 							</div>
 							<hr />
+							<!--题目1-->
 							<div class="form-group">
 								<label>题目1</label>
 								<textarea type="text" class="form-control form-choosemain"
@@ -167,13 +168,159 @@
 								</div>
 							</div>
 							<hr />
+							<!-- 题目2 -->
+							<div class="form-group">
+								<label>题目2</label>
+								<textarea type="text" class="form-control form-choosemain"
+									name="readingChoose" placeholder="请输入题干">
+	                            </textarea>
+							</div>
+							<div class="form-group">
+								<label>选项</label>
+								<textarea type="text" class="form-control form-choosemain"
+									name="readingSelect" placeholder="请输入选项">
+	                            </textarea>
+							</div>
+							<button class="btn btn-primary" style="float: right">解析选项</button>
+							<div class="clearfix"></div>
+							<!--选项-->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionAreading">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionBreading">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionCreading">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionDreading">
+									</div>
+								</div>
+							</div>
+							<hr />
+							<!-- 题目3 -->
+							<div class="form-group">
+								<label>题目3</label>
+								<textarea type="text" class="form-control form-choosemain"
+									name="readingChoose" placeholder="请输入题干">
+	                            </textarea>
+							</div>
+							<div class="form-group">
+								<label>选项</label>
+								<textarea type="text" class="form-control form-choosemain"
+									name="readingSelect" placeholder="请输入选项">
+	                            </textarea>
+							</div>
+							<button class="btn btn-primary" style="float: right">解析选项</button>
+							<div class="clearfix"></div>
+							<!--选项-->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionAreading">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionBreading">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionCreading">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionDreading">
+									</div>
+								</div>
+							</div>
+							<hr />
+							<!-- 题目4 -->
+							<div class="form-group">
+								<label>题目4</label>
+								<textarea type="text" class="form-control form-choosemain"
+									name="readingChoose" placeholder="请输入题干">
+	                            </textarea>
+							</div>
+							<div class="form-group">
+								<label>选项</label>
+								<textarea type="text" class="form-control form-choosemain"
+									name="readingSelect" placeholder="请输入选项">
+	                            </textarea>
+							</div>
+							<button class="btn btn-primary" style="float: right">解析选项</button>
+							<div class="clearfix"></div>
+							<!--选项-->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionAreading">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionBreading">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionCreading">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option2">
+										</span> <input type="text" class="form-control" name="optionDreading">
+									</div>
+								</div>
+							</div>
+							<hr />
 						</form>
 					</div>
-					<!--三个按钮-->
+					<!--两个按钮-->
 					<div class="clearfix"></div>
 					<div class=" row col-lg-10">
-						<button class="btn-lg btn-primary" id="addReadingChoose">继续添加选择题</button>
-						<button class="btn-lg btn-success" id="addReading">继续添加阅读题</button>
+						<button class="btn-lg btn-success" id="addReading" style="margin-left:200px">继续添加阅读题</button>
 						<button class="btn-lg btn-default">添加完毕</button>
 					</div>
 				</div>
@@ -294,24 +441,6 @@
 		$(".chooseContent").append(newform);
 	});
 
-	$("#addReadingChoose").click(function() {
-		//        添加新的form-group到form-inline
-		readingChoice++;
-		var newmain = main('reading', readingChoice);
-		var newselect = select('reading');
-		var newbutton = button();
-		var newclear = clear();
-		var newrow = selectChoose('reading');
-		var newhr = hr();
-		$("#reading" + reading).append(newmain);
-		$("#reading" + reading).append(newselect);
-		$("#reading" + reading).append(newbutton);
-		$("#reading" + reading).append(newclear);
-		$("#reading" + reading).append(newrow.newRow1);
-		$("#reading" + reading).append(newrow.newRow2);
-		$("#reading" + reading).append(newhr);
-	});
-
 	$("#addReading").click(function() {
 		//        添加新的form-inline到readingContent
 		reading++;
@@ -321,20 +450,22 @@
 		newform.setAttribute("name", "reading" + reading);
 		newform.setAttribute("id", "reading" + reading);
 		var newarticle = article('reading', reading);
-		var newmain = main('reading', readingChoice);
-		var newselect = select('reading');
-		var newbutton = button();
-		var newclear = clear();
-		var newrow = selectChoose('reading');
-		var newhr = hr();
 		newform.appendChild(newarticle);
-		newform.appendChild(newmain);
-		newform.appendChild(newselect);
-		newform.appendChild(newbutton);
-		newform.appendChild(newclear);
-		newform.appendChild(newrow.newRow1);
-		newform.appendChild(newrow.newRow2);
-		newform.appendChild(newhr);
+		for(readingChoice=1;readingChoice<=4;readingChoice++){
+			var newmain = main('reading', readingChoice);
+			var newselect = select('reading');
+			var newbutton = button();
+			var newclear = clear();
+			var newrow = selectChoose('reading');
+			var newhr = hr();
+			newform.appendChild(newmain);
+			newform.appendChild(newselect);
+			newform.appendChild(newbutton);
+			newform.appendChild(newclear);
+			newform.appendChild(newrow.newRow1);
+			newform.appendChild(newrow.newRow2);
+			newform.appendChild(newhr);
+		}
 		$(".readingContent").append(newform);
 	})
 
