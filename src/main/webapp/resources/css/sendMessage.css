@@ -15,13 +15,13 @@ body {
     margin-left: 35px;
 }
 .form-inline {
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     margin-left: 250px;
 }
 .form-inline .form-group {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     vertical-align: middle;
 }
 label {
@@ -50,7 +50,7 @@ textarea.form-control {
 .btn {
     display: inline-block;
     padding: 6px 12px;
-    margin-bottom: 0px;
+    margin-bottom: 0p;
     font-size: 20px;
     font-weight: 400;
     line-height: 1.42857;
@@ -62,7 +62,7 @@ textarea.form-control {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 6px;
-    margin-top: 20px;
+    margin-top: 0;
 }
 /**/
 .container{

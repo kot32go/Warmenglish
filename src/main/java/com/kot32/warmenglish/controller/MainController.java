@@ -172,8 +172,8 @@ public class MainController {
 
 	// 跳转到控制面板
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String jump() {
-
+	public String jump(Model model,String type) {
+		model.addAttribute("type", "../control/"+type);
 		return "/control/main";
 	}
 }

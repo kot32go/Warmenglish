@@ -31,7 +31,7 @@
 			<div class="col-md-4">
 				<label for="homeworkGroup">小组</label> <select
 					class="form-control form-homeworkGroup" id="homeworkGroup">
-	
+
 				</select>
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 				<div class="content">
 					<div class="chooseContent">
 						<form class="form-inline" id="choose1" name="choose1">
-							<div class="form-group" >
+							<div class="form-group">
 								<label>题目1</label>
 								<textarea type="text" class="form-control form-choosemain"
 									name="chooseMain">
@@ -102,7 +102,7 @@
 					<!--提交按钮-->
 					<div class="clearfix"></div>
 					<div class=" row col-lg-8">
-						<button class="btn-lg btn-primary" id="addChoose">继续添加选择题</button>
+						<button class="btn-lg btn-primary" id="addChoose" style="margin-left:180px">继续添加选择题</button>
 						<button class="btn-lg btn-default">添加完毕</button>
 					</div>
 				</div>
@@ -242,7 +242,24 @@
 					</div>
 				</div>
 			</div>
-			<div class="tab-pane fade" id="essay"></div>
+			<div class="tab-pane fade" id="essay">
+				<div class="content">
+					<div class="essayContent">
+						<form class="form-inline" name="essay1" id="essay1">
+							<div class="form-group">
+								<label>作文</label>
+								<textarea type="text" class="form-control form-readingmain"
+									name="essayMain" placeholder="请输入题目">
+                                </textarea>
+							</div>
+							<hr />
+						</form>
+					</div>
+					<div class="row col-lg-10">
+						<button class="btn-lg btn-primary" style="margin-left: 300px">添加完毕</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -375,9 +392,11 @@
 		group_id = $(this).val();
 	});
 	/* 进行选项解析 */
-	$("#analyzeChoose").click(function() {
-		myAjax_choose($(this).parent().child("#xuanxiang").child("#chooseSelect").val());
-	});
+	$("#analyzeChoose").click(
+			function() {
+				myAjax_choose($(this).parent().child("#xuanxiang").child(
+						"#chooseSelect").val());
+			});
 
 	function myAjax() {
 		$.ajax({

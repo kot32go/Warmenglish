@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -51,15 +52,15 @@
 
 	<div class="main">
 		<div class="col-md-4 col-sm-4" >
-			<a href="main"><input type="image" src="../resources/images/1.png" width="200px"></a>
+			<a href="main?type=homework"><input type="image" src="../resources/images/1.png" width="200px"></a>
 			<p>作业管理</p>
 		</div>
 		<div class="col-md-4 col-sm-4">
-			<a href="main"><input type="image" src="../resources/images/2.png" width="200px"></a>
+			<a href="main?type=send_message"><input type="image" src="../resources/images/2.png" width="200px"></a>
 			<p>通知管理</p>
 		</div>
 		<div class="col-md-4 col-sm-4">
-			<a href="main"><input type="image" src="../resources/images/3.png" width="200px"></a>
+			<a href="main?type=add_class"><input type="image" src="../resources/images/3.png" width="200px"></a>
 			<p>班级管理</p>
 		</div>
 	</div>

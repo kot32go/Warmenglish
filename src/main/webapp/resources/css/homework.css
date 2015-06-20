@@ -18,7 +18,7 @@ body {
     padding-right: 15px;
     padding-left: 15px;
     margin-right: 35px;
-    margin-left: 180px;
+    margin-left: 120px;
 }
 .form-inline {
     margin-top: 30px;
@@ -49,16 +49,17 @@ label {
 .row .col-md-6 .input-group{
     margin-left: 80px;
 }
-/*ï¿½à¼­ï¿½ï¿½*/
+/*±à¼­¿ò*/
 .content{
     margin-bottom: 20px;
     position: relative;
 }
 .content .btn-primary{
-    margin-left: 150px;
+    margin-left:120px;
 }
 .btn-lg{
-    margin-top: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 .chooseContent{
     width: 670px;
@@ -79,6 +80,11 @@ label {
     height: 400px;
 }
 .clozeContent{
+    width: 670px;
+    position: relative;
+    margin-bottom: 20px;
+}
+.essayContent{
     width: 670px;
     position: relative;
     margin-bottom: 20px;

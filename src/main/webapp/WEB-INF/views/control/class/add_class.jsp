@@ -28,7 +28,6 @@
 					name="classDes" placeholder="输入班级概况">
             </textarea>
 			</div>
-			<br />
 			<button type="submit" class="btn btn-default">添加</button>
 		</form>
 

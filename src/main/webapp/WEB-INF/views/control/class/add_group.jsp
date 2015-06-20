@@ -19,7 +19,7 @@
 		<hr />
 		<form class="form-inline" method="post">
 			<div class="form-group">
-				<label for="groupClass">班级</label> <select name="class_uuid"
+				<label for="groupClass">班级名称</label> <select name="class_uuid"
 					class="form-control form-infoClass" id="groupClass">
 					<c:forEach items="${classes}" var="class">
 						<option value="${class.uuid}">${class.name}</option>
@@ -27,11 +27,11 @@
 				</select>
 			</div>
 			<div class="form-group">
-				<label for="groupName">组名</label> <input type="text"
+				<label for="groupName">小组名称</label> <input type="text"
 					class="form-control" id="groupName" placeholder="输入组名" name="name" />
 			</div>
 			<div class="form-group">
-				<label for="groupTip">备注</label> <input type="text"
+				<label for="groupTip" style="margin-right: 56px">备注</label> <input type="text"
 					class="form-control" id="groupTip" placeholder="输入备注" name="tips" />
 			</div>
 			<button type="submit" class="btn btn-default">添加</button>
