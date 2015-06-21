@@ -26,13 +26,13 @@ public class ClassDAO {
 	public boolean addClass(User teacher, com.kot32.warmenglish.domain.Class c) {
 		Session session = sessionFactory.getCurrentSession();
 		// 先创建一个默认小组并保存
-		Group group = new Group("默认小组","创建班级时默认添加的小组", c);
+		Group group = new Group("默认小组", "创建班级时默认添加的小组", c);
 		c.getGroups().add(group);
 		session.save(group);
-		session.save(c);	
+		session.save(c);
 		teacher = HibernateUtil.getCurrentTeacher(session, teacher.getId());
 		teacher.getClasses().add(c);
-		
+
 		try {
 			session.update(teacher);
 		} catch (Exception e) {
@@ -56,21 +56,20 @@ public class ClassDAO {
 				.get(0);
 		clazz.getUser().getClasses().remove(clazz);
 		session.update(clazz.getUser());
-		
-		//删掉改班级下的所有小组，推送消息
+
+		// 删掉改班级下的所有小组，推送消息
 		Query query = session
 				.createQuery("delete from Group g where g.clazz=:clazz");
 		query.setParameter("clazz", clazz);
 		query.executeUpdate();
-		
+
 		query = session
 				.createQuery("delete from Message m where m.clazz=:clazz");
 		query.setParameter("clazz", clazz);
 		query.executeUpdate();
-		
-		//删掉该班级
-		query = session
-				.createQuery("delete from Class c where c.uuid=:id");
+
+		// 删掉该班级
+		query = session.createQuery("delete from Class c where c.uuid=:id");
 		query.setParameter("id", uuid);
 		query.executeUpdate();
 
@@ -79,42 +78,39 @@ public class ClassDAO {
 	public void addGroup(String class_uuid, String name, String tips) {
 		Session session = sessionFactory.getCurrentSession();
 		Class clazz = (Class) session
-				.createQuery("from Class c where uuid='" + class_uuid + "'").list()
-				.get(0);
-		//首先在班级中添加对它的引用，在保存它，再更新班级
-		Group group=new Group(name,tips, clazz);
+				.createQuery("from Class c where uuid='" + class_uuid + "'")
+				.list().get(0);
+		// 首先在班级中添加对它的引用，在保存它，再更新班级
+		Group group = new Group(name, tips, clazz);
 		session.save(group);
 		clazz.getGroups().add(group);
 		session.update(clazz);
 	}
-	
+
 	public List<Group> listGroup(String uuid) {
 		Session session = sessionFactory.getCurrentSession();
-		Class clazz = (Class) session
-				.createQuery("from Class c where uuid=:'" + uuid + "'").list()
-				.get(0);
-		Query query=session.createQuery("from Group g where g.clazz=:clazz");
+		Query query = session.createQuery("from Class c where c.uuid=:uuid");
+		query.setParameter("uuid", uuid);
+		Class clazz = (Class) query.list().get(0);
+		query = session.createQuery("from Group g where g.clazz=:clazz");
 		query.setParameter("clazz", clazz);
-		return query.list();	
+		return query.list();
 	}
-	
-	public List<Group> listAllGroup(User teacher){
-		//先根据user找到class
-		//再根据class_id找到小组
-		List<Group> groups = null;
+
+	public List<Group> listAllGroup(User teacher) {
+		// 先根据user找到class
+		// 再根据class_id找到小组
+		List<Group> groups = new ArrayList<Group>();
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from Class c where c.user=:user");
-//		Query query = session.createQuery("from Group g");
 		query.setParameter("user", teacher);
+		
 		List<Class> clazzs = query.list();
 		for (Class clazz : clazzs) {
-			query=session.createQuery("from Group g where g.clazz=:clazz");
+			query = session.createQuery("from Group g where g.clazz=:clazz");
 			query.setParameter("clazz", clazz);
-			groups.add((Group)query.list().get(0));
+			groups.addAll(query.list());
 		}
-//		query=session.createQuery("from Group g where g.clazz=:clazz");
-//		query.setParameter("clazz", clazz.);
-//		return query.list();
 		return groups;
 	}
 

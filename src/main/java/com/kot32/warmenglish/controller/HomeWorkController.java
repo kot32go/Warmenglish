@@ -69,5 +69,17 @@ public class HomeWorkController {
 		mv.addObject("status", "success");
 		return mv;
 	}
-
+	
+	@RequestMapping(value = "/addread", method = RequestMethod.GET)
+	public ModelAndView addread(String homework_uuid,String content,HttpServletRequest req){
+		ModelAndView mv = new ModelAndView();
+		if(homeworkService.addRead(homework_uuid,content,req)){
+			mv.addObject("status", "success");
+		}else{
+			mv.addObject("status", "error");
+		}
+		
+		return mv;
+	}
+	
 }

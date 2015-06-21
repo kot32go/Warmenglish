@@ -91,5 +91,13 @@ public class SelectProblem {
 	public SelectProblem() {
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public String toString() {
+		return "SelectProblem [id=" + id + ", des=" + des + ", a=" + a + ", b="
+				+ b + ", c=" + c + ", d=" + d + ", answer=" + answer
+				+ ", homework=" + homework + "]";
+	}
+	
+	
 	
 }

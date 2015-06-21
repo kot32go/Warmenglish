@@ -71,14 +71,14 @@
 								<div class="col-md-6">
 									<div class="input-group">
 										<span class="input-group-addon"> <input type="radio"
-											id="option1">
+											name="option1" id="option1">
 										</span> <input type="text" class="form-control" id="optionAchoose1">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="input-group">
 										<span class="input-group-addon"> <input type="radio"
-											id="option1">
+											name="option1" id="option1">
 										</span> <input type="text" class="form-control" id="optionBchoose1">
 									</div>
 								</div>
@@ -87,14 +87,14 @@
 								<div class="col-md-6">
 									<div class="input-group">
 										<span class="input-group-addon"> <input type="radio"
-											id="option1">
+											name="option1" id="option1">
 										</span> <input type="text" class="form-control" id="optionCchoose1">
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="input-group">
 										<span class="input-group-addon"> <input type="radio"
-											id="option1" />
+											name="option1" id="option1" />
 										</span> <input type="text" class="form-control" id="optionDchoose1">
 									</div>
 								</div>
@@ -116,208 +116,12 @@
 					<div class="readingContent">
 						<form class="form-inline" name="reading1" id="reading1">
 							<div class="form-group">
-								<label>文章1</label>
-								<textarea type="text" class="form-control form-readingmain"
-									name="readingMain" placeholder="请输入文章">
-	                            </textarea>
-							</div>
-							<hr />
-							<!--题目1-->
-							<div class="form-group">
 								<label>题目1</label>
-								<textarea type="text" class="form-control form-choosemain"
-									name="readingChoose" placeholder="请输入题干">
+								<textarea type="text" class="form-control form-readingmain"
+									name="readingMain1" id="readingMain1">
+									
 	                            </textarea>
 							</div>
-							<div class="form-group">
-								<label>选项</label>
-								<textarea type="text" class="form-control form-choosemain"
-									name="readingSelect" placeholder="请输入选项">
-	                            </textarea>
-							</div>
-							<button class="btn btn-primary" style="float: right">解析选项</button>
-							<div class="clearfix"></div>
-							<!--选项-->
-							<div class="row">
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionAreading">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionBreading">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionCreading">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionDreading">
-									</div>
-								</div>
-							</div>
-							<hr />
-							<!-- 题目2 -->
-							<div class="form-group">
-								<label>题目2</label>
-								<textarea type="text" class="form-control form-choosemain"
-									name="readingChoose" placeholder="请输入题干">
-	                            </textarea>
-							</div>
-							<div class="form-group">
-								<label>选项</label>
-								<textarea type="text" class="form-control form-choosemain"
-									name="readingSelect" placeholder="请输入选项">
-	                            </textarea>
-							</div>
-							<button class="btn btn-primary" style="float: right">解析选项</button>
-							<div class="clearfix"></div>
-							<!--选项-->
-							<div class="row">
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionAreading">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionBreading">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionCreading">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionDreading">
-									</div>
-								</div>
-							</div>
-							<hr />
-							<!-- 题目3 -->
-							<div class="form-group">
-								<label>题目3</label>
-								<textarea type="text" class="form-control form-choosemain"
-									name="readingChoose" placeholder="请输入题干">
-	                            </textarea>
-							</div>
-							<div class="form-group">
-								<label>选项</label>
-								<textarea type="text" class="form-control form-choosemain"
-									name="readingSelect" placeholder="请输入选项">
-	                            </textarea>
-							</div>
-							<button class="btn btn-primary" style="float: right">解析选项</button>
-							<div class="clearfix"></div>
-							<!--选项-->
-							<div class="row">
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionAreading">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionBreading">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionCreading">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionDreading">
-									</div>
-								</div>
-							</div>
-							<hr />
-							<!-- 题目4 -->
-							<div class="form-group">
-								<label>题目4</label>
-								<textarea type="text" class="form-control form-choosemain"
-									name="readingChoose" placeholder="请输入题干">
-	                            </textarea>
-							</div>
-							<div class="form-group">
-								<label>选项</label>
-								<textarea type="text" class="form-control form-choosemain"
-									name="readingSelect" placeholder="请输入选项">
-	                            </textarea>
-							</div>
-							<button class="btn btn-primary" style="float: right">解析选项</button>
-							<div class="clearfix"></div>
-							<!--选项-->
-							<div class="row">
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionAreading">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionBreading">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionCreading">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="input-group">
-										<span class="input-group-addon"> <input type="radio"
-											name="option2">
-										</span> <input type="text" class="form-control" name="optionDreading">
-									</div>
-								</div>
-							</div>
-							<hr />
 						</form>
 					</div>
 					<!--两个按钮-->
@@ -457,7 +261,14 @@
 	});
 
 	$("#addReading").click(function() {
-		//        添加新的form-inline到readingContent
+		//现将之前的题目传到服务器以供解析
+		var read=$("#readingMain"+reading).val();
+		if(read==''){
+			alert("尚未输入！");
+		}else{
+			addRead(read);
+		}
+		//添加新的form-inline到readingContent
 		reading++;
 		readingChoice = 1;
 		var newform = document.createElement('form');
@@ -466,13 +277,14 @@
 		newform.setAttribute("id", "reading" + reading);
 		var newarticle = article('reading', reading);
 		newform.appendChild(newarticle);
-		for (readingChoice = 1; readingChoice <= 4; readingChoice++) {
+		
+		/* for (readingChoice = 1; readingChoice <= 4; readingChoice++) {
 			var newmain = main('reading', readingChoice);
 			var newselect = select('reading');
 			var newbutton = button();
 			var newclear = clear();
 			var newrow = selectChoose('reading');
-			var newhr = hr();
+			var newhr = hr(); 
 			newform.appendChild(newmain);
 			newform.appendChild(newselect);
 			newform.appendChild(newbutton);
@@ -480,7 +292,7 @@
 			newform.appendChild(newrow.newRow1);
 			newform.appendChild(newrow.newRow2);
 			newform.appendChild(newhr);
-		}
+		} */
 		$(".readingContent").append(newform);
 	})
 
@@ -644,6 +456,27 @@
 			type : "GET", //请求方式
 			contentType : "application/x-www-form-urlencoded; charset=utf-8",
 			success : function(msg) {
+			},
+			error : function() {
+				alert("error")
+			}
+		});
+	}
+	
+	function addRead(read){
+		$.ajax({
+			url : "../homework/addread", //请求的url地址
+			dataType : "json", //返回格式为json
+			async : true, //请求是否异步
+			data : {
+				"homework_uuid" : homework_uuid,
+				"content" : read,
+				"format" : "json"
+			}, //参数值
+			type : "GET", //请求方式
+			contentType : "application/x-www-form-urlencoded; charset=utf-8",
+			success : function(msg) {
+				
 			},
 			error : function() {
 				alert("error")

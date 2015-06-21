@@ -30,7 +30,7 @@ function selectNumber(name,number){
 function article(name,number){
     var newformgroup=document.createElement('div');
     newformgroup.setAttribute("class","form-group");
-    var str="<label>文章"+number+"</label><textarea type='text' class='form-control form-readingmain' name='"+name+"Article' placeholder='请输入文章'></textarea>"
+    var str="<label>题目"+number+"</label><textarea type='text' class='form-control form-readingmain' id='readingMain"+number+"' name='readingMain"+number+"' placeholder='请输入文章'></textarea>"
     newformgroup.innerHTML = str;
     return newformgroup;
 }
@@ -59,11 +59,11 @@ function hr(){
 function selectChoose(name){
     var newrow1=document.createElement('div');
     newrow1.setAttribute("class","row");
-    var str1="<div class='col-md-6'><div class='input-group'><span class='input-group-addon'><input type='radio' id='option"+name+"'></span><input type='text' class='form-control' id='optionAchoose"+name+"'></div></div><div class='col-md-6'><div class='input-group'><span class='input-group-addon'><input type='radio' id='option"+name+"'></span><input type='text' class='form-control' id='optionBchoose"+name+"'></div></div>";
+    var str1="<div class='col-md-6'><div class='input-group'><span class='input-group-addon'><input type='radio' name='option"+name+"' id='option"+name+"'></span><input type='text' class='form-control' id='optionAchoose"+name+"'></div></div><div class='col-md-6'><div class='input-group'><span class='input-group-addon'><input type='radio' id='option"+name+"'></span><input type='text' class='form-control' id='optionBchoose"+name+"'></div></div>";
     newrow1.innerHTML=str1;
     var newrow2=document.createElement('div');
     newrow2.setAttribute("class","row");
-    var str2="<div class='col-md-6'><div class='input-group'><span class='input-group-addon'><input type='radio' id='option"+name+"'></span><input type='text' class='form-control' id='optionCchoose"+name+"'></div></div><div class='col-md-6'><div class='input-group'><span class='input-group-addon'><input type='radio' id='option"+name+"'></span><input type='text' class='form-control' id='optionDchoose"+name+"'></div></div>";
+    var str2="<div class='col-md-6'><div class='input-group'><span class='input-group-addon'><input type='radio' name='option"+name+"' id='option"+name+"'></span><input type='text' class='form-control' id='optionCchoose"+name+"'></div></div><div class='col-md-6'><div class='input-group'><span class='input-group-addon'><input type='radio' id='option"+name+"'></span><input type='text' class='form-control' id='optionDchoose"+name+"'></div></div>";
     newrow2.innerHTML=str2;
     var Newrow={newRow1:newrow1,newRow2:newrow2};
     return Newrow;

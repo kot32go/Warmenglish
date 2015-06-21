@@ -2,6 +2,8 @@ package com.kot32.warmenglish.service;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -35,6 +37,18 @@ public class HomeworkService {
 			String b, String c, String d, String rightAnswer) {
 		// TODO Auto-generated method stub
 		HomeworkDAO.addSelectProbelm(homework_uuid,tigan,a,b,c,d,rightAnswer);	
+	}
+	@Transactional
+	public boolean addRead(String homework_uuid,String content,HttpServletRequest req) {
+		// TODO Auto-generated method stub
+		boolean isSuccess=true;
+		try{
+			HomeworkDAO.addRead(homework_uuid,content,req);
+		}catch(Exception e){
+			e.printStackTrace();
+			isSuccess=false;
+		}
+		return isSuccess;
 	}
 	
 }

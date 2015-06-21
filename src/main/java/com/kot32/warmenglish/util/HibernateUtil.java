@@ -5,6 +5,7 @@ import org.hibernate.Session;
 
 import com.kot32.warmenglish.domain.Class;
 import com.kot32.warmenglish.domain.Group;
+import com.kot32.warmenglish.domain.Homework;
 import com.kot32.warmenglish.domain.Student;
 import com.kot32.warmenglish.domain.User;
 
@@ -34,5 +35,11 @@ public class HibernateUtil {
 		query.setParameter("clazz", clazz);
 		query.setParameter("name", "默认小组");
 		return (Group)query.list().get(0);
+	}
+	
+	public static Homework getCurrentHomework(Session session,String uuid){
+		Query query=session.createQuery("from Homework h where h.uuid=:uuid");
+		query.setParameter("uuid", uuid);
+		return (Homework)query.list().get(0);
 	}
 }

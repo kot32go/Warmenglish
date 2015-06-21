@@ -110,9 +110,9 @@ public class MainController {
 
 	// 根据所选班级列出小组
 	@RequestMapping(value = "/set_group", method = RequestMethod.POST)
-	public String list_group(Model model, String clazz) {
+	public String list_group(Model model, String class_uuid) {
 		model.addAttribute("classes", classService.listClass(logined_user));
-		model.addAttribute("groups", classService.listGroup(clazz));
+		model.addAttribute("groups", classService.listGroup(class_uuid));
 		return "/control/class/set_group";
 	}
 

@@ -54,7 +54,7 @@
         <div class="col-md-5">
             <form method="post" class="form-inline">
                 <label for="groupClass">班级</label>
-	                <select class="form-control" id="groupClass" name="uuid">
+	                <select class="form-control" name="class_uuid" id="groupClass" >
 	                    <c:forEach items="${classes}" var="class">
 							<option value="${class.uuid}">${class.name}</option>
 						</c:forEach>
