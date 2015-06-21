@@ -30,6 +30,10 @@ public class Homework {
 	//选择题
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "homework",cascade={CascadeType.ALL})
 	private Set<SelectProblem> selectProblems = new HashSet<SelectProblem>();
+	//学生的答案
+	private String student_answer;
+	
+	private String uuid;
 	
 	public int getId() {
 		return id;
@@ -61,20 +65,35 @@ public class Homework {
 	public void setSelectProblems(Set<SelectProblem> selectProblems) {
 		this.selectProblems = selectProblems;
 	}
+	
+	public String getStudent_answer() {
+		return student_answer;
+	}
+	public void setStudent_answer(String student_answer) {
+		this.student_answer = student_answer;
+	}
+	public String getUuid() {
+		return uuid;
+	}
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 	@Override
 	public String toString() {
 		return "Homework [id=" + id + ", des=" + des + ", group=" + group
-				+ ", date=" + date + ", selectProblems=" + selectProblems + "]";
+				+ ", date=" + date + ", selectProblems=" + selectProblems
+				+ ", student_answer=" + student_answer + ", uuid=" + uuid + "]";
 	}
 	
 	public Homework() {
 		// TODO Auto-generated constructor stub
 	}
-	public Homework(String des, Group group, Date date) {
+	public Homework(String des, Group group, Date date, String uuid) {
 		super();
 		this.des = des;
 		this.group = group;
 		this.date = date;
+		this.uuid=uuid;
 	}
 	
 	

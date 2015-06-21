@@ -1,0 +1,76 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+/* navbar navigation */
+.navbar-inverse .navbar-brand {
+    color: #FFF;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFF;
+}
+.navbar-fixed-top {
+    border: 0;
+}
+.nav {
+    padding-left: 20px;
+    margin-bottom: 0;
+    list-style: outside none none;
+}
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 15px 30px;
+}
+/* Sidebar navigation */
+.content{
+    overflow:hidden;
+    zoom:1;
+}
+.sidebar {
+    display: none;
+}
+@media (min-width: 750px) {
+    .sidebar {
+        position: absolute;
+        top: 51px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 0;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        background-color: #f5f5f5;
+        height:100%
+    }
+}
+.nav-sidebar {
+    margin: 20px 20px;
+    font-size: 18px;
+}
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    color: #fff;
+    background-color: #428bca;
+}
+/* frame navigation */
+.myFrame{
+    margin-left: 228px;
+    height: 655px;
+    border: none;
+    width: 86.1%;
+}

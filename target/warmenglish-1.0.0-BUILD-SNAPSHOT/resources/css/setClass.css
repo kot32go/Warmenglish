@@ -1,0 +1,22 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 45px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+table tr .actions{
+    display: none;
+}
+table tr.hover .actions{
+    display:inline-block;
+}

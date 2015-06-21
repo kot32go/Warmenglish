@@ -18,7 +18,7 @@ public class HomeworkService {
 	HomeworkDAO HomeworkDAO;
 	
 	@Transactional
-	public boolean addHomework(String des,String group_id) {
+	public String addHomework(String des,String group_id) {
 		return HomeworkDAO.addHomework(des, group_id);
 	}
 	@Transactional
@@ -29,6 +29,12 @@ public class HomeworkService {
 	public ArrayList<com.kot32.warmenglish.domain.appPojo.Group> listGroups(int class_id) {
 		// TODO Auto-generated method stub
 		return HomeworkDAO.listGroups(class_id);
+	}
+	@Transactional
+	public void addSelectProbelm(String homework_uuid, String tigan, String a,
+			String b, String c, String d, String rightAnswer) {
+		// TODO Auto-generated method stub
+		HomeworkDAO.addSelectProbelm(homework_uuid,tigan,a,b,c,d,rightAnswer);	
 	}
 	
 }

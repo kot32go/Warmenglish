@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+
+	<session-factory>
+		<mapping class="com.kot32.warmenglish.domain.User" />
+		<mapping class="com.kot32.warmenglish.domain.Class" />
+		<mapping class="com.kot32.warmenglish.domain.Student" />
+		<mapping class="com.kot32.warmenglish.domain.Group" />
+		<mapping class="com.kot32.warmenglish.domain.Homework" />
+		<mapping class="com.kot32.warmenglish.domain.SelectProblem" />
+		<mapping class="com.kot32.warmenglish.domain.Grade" />
+		<mapping class="com.kot32.warmenglish.domain.Message" />
+	</session-factory>
+	
+</hibernate-configuration>

@@ -1,0 +1,49 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 45px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: 35px;
+    margin-left: 35px;
+}
+table tr .actions{
+    display:none;
+}
+table tr.hover .actions{
+    display:inline-block;
+}
+.form-inline .form-control {
+    display: inline-block;
+    width: 200px;
+}
+.content{
+    margin: 20px 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+.table-responsive {
+    min-height: 0.01%;
+    overflow-x: auto;
+    margin-top: 30px;
+}
+.child{
+    height: 600px;
+    display: none;
+}
+.homework{
+    margin-left: 150px;
+    border:solid 1px #dcdcdc;
+    height: 600px;
+    margin-bottom: 20px;
+}
+.content .btn{
+    margin-top: 20px;
+}
