@@ -18,99 +18,100 @@
 	</h2>
 	<hr />
 	<!--选择班级和小组-->
-	<div class="row">
-		<div class="col-md-4">
-			<label for="homeworkClass">班级</label> <select
-				class="form-control form-homeworkClass" id="homeworkClass">
-				<c:forEach items="${classes}" var="class">
-					<option id="sss" value=${class.id }>${class.name}</option>
-				</c:forEach>
-			</select>
-		</div>
-		<div class="col-md-4">
-			<label for="homeworkGroup">小组</label> <select
-				class="form-control form-homeworkGroup" id="homeworkGroup">
-			</select>
-		</div>
-		<div class="col-md-2">
-			<label for="homeworkGroup"> 确认</label>
-			<button class="btn btn-primary" id="confirmGroup">确认发布对象</button>
-		</div>
-	</div>
-	<!--导航栏-->
-	<ul id="myTab1" class="nav nav-pills" style="margin-top: 20px">
-		<li class="active"><a href="#choose" data-toggle="tab">选择题</a></li>
-		<li><a href="#reading" data-toggle="tab">阅读题</a></li>
-		<li><a href="#cloze" data-toggle="tab">完形填空</a></li>
-		<li><a href="#essay" data-toggle="tab">作文</a></li>
-	</ul>
-	<!--导航页面-->
-	<div id="myTabContent1" class="tab-content">
-		<!--选择题-->
-		<div class="tab-pane fade in active" id="choose">
-			<div class="content">
-				<div class="chooseContent">
-					<form class="form-inline" id="choose" name="choose1">
-						<div class="form-group">
-							<label>题目1</label>
-							<textarea type="text" class="form-control form-choosemain"
-								id="chooseMain1">
-                            </textarea>
-						</div>
-						<div class="form-group" id="xuanxiang">
-							<label>选项</label>
-							<textarea type="text" class="form-control form-choosemain"
-								id="chooseSelect">
-                            </textarea>
-						</div>
-						<input class="btn btn-primary" id="analyzeChoose"
-							style="float: right" readonly="true" value="解析选项" />
-						<div class="clearfix"></div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"> <input type="radio"
-										id="option1">
-									</span> <input type="text" class="form-control" id="optionAchoose1">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"> <input type="radio"
-										id="option1">
-									</span> <input type="text" class="form-control" id="optionBchoose1">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"> <input type="radio"
-										id="option1">
-									</span> <input type="text" class="form-control" id="optionCchoose1">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"> <input type="radio"
-										id="option1" />
-									</span> <input type="text" class="form-control" id="optionDchoose1">
-								</div>
-							</div>
-						</div>
-						<hr />
-					</form>
-				</div>
-				<!--提交按钮-->
-				<div class="clearfix"></div>
-				<div class=" row col-lg-6">
-					<button class="btn-lg btn-primary" id="addChoose">继续添加选择题</button>
-					<button class="btn-lg btn-default">添加完毕</button>
-				</div>
+	<div class="container1">
+		<div class="row">
+			<div class="col-md-4">
+				<label for="homeworkClass">班级</label> <select
+					class="form-control form-homeworkClass" id="homeworkClass">
+					<c:forEach items="${classes}" var="class">
+						<option id="sss" value=${class.id }>${class.name}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div class="col-md-4">
+				<label for="homeworkGroup">小组</label> <select
+					class="form-control form-homeworkGroup" id="homeworkGroup">
+				</select>
+			</div>
+			<div class="col-md-2">
+				<label for="homeworkGroup"> 确认</label>
+				<button class="btn btn-primary" id="confirmGroup">确认发布对象</button>
 			</div>
 		</div>
-		<!--阅读题-->
-		<div class="tab-pane fade" id="reading">
+		<!--导航栏-->
+		<ul id="myTab1" class="nav nav-pills" style="margin-top: 20px">
+			<li class="active"><a href="#choose" data-toggle="tab">选择题</a></li>
+			<li><a href="#reading" data-toggle="tab">阅读题</a></li>
+			<li><a href="#cloze" data-toggle="tab">完形填空</a></li>
+			<li><a href="#essay" data-toggle="tab">作文</a></li>
+		</ul>
+		<!--导航页面-->
+		<div id="myTabContent1" class="tab-content">
+			<!--选择题-->
+			<div class="tab-pane fade in active" id="choose">
+				<div class="content">
+					<div class="chooseContent">
+						<form class="form-inline" id="choose" name="choose1">
+							<div class="form-group">
+								<label>题目1</label>
+								<textarea type="text" class="form-control form-choosemain"
+									id="chooseMain1">
+                            </textarea>
+							</div>
+							<div class="form-group" id="xuanxiang">
+								<label>选项</label>
+								<textarea type="text" class="form-control form-choosemain"
+									id="chooseSelect">
+                            </textarea>
+							</div>
+							<input class="btn btn-primary" id="analyzeChoose"
+								style="float: right" readonly="true" value="解析选项" />
+							<div class="clearfix"></div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											id="option1">
+										</span> <input type="text" class="form-control" id="optionAchoose1">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											id="option1">
+										</span> <input type="text" class="form-control" id="optionBchoose1">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											id="option1">
+										</span> <input type="text" class="form-control" id="optionCchoose1">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											id="option1" />
+										</span> <input type="text" class="form-control" id="optionDchoose1">
+									</div>
+								</div>
+							</div>
+							<hr />
+						</form>
+					</div>
+					<!--提交按钮-->
+					<div class="clearfix"></div>
+					<div class=" row col-lg-6">
+						<button class="btn-lg btn-primary" id="addChoose">继续添加选择题</button>
+						<button class="btn-lg btn-default">添加完毕</button>
+					</div>
+				</div>
+			</div>
+			<!--阅读题-->
+			<div class="tab-pane fade" id="reading">
 				<div class="content">
 					<div class="readingContent">
 						<form class="form-inline" name="reading1" id="reading1">
@@ -322,76 +323,95 @@
 					<!--两个按钮-->
 					<div class="clearfix"></div>
 					<div class=" row col-lg-10">
-						<button class="btn-lg btn-success" id="addReading" style="margin-left:200px">继续添加阅读题</button>
+						<button class="btn-lg btn-success" id="addReading"
+							style="margin-left: 200px">继续添加阅读题</button>
 						<button class="btn-lg btn-default">添加完毕</button>
 					</div>
 				</div>
 			</div>
-		<!--完形填空-->
-		<div class="tab-pane fade" id="cloze">
-			<div class="content">
-				<div class="clozeContent">
-					<form class="form-inline" name="cloze1" id="cloze1">
-						<div class="form-group">
-							<label>文章1</label>
-							<textarea type="text" class="form-control form-readingmain"
-								name="clozeMain" placeholder="请输入文章">
+			<!--完形填空-->
+			<div class="tab-pane fade" id="cloze">
+				<div class="content">
+					<div class="clozeContent">
+						<form class="form-inline" name="cloze1" id="cloze1">
+							<div class="form-group">
+								<label>文章1</label>
+								<textarea type="text" class="form-control form-readingmain"
+									name="clozeMain" placeholder="请输入文章">
                             </textarea>
-						</div>
-						<hr />
-						<div class="form-group">
-							<label>选项1</label>
-							<textarea type="text" class="form-control form-choosemain"
-								name="clozeSelect" placeholder="请输入选项">
+							</div>
+							<hr />
+							<div class="form-group">
+								<label>选项1</label>
+								<textarea type="text" class="form-control form-choosemain"
+									name="clozeSelect" placeholder="请输入选项">
                             </textarea>
-						</div>
-						<button class="btn btn-primary" style="float: right">解析选项</button>
-						<div class="clearfix"></div>
-						<!--选项-->
-						<div class="row">
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"> <input type="radio"
-										name="option3">
-									</span> <input type="text" class="form-control" name="optionAcloze">
+							</div>
+							<button class="btn btn-primary" style="float: right">解析选项</button>
+							<div class="clearfix"></div>
+							<!--选项-->
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option3">
+										</span> <input type="text" class="form-control" name="optionAcloze">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option3">
+										</span> <input type="text" class="form-control" name="optionBcloze">
+									</div>
 								</div>
 							</div>
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"> <input type="radio"
-										name="option3">
-									</span> <input type="text" class="form-control" name="optionBcloze">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option3">
+										</span> <input type="text" class="form-control" name="optionCcloze">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="input-group">
+										<span class="input-group-addon"> <input type="radio"
+											name="option3">
+										</span> <input type="text" class="form-control" name="optionDcloze">
+									</div>
 								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"> <input type="radio"
-										name="option3">
-									</span> <input type="text" class="form-control" name="optionCcloze">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="input-group">
-									<span class="input-group-addon"> <input type="radio"
-										name="option3">
-									</span> <input type="text" class="form-control" name="optionDcloze">
-								</div>
-							</div>
-						</div>
-						<hr />
-					</form>
+							<hr />
+						</form>
+					</div>
+					<div class="clearfix"></div>
+					<div class=" row col-lg-10">
+						<button class="btn-lg btn-primary" id="addClozeChoose">继续添加选择题</button>
+						<button class="btn-lg btn-success" id="addCloze">继续添加完形填空</button>
+						<button class="btn-lg btn-default">添加完毕</button>
+					</div>
 				</div>
-				<div class="clearfix"></div>
-				<div class=" row col-lg-10">
-					<button class="btn-lg btn-primary" id="addClozeChoose">继续添加选择题</button>
-					<button class="btn-lg btn-success" id="addCloze">继续添加完形填空</button>
-					<button class="btn-lg btn-default">添加完毕</button>
+			</div>
+			<div class="tab-pane fade" id="essay">
+				<div class="content">
+					<div class="essayContent">
+						<form class="form-inline" name="essay1" id="essay1">
+							<div class="form-group">
+								<label>作文</label>
+								<textarea type="text" class="form-control form-readingmain"
+									name="essayMain" placeholder="请输入题目">
+                                </textarea>
+							</div>
+							<hr />
+						</form>
+					</div>
+					<div class="row col-lg-10">
+						<button class="btn-lg btn-primary" style="margin-left: 300px">添加完毕</button>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="tab-pane fade" id="essay"></div>
 	</div>
 </div>
 <script src="../resources/js/jquery.min.js"></script>
@@ -446,7 +466,7 @@
 		newform.setAttribute("id", "reading" + reading);
 		var newarticle = article('reading', reading);
 		newform.appendChild(newarticle);
-		for(readingChoice=1;readingChoice<=4;readingChoice++){
+		for (readingChoice = 1; readingChoice <= 4; readingChoice++) {
 			var newmain = main('reading', readingChoice);
 			var newselect = select('reading');
 			var newbutton = button();
@@ -618,7 +638,7 @@
 				"b" : b,
 				"c" : c,
 				"d" : d,
-				"rightAnswer":rightAnswer,
+				"rightAnswer" : rightAnswer,
 				"format" : "json"
 			}, //参数值
 			type : "GET", //请求方式
