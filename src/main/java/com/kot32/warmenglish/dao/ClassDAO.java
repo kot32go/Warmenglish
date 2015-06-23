@@ -15,6 +15,7 @@ import org.springframework.stereotype.Repository;
 import com.kot32.warmenglish.domain.Class;
 import com.kot32.warmenglish.domain.Group;
 import com.kot32.warmenglish.domain.Message;
+import com.kot32.warmenglish.domain.Student;
 import com.kot32.warmenglish.domain.User;
 import com.kot32.warmenglish.util.HibernateUtil;
 
@@ -112,6 +113,14 @@ public class ClassDAO {
 			groups.addAll(query.list());
 		}
 		return groups;
+	}
+	
+	public List<Student> list_members(String clazz,String group){
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("from Student s where s.clazz=:clazz and s.group=:group");
+		query.setParameter("clazz", clazz);
+		query.setParameter("group", group);
+		return query.list();
 	}
 
 }

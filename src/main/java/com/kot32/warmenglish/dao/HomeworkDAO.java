@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kot32.warmenglish.domain.Class;
+import com.kot32.warmenglish.domain.EssayProblem;
 import com.kot32.warmenglish.domain.Group;
 import com.kot32.warmenglish.domain.Homework;
 import com.kot32.warmenglish.domain.ReadingProblem;
@@ -162,5 +163,17 @@ public class HomeworkDAO {
 		session.update(homework);
 
 	}
-
+	public void addEssay(String homework_uuid,  String content) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("from Homework h where h.uuid=:uuid");
+		query.setParameter("uuid", homework_uuid);
+		Homework homework = (Homework) query.list().get(0);
+		EssayProblem essayProblem = new EssayProblem(content, homework);
+		System.out.println(content);
+		session.save(essayProblem);
+		homework.getEssayProblems().add(essayProblem);
+		session.update(homework);
+	}
+	
 }

@@ -5,7 +5,7 @@
 function main(name,number){
     var newformgroup=document.createElement('div');
     newformgroup.setAttribute("class","form-group");
-    var str="<label>题目"+number+"</label><textarea type='text' class='form-control form-choosemain' id='chooseMain"+number+"' placeholder='请输入题干'></textarea>"
+    var str="<label>题目"+number+"</label><textarea type='text' class='form-control form-choosemain' id='chooseMain"+number+"'></textarea>"
     newformgroup.innerHTML = str;
     return newformgroup;
 }
@@ -14,7 +14,7 @@ function main(name,number){
 function select(name){
     var newformgroup=document.createElement('div');
     newformgroup.setAttribute("class","form-group");
-    var str="<label>选项</label><textarea type='text' class='form-control form-choosemain' id='chooseSelect' name='"+name+"Select' placeholder='请输入选项'></textarea>"
+    var str="<label>选项</label><textarea type='text' class='form-control form-choosemain' id='chooseSelect' name='"+name+"Select'></textarea>"
     newformgroup.innerHTML = str;
     return newformgroup;
 }
@@ -22,7 +22,7 @@ function select(name){
 function selectNumber(name,number){
     var newformgroup=document.createElement('div');
     newformgroup.setAttribute("class","form-group");
-    var str="<label>选项"+number+"</label><textarea type='text' class='form-control form-choosemain' name='"+name+"Select' placeholder='请输入选项'></textarea>"
+    var str="<label>选项"+number+"</label><textarea type='text' class='form-control form-choosemain' name='"+name+"Select'></textarea>"
     newformgroup.innerHTML = str;
     return newformgroup;
 }
@@ -30,7 +30,7 @@ function selectNumber(name,number){
 function article(name,number){
     var newformgroup=document.createElement('div');
     newformgroup.setAttribute("class","form-group");
-    var str="<label>题目"+number+"</label><textarea type='text' class='form-control form-readingmain' id='readingMain"+number+"' name='readingMain"+number+"' placeholder='请输入文章'></textarea>"
+    var str="<label>题目"+number+"</label><textarea type='text' class='form-control form-readingmain' id='readingMain"+number+"' name='readingMain"+number+"'></textarea>"
     newformgroup.innerHTML = str;
     return newformgroup;
 }

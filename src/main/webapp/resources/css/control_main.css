@@ -53,7 +53,7 @@ body {
 }
 .nav-sidebar {
     margin: 20px 20px;
-    font-size: 18px;
+    font-size: 16px;
 }
 .nav-sidebar > li > a {
     padding-right: 20px;
@@ -70,7 +70,7 @@ body {
 /* frame navigation */
 .myFrame{
     margin-left: 228px;
-    height: 655px;
+    height: 620px;
     border: none;
-    width: 86.1%;
+    width: 84.4%;
 }

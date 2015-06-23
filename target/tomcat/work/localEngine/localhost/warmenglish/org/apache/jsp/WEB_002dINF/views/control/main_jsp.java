@@ -79,8 +79,16 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t</div>\r\n");
       out.write("\t<div id=\"navbar\" class=\"navbar-collapse collapse\">\r\n");
       out.write("\t\t<ul class=\"nav navbar-nav\">\r\n");
-      out.write("\t\t\t<li><a role=\"button\"><span class=\"glyphicon glyphicon-home\"></span></a></li>\r\n");
-      out.write("\t\t\t<li><a role=\"button\"><span class=\"glyphicon glyphicon-user\"></span></a></li>\r\n");
+      out.write("\t\t\t<li><a role=\"button\" href=\"index\"><span class=\"glyphicon glyphicon-home\"></span></a></li>\r\n");
+      out.write("\t\t\t<li><a role=\"button\" id=\"personinfo\" data-toggle=\"popover\" data-container=\"body\" data-trigger=\"focus\" title=\"个人信息\" data-placement=\"bottom\" data-content=\"真实姓名：");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${logined_user.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("用户名：");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${logined_user.username}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("已建班级：");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${class_count}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("\">\r\n");
+      out.write("\t\t\t<span class=\"glyphicon glyphicon-user\"></span>\r\n");
+      out.write("\t\t\t</a></li>\r\n");
       out.write("\t\t\t<li><a role=\"button\"><span\r\n");
       out.write("\t\t\t\t\tclass=\"glyphicon glyphicon-info-sign\"></span></a></li>\r\n");
       out.write("\t\t</ul>\r\n");
@@ -125,6 +133,9 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t$(\"#\" + current).parent(\"li\").removeAttr(\"class\");\r\n");
       out.write("\t\t\t\t$(this).parent(\"li\").addClass(\"active\");\r\n");
       out.write("\t\t\t\tcurrent = $(this).attr(\"id\");\r\n");
+      out.write("\t\t\t})\r\n");
+      out.write("\t\t\t$(\".glyphicon-user\").click(function(){\r\n");
+      out.write("\t\t\t\t$('#personinfo').popover('toggle');\r\n");
       out.write("\t\t\t})\r\n");
       out.write("\t\t\t$(\"#addClass\").click(function() {\r\n");
       out.write("\t\t\t\t$(\".myFrame\").attr(\"src\", \"../control/add_class\");\r\n");

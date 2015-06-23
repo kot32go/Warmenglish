@@ -50,5 +50,28 @@ public class HomeworkService {
 		}
 		return isSuccess;
 	}
-	
+//	@Transactional
+//	public boolean addCloze(String homework_uuid,String content,HttpServletRequest req) {
+//		// TODO Auto-generated method stub
+//		boolean isSuccess=true;
+//		try{
+//			HomeworkDAO.addCloze(homework_uuid,content,req);
+//		}catch(Exception e){
+//			e.printStackTrace();
+//			isSuccess=false;
+//		}
+//		return isSuccess;
+//	}
+	@Transactional
+	public boolean addEssay(String homework_uuid,String content) {
+		// TODO Auto-generated method stub
+		boolean isSuccess=true;
+		try{
+			HomeworkDAO.addEssay(homework_uuid,content);
+		}catch(Exception e){
+			e.printStackTrace();
+			isSuccess=false;
+		}
+		return isSuccess;
+	}
 }

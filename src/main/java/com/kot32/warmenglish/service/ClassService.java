@@ -12,6 +12,7 @@ import com.kot32.warmenglish.dao.ClassDAO;
 import com.kot32.warmenglish.domain.Class;
 import com.kot32.warmenglish.domain.Group;
 import com.kot32.warmenglish.domain.Message;
+import com.kot32.warmenglish.domain.Student;
 import com.kot32.warmenglish.domain.User;
 
 @Service
@@ -47,5 +48,9 @@ public class ClassService {
 	@Transactional
 	public List<Group> listAllGroup(User teacher){
 		return groupDAO.listAllGroup(teacher);
+	}
+	@Transactional
+	public List<Student> list_members(String clazz,String group){
+		return groupDAO.list_members(clazz,group);
 	}
 }

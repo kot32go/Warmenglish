@@ -31,7 +31,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a role="button"><span class="glyphicon glyphicon-home"></span></a></li>
-                <li><a role="button"><span class="glyphicon glyphicon-user"></span></a></li>
+                <li><a role="button" id="personinfo" data-toggle="popover" data-container="body" data-trigger="focus" title="个人信息" data-placement="bottom" data-content="真实姓名：${logined_user.name}用户名：${logined_user.username}">
                 <li><a role="button"><span class="glyphicon glyphicon-info-sign"></span></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -69,6 +69,15 @@
 ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="../resources/js/jquery.min.js"></script>
+	<script>
+	$(".glyphicon-user").click(function(){
+		$(document).ready(function(){
+			$(".glyphicon-user").click(function(){
+				$('#personinfo').popover('toggle');
+			})
+		})
+	})
+	</script>
 	<script src="../resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -16,6 +16,7 @@
 		<mapping class="com.kot32.warmenglish.domain.Grade" />
 		<mapping class="com.kot32.warmenglish.domain.Message" />
 		<mapping class="com.kot32.warmenglish.domain.ReadingProblem" />
+		<mapping class="com.kot32.warmenglish.domain.EssayProblem"/>
 	</session-factory>
 	
 </hibernate-configuration>

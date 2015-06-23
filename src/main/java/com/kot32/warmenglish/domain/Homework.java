@@ -33,6 +33,9 @@ public class Homework {
 	// 阅读题
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "homework", cascade = { CascadeType.ALL })
 	private Set<ReadingProblem> readingProblems = new HashSet<ReadingProblem>();
+	// 作文
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "homework", cascade = { CascadeType.ALL })
+	private Set<EssayProblem> essayProblems = new HashSet<EssayProblem>();
 	// 学生的答案
 	private String student_answer;
 
@@ -121,6 +124,14 @@ public class Homework {
 		this.group = group;
 		this.date = date;
 		this.uuid = uuid;
+	}
+	
+	public Set<EssayProblem> getEssayProblems() {
+		return essayProblems;
+	}
+
+	public void setEssayProblems(Set<EssayProblem> essayProblems) {
+		this.essayProblems = essayProblems;
 	}
 
 }

@@ -81,5 +81,28 @@ public class HomeWorkController {
 		
 		return mv;
 	}
+
+//	@RequestMapping(value = "/addcloze", method = RequestMethod.GET)
+//	public ModelAndView addcloze(String homework_uuid,String content,HttpServletRequest req){
+//		ModelAndView mv = new ModelAndView();
+//		if(homeworkService.addCloze(homework_uuid,content,req)){
+//			mv.addObject("status", "success");
+//		}else{
+//			mv.addObject("status", "error");
+//		}
+//		
+//		return mv;
+//	}
 	
+	@RequestMapping(value = "/addessay", method = RequestMethod.GET)
+	public ModelAndView addessay(String homework_uuid,String content){
+		ModelAndView mv = new ModelAndView();
+		if(homeworkService.addEssay(homework_uuid,content)){
+			mv.addObject("status", "success");
+		}else{
+			mv.addObject("status", "error");
+		}
+		
+		return mv;
+	}
 }

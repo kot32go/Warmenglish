@@ -76,37 +76,37 @@
             <tbody>
             <c:forEach items="${groups}" var="group">
 						<tr class="main">
-							<td>${group.clazz.name}</td>
-							<td>${group.name}</td>
+							<td value="${group.clazz}" id="group_class">${group.clazz.name}</td>
+							<td value="${group.id}" id="group_id">${group.name}</td>
 							<td>${group.tips}</td>
 							<td style="padding: 3px 0 0 0">
 								<button class="actions btn btn-default btn-primary">编辑</button>
                     			<button class="actions btn btn-default btn-danger">删除</button>
-                    			<button class="actions btn btn-default btn-info">管理成员</button>
+                    			<button class="actions btn btn-default btn-info" id="listMember">管理成员</button>
 							</td>
 						</tr>
 						<tr class="child">
 							<td colspan="4">
 								<div class="content">
 									<p>小组成员：</p>
-                        <table class="table ta">
-                            <tr>
-                                <td>王柯</td>
-                                <td>关艺竹</td>
-                                <td>刘巍</td>
-                                <td>张云洁</td>
-                                <td>范宁</td>
-                                <td>第六名</td>
-                            </tr>
-                            <tr>
-                                <td>许佳清</td>
-                                <td>范宁</td>
-                            </tr>
-                        </table>
-							<div class="member">
-								<a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">添加成员</a>
-								<a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">删除成员</a>
-							</div>
+		                        	<table class="table">
+			                            <tr>
+			                                <td>王柯</td>
+			                                <td>关艺竹</td>
+			                                <td>刘巍</td>
+			                                <td>张云洁</td>
+			                                <td>范宁</td>
+			                                <td>第六名</td>
+			                            </tr>
+			                            <tr>
+			                                <td>许佳清</td>
+			                                <td>范宁</td>
+			                            </tr>
+		                        	</table>
+									<div class="member">
+										<a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">添加成员</a>
+										<a  data-target="#deleteMember" data-toggle='modal' class="btn btn-sm btn-danger">删除成员</a>
+									</div>
 								</div>
 							</td>
 						</tr>
@@ -117,6 +117,8 @@
 </div>
 <script src="../resources/js/jquery.min.js"></script>
 <script>
+	var clazz;
+	var group;
     $('table').on('mouseenter', 'tr', function(){
         $(this).addClass('hover');
         $('.actions.btn-info').click(function() {
@@ -136,6 +138,34 @@
     $('table').on('mouseleave', 'tr', function(){
         $(this).removeClass('hover');
     });
+    $('#listMember').click(function(){
+    	clazz=$(this).parent().child("#group_class").val();
+    	group=$(this).parent().child("#group_id").val();
+    	listMember();
+    })
+    function listMember() {
+		$.ajax({
+			url : "../set_group/list_members", //请求的url地址
+			dataType : "json", //返回格式为json
+			async : true, //请求是否异步
+			data : {
+				"class_id" : clazz
+				"group_id" : group
+				"format" : "json"
+			}, //参数值
+			type : "GET", //请求方式
+			success : function(msg) {
+				$.each(msg.students, function(index, item) {
+					$(".child .content .table tr").append(
+							"<td>" + item.name+"</option>");
+				})
+
+			},
+			error : function() {
+				alert("error")
+			}
+		});
+	}
 </script>
 <script src="../resources/bootstrap/js/bootstrap.min.js"></script>
 </body>
