@@ -97,12 +97,6 @@ public class Homework {
 		this.uuid = uuid;
 	}
 
-	@Override
-	public String toString() {
-		return "Homework [id=" + id + ", des=" + des + ", group=" + group
-				+ ", date=" + date + ", selectProblems=" + selectProblems
-				+ ", student_answer=" + student_answer + ", uuid=" + uuid + "]";
-	}
 
 	public Homework() {
 		// TODO Auto-generated constructor stub

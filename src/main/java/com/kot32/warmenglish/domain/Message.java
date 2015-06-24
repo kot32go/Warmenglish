@@ -62,12 +62,7 @@ public class Message {
 	public void setClazz(Class clazz) {
 		this.clazz = clazz;
 	}
-	@Override
-	public String toString() {
-		return "Message [id=" + id + ", title=" + title + ", content="
-				+ content + ", date=" + date + ", user=" + user + ", clazz="
-				+ clazz + "]";
-	}
+
 	
 	public Message() {
 		// TODO Auto-generated constructor stub

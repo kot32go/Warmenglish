@@ -77,10 +77,6 @@ public class User {
 		this.classes = classes;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", username=" + username
-				+ ", password=" + password + ", classes=" + classes + "]";
-	}
+	
 
 }

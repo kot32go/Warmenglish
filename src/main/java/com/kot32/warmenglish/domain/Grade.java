@@ -41,11 +41,6 @@ public class Grade {
 		this.student = student;
 	}
 
-	@Override
-	public String toString() {
-		return "Grade [id=" + id + ", selectGrade=" + selectGrade
-				+ ", student=" + student + "]";
-	}
 	
 	
 }

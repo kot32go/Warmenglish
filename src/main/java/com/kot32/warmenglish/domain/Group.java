@@ -72,12 +72,6 @@ public class Group {
 		this.homeworks = homeworks;
 	}
 
-	@Override
-	public String toString() {
-		return "Group [id=" + id + ", name=" + name + ", tips=" + tips
-				+ ", clazz=" + clazz + ", students=" + students
-				+ ", homeworks=" + homeworks + "]";
-	}
 
 	
 	public String getTips() {

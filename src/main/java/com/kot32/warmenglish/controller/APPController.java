@@ -1,5 +1,11 @@
 package com.kot32.warmenglish.controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kot32.warmenglish.domain.Student;
+import com.kot32.warmenglish.domain.appPojo.Homework;
+import com.kot32.warmenglish.domain.appPojo.SelectProblem;
 import com.kot32.warmenglish.exception.UserException;
 import com.kot32.warmenglish.service.APPService;
 
@@ -15,6 +23,7 @@ import com.kot32.warmenglish.service.APPService;
 public class APPController {
 	@Autowired
 	APPService service;
+
 	// 注册
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public ModelAndView register(String username, String password) {
@@ -54,7 +63,8 @@ public class APPController {
 		} else {
 			mv.addObject("status", "success");
 		}
-		com.kot32.warmenglish.domain.appPojo.Student student2 = com.kot32.warmenglish.domain.appPojo.Student.copyFromStudent(student);
+		com.kot32.warmenglish.domain.appPojo.Student student2 = com.kot32.warmenglish.domain.appPojo.Student
+				.copyFromStudent(student);
 		mv.addObject("student", student2);
 		return mv;
 	}
@@ -81,6 +91,25 @@ public class APPController {
 		} else {
 			mv.addObject("result", "error");
 		}
+		return mv;
+	}
+
+	@RequestMapping(value = "/list_homework", method = RequestMethod.GET)
+	public ModelAndView list_groups(String student_id,HttpServletResponse response)
+			throws IOException {
+		ModelAndView mv = new ModelAndView();
+		ArrayList<Homework> homeworks = service.listHomeworks(student_id);
+		mv.addObject("homeworks", homeworks);
+		return mv;
+	}
+	
+	//根据给出的homework uuid列出选择题
+	@RequestMapping(value = "/list_select", method = RequestMethod.GET)
+	public ModelAndView list_select(String uuid,HttpServletResponse response)
+			throws IOException {
+		ModelAndView mv = new ModelAndView();
+		List<SelectProblem> selectProblems = service.listSelects(uuid);
+		mv.addObject("selects", selectProblems);
 		return mv;
 	}
 

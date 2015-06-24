@@ -33,13 +33,7 @@ public class Class {
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "clazz", cascade = { CascadeType.ALL })
 	private Set<Message> messages = new HashSet<Message>();
 
-	@Override
-	public String toString() {
-		return "Class [id=" + id + ", name=" + name + ", uuid=" + uuid
-				+ ", user=" + user + ", des=" + des + ", groups=" + groups
-				+ ", messages=" + messages + "]";
-	}
-
+	
 	public int getId() {
 		return id;
 	}

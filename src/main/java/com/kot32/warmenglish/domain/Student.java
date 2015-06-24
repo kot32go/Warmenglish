@@ -105,12 +105,4 @@ public class Student {
 		this.adult_email = adult_email;
 	}
 
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", username="
-				+ username + ", password=" + password + ", adult_email="
-				+ adult_email + ", clazz=" + clazz + ", user=" + user
-				+ ", group=" + group + ", homeworks=" + homeworks + "]";
-	}
-
 }
