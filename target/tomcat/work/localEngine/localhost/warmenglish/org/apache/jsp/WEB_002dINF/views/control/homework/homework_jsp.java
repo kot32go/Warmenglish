@@ -411,6 +411,7 @@ public final class homework_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t});\r\n");
       out.write("\t$(\"#homeworkGroup\").change(function() {\r\n");
       out.write("\t\tgroup_id = $(this).val();\r\n");
+      out.write("\t\talert(group_id);\r\n");
       out.write("\t});\r\n");
       out.write("\t$(\"#confirmGroup\").click(function() {\r\n");
       out.write("\t\tgroup_id = $(\"#homeworkGroup\").val()\r\n");

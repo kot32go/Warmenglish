@@ -123,14 +123,15 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("        <table class=\"table table-striped\">\r\n");
       out.write("            <thead>\r\n");
       out.write("            <tr>\r\n");
-      out.write("            \t<th class=\"col-md-3\">班级名称</th>\r\n");
-      out.write("                <th class=\"col-md-3\">小组名称</th>\r\n");
+      out.write("            \t<th class=\"col-md-2\">班级名称</th>\r\n");
+      out.write("            \t<th class=\"col-md-2\">小组id</th>\r\n");
+      out.write("                <th class=\"col-md-2\">小组名称</th>\r\n");
       out.write("                <th class=\"col-md-3\">备注</th>\r\n");
       out.write("                <th class=\"col-md-3\"></th>\r\n");
       out.write("            </tr>\r\n");
       out.write("            </thead>\r\n");
       out.write("            <tbody>\r\n");
-      out.write("            ");
+      out.write("            \t");
       if (_jspx_meth_c_005fforEach_005f1(_jspx_page_context))
         return;
       out.write("\r\n");
@@ -140,7 +141,6 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("</div>\r\n");
       out.write("<script src=\"../resources/js/jquery.min.js\"></script>\r\n");
       out.write("<script>\r\n");
-      out.write("\tvar clazz;\r\n");
       out.write("\tvar group;\r\n");
       out.write("    $('table').on('mouseenter', 'tr', function(){\r\n");
       out.write("        $(this).addClass('hover');\r\n");
@@ -161,26 +161,30 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("    $('table').on('mouseleave', 'tr', function(){\r\n");
       out.write("        $(this).removeClass('hover');\r\n");
       out.write("    });\r\n");
-      out.write("    $('#listMember').click(function(){\r\n");
-      out.write("    \tclazz=$(this).parent().child(\"#group_class\").val();\r\n");
-      out.write("    \tgroup=$(this).parent().child(\"#group_id\").val();\r\n");
+      out.write("    $('table').on('click', '#listMember', function(e) {\r\n");
+      out.write("    \tgroup=$(this).find(\"#group_id\").text();\r\n");
+      out.write("    \talert(group);\r\n");
       out.write("    \tlistMember();\r\n");
+      out.write("    \tevent.cancelBubble();\r\n");
       out.write("    })\r\n");
       out.write("    function listMember() {\r\n");
+      out.write("    //\talert(group);\r\n");
       out.write("\t\t$.ajax({\r\n");
       out.write("\t\t\turl : \"../set_group/list_members\", //请求的url地址\r\n");
       out.write("\t\t\tdataType : \"json\", //返回格式为json\r\n");
       out.write("\t\t\tasync : true, //请求是否异步\r\n");
       out.write("\t\t\tdata : {\r\n");
-      out.write("\t\t\t\t\"class_id\" : clazz\r\n");
-      out.write("\t\t\t\t\"group_id\" : group\r\n");
+      out.write("\t\t\t\t\"group_id\" : group,\r\n");
       out.write("\t\t\t\t\"format\" : \"json\"\r\n");
       out.write("\t\t\t}, //参数值\r\n");
       out.write("\t\t\ttype : \"GET\", //请求方式\r\n");
       out.write("\t\t\tsuccess : function(msg) {\r\n");
+      out.write("\t\t\t\talert(\"success\");\r\n");
       out.write("\t\t\t\t$.each(msg.students, function(index, item) {\r\n");
-      out.write("\t\t\t\t\t$(\".child .content .table tr\").append(\r\n");
-      out.write("\t\t\t\t\t\t\t\"<td>\" + item.name+\"</option>\");\r\n");
+      out.write("\t\t\t\t\talert(item.name);\r\n");
+      out.write("\t\t\t\t\t//$(\".table");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write(" tr\").append(\"<td>\" + item.name+\"</td>\")\r\n");
       out.write("\t\t\t\t})\r\n");
       out.write("\r\n");
       out.write("\t\t\t},\r\n");
@@ -258,9 +262,9 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f1.setParent(null);
-    // /WEB-INF/views/control/class/set_group.jsp(77,12) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f1.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_group.jsp(77,12) '${groups}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${groups}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/views/control/class/set_group.jsp(77,12) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/control/class/set_group.jsp(78,13) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f1.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_group.jsp(78,13) '${groups}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${groups}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/views/control/class/set_group.jsp(78,13) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f1.setVar("group");
     int[] _jspx_push_body_count_c_005fforEach_005f1 = new int[] { 0 };
     try {
@@ -269,14 +273,13 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
         do {
           out.write("\r\n");
           out.write("\t\t\t\t\t\t<tr class=\"main\">\r\n");
-          out.write("\t\t\t\t\t\t\t<td value=\"");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.clazz}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("\" id=\"group_class\">");
+          out.write("\t\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.clazz.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\r\n");
-          out.write("\t\t\t\t\t\t\t<td value=\"");
+          out.write("\t\t\t\t\t\t\t<td id=\"group_id\">");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("\" id=\"group_id\">");
+          out.write("</td>\r\n");
+          out.write("\t\t\t\t\t\t\t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\r\n");
           out.write("\t\t\t\t\t\t\t<td>");
@@ -293,18 +296,7 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
           out.write("\t\t\t\t\t\t\t\t<div class=\"content\">\r\n");
           out.write("\t\t\t\t\t\t\t\t\t<p>小组成员：</p>\r\n");
           out.write("\t\t                        \t<table class=\"table\">\r\n");
-          out.write("\t\t\t                            <tr>\r\n");
-          out.write("\t\t\t                                <td>王柯</td>\r\n");
-          out.write("\t\t\t                                <td>关艺竹</td>\r\n");
-          out.write("\t\t\t                                <td>刘巍</td>\r\n");
-          out.write("\t\t\t                                <td>张云洁</td>\r\n");
-          out.write("\t\t\t                                <td>范宁</td>\r\n");
-          out.write("\t\t\t                                <td>第六名</td>\r\n");
-          out.write("\t\t\t                            </tr>\r\n");
-          out.write("\t\t\t                            <tr>\r\n");
-          out.write("\t\t\t                                <td>许佳清</td>\r\n");
-          out.write("\t\t\t                                <td>范宁</td>\r\n");
-          out.write("\t\t\t                            </tr>\r\n");
+          out.write("\t\t\t                            <tr></tr>\r\n");
           out.write("\t\t                        \t</table>\r\n");
           out.write("\t\t\t\t\t\t\t\t\t<div class=\"member\">\r\n");
           out.write("\t\t\t\t\t\t\t\t\t\t<a  data-target=\"#addMember\" data-toggle='modal' class=\"btn btn-sm btn-primary\">添加成员</a>\r\n");
@@ -313,7 +305,7 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
           out.write("\t\t\t\t\t\t\t\t</div>\r\n");
           out.write("\t\t\t\t\t\t\t</td>\r\n");
           out.write("\t\t\t\t\t\t</tr>\r\n");
-          out.write("\t\t\t\t\t");
+          out.write("\t\t\t\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;

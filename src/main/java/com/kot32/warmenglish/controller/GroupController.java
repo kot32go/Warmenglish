@@ -19,7 +19,7 @@ public class GroupController {
 	ClassService groupService;
 	
 	@RequestMapping(value = "/list_members", method = RequestMethod.GET)
-	public void list_members(Model model,String clazz,String group){
-		model.addAttribute("students", groupService.list_members(clazz,group));
+	public void list_members(Model model,Integer group){
+		model.addAttribute("students", groupService.list_members(group));
 	}
 }

@@ -67,17 +67,19 @@
         <table class="table table-striped">
             <thead>
             <tr>
-            	<th class="col-md-3">班级名称</th>
-                <th class="col-md-3">小组名称</th>
+            	<th class="col-md-2">班级名称</th>
+            	<th class="col-md-2">小组id</th>
+                <th class="col-md-2">小组名称</th>
                 <th class="col-md-3">备注</th>
                 <th class="col-md-3"></th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${groups}" var="group">
+            	<c:forEach items="${groups}" var="group">
 						<tr class="main">
-							<td value="${group.clazz}" id="group_class">${group.clazz.name}</td>
-							<td value="${group.id}" id="group_id">${group.name}</td>
+							<td>${group.clazz.name}</td>
+							<td id="group_id">${group.id}</td>
+							<td>${group.name}</td>
 							<td>${group.tips}</td>
 							<td style="padding: 3px 0 0 0">
 								<button class="actions btn btn-default btn-primary">编辑</button>
@@ -90,18 +92,7 @@
 								<div class="content">
 									<p>小组成员：</p>
 		                        	<table class="table">
-			                            <tr>
-			                                <td>王柯</td>
-			                                <td>关艺竹</td>
-			                                <td>刘巍</td>
-			                                <td>张云洁</td>
-			                                <td>范宁</td>
-			                                <td>第六名</td>
-			                            </tr>
-			                            <tr>
-			                                <td>许佳清</td>
-			                                <td>范宁</td>
-			                            </tr>
+			                            <tr></tr>
 		                        	</table>
 									<div class="member">
 										<a  data-target="#addMember" data-toggle='modal' class="btn btn-sm btn-primary">添加成员</a>
@@ -110,14 +101,13 @@
 								</div>
 							</td>
 						</tr>
-					</c:forEach>
+				</c:forEach>
             </tbody>
         </table>
     </div>
 </div>
 <script src="../resources/js/jquery.min.js"></script>
 <script>
-	var clazz;
 	var group;
     $('table').on('mouseenter', 'tr', function(){
         $(this).addClass('hover');
@@ -138,26 +128,28 @@
     $('table').on('mouseleave', 'tr', function(){
         $(this).removeClass('hover');
     });
-    $('#listMember').click(function(){
-    	clazz=$(this).parent().child("#group_class").val();
-    	group=$(this).parent().child("#group_id").val();
+    $('table').on('click', '#listMember', function(e) {
+    	group=$(this).find("#group_id").text();
+    	alert(group);
     	listMember();
+    	event.cancelBubble();
     })
     function listMember() {
+    //	alert(group);
 		$.ajax({
 			url : "../set_group/list_members", //请求的url地址
 			dataType : "json", //返回格式为json
 			async : true, //请求是否异步
 			data : {
-				"class_id" : clazz
-				"group_id" : group
+				"group_id" : group,
 				"format" : "json"
 			}, //参数值
 			type : "GET", //请求方式
 			success : function(msg) {
+				alert("success");
 				$.each(msg.students, function(index, item) {
-					$(".child .content .table tr").append(
-							"<td>" + item.name+"</option>");
+					alert(item.name);
+					//$(".table${group.id} tr").append("<td>" + item.name+"</td>")
 				})
 
 			},
