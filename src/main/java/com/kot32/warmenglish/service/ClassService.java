@@ -50,7 +50,7 @@ public class ClassService {
 		return groupDAO.listAllGroup(teacher);
 	}
 	@Transactional
-	public List<Student> list_members(Integer group){
-		return groupDAO.list_members(group);
+	public List<Student> list_members(int group_id){
+		return groupDAO.list_members(group_id);
 	}
 }

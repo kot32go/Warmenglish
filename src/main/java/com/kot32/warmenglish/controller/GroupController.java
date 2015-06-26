@@ -16,10 +16,10 @@ import com.kot32.warmenglish.service.ClassService;
 @RequestMapping("/set_group")
 public class GroupController {
 	@Autowired
-	ClassService groupService;
+	ClassService classService;
 	
 	@RequestMapping(value = "/list_members", method = RequestMethod.GET)
-	public void list_members(Model model,Integer group){
-		model.addAttribute("students", groupService.list_members(group));
+	public void list_members(Model model,int group_id){
+		model.addAttribute("students", classService.list_members(group_id));
 	}
 }

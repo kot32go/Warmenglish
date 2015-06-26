@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name = "t_student")
 public class Student {
@@ -23,10 +25,13 @@ public class Student {
 	private String username;
 	private String password;
 	private String adult_email;
+	@JsonIgnore
 	@ManyToOne
 	private Class clazz;
+	@JsonIgnore
 	@ManyToOne
 	private User user;
+	@JsonIgnore
 	@ManyToOne
 	private Group group;
 	// 学生有很多次成绩

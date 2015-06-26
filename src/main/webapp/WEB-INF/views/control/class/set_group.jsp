@@ -13,6 +13,7 @@
 <title>管理分组信息</title>
 </head>
 <body>
+<!-- 两个模态框 -->
 <div class="modal fade" id="addMember" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -88,10 +89,10 @@
 							</td>
 						</tr>
 						<tr class="child">
-							<td colspan="4">
+							<td colspan="5">
 								<div class="content">
 									<p>小组成员：</p>
-		                        	<table class="table">
+		                        	<table class="table${group.id}">
 			                            <tr></tr>
 		                        	</table>
 									<div class="member">
@@ -129,7 +130,7 @@
         $(this).removeClass('hover');
     });
     $('table').on('click', '#listMember', function(e) {
-    	group=$(this).find("#group_id").text();
+    	group=$(this).parents(".main").children("td").eq(1).text();
     	alert(group);
     	listMember();
     	event.cancelBubble();
@@ -146,10 +147,9 @@
 			}, //参数值
 			type : "GET", //请求方式
 			success : function(msg) {
-				alert("success");
 				$.each(msg.students, function(index, item) {
-					alert(item.name);
-					//$(".table${group.id} tr").append("<td>" + item.name+"</td>")
+					alert("到这了");
+					$(".table"+group+" tr").append("<td>" + item.name+"</td>")
 				})
 
 			},

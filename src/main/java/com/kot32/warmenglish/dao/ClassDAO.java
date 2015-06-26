@@ -115,10 +115,13 @@ public class ClassDAO {
 		return groups;
 	}
 	
-	public List<Student> list_members(Integer group){
+	public List<Student> list_members(int group_id){
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from Student s where s.group=:group");
-		query.setParameter("group", group);
+		Query q=session.createQuery("from Group p where p.id=:id");
+		q.setParameter("id", group_id);
+		Group g=(Group) q.list().get(0);
+		query.setParameter("group", g);
 		return query.list();
 	}
 

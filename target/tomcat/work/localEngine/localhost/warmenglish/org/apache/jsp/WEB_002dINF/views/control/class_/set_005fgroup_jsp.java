@@ -68,6 +68,7 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("<title>管理分组信息</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
+      out.write("<!-- 两个模态框 -->\r\n");
       out.write("<div class=\"modal fade\" id=\"addMember\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n");
       out.write("    <div class=\"modal-dialog\">\r\n");
       out.write("        <div class=\"modal-content\">\r\n");
@@ -162,7 +163,7 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("        $(this).removeClass('hover');\r\n");
       out.write("    });\r\n");
       out.write("    $('table').on('click', '#listMember', function(e) {\r\n");
-      out.write("    \tgroup=$(this).find(\"#group_id\").text();\r\n");
+      out.write("    \tgroup=$(this).parents(\".main\").children(\"td\").eq(1).text();\r\n");
       out.write("    \talert(group);\r\n");
       out.write("    \tlistMember();\r\n");
       out.write("    \tevent.cancelBubble();\r\n");
@@ -179,12 +180,9 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t}, //参数值\r\n");
       out.write("\t\t\ttype : \"GET\", //请求方式\r\n");
       out.write("\t\t\tsuccess : function(msg) {\r\n");
-      out.write("\t\t\t\talert(\"success\");\r\n");
       out.write("\t\t\t\t$.each(msg.students, function(index, item) {\r\n");
-      out.write("\t\t\t\t\talert(item.name);\r\n");
-      out.write("\t\t\t\t\t//$(\".table");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write(" tr\").append(\"<td>\" + item.name+\"</td>\")\r\n");
+      out.write("\t\t\t\t\talert(\"到这了\");\r\n");
+      out.write("\t\t\t\t\t$(\".table\"+group+\" tr\").append(\"<td>\" + item.name+\"</td>\")\r\n");
       out.write("\t\t\t\t})\r\n");
       out.write("\r\n");
       out.write("\t\t\t},\r\n");
@@ -218,9 +216,9 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/views/control/class/set_group.jsp(58,21) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_group.jsp(58,21) '${classes}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${classes}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/views/control/class/set_group.jsp(58,21) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/control/class/set_group.jsp(59,21) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_group.jsp(59,21) '${classes}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${classes}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/views/control/class/set_group.jsp(59,21) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("class");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -262,9 +260,9 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f1.setParent(null);
-    // /WEB-INF/views/control/class/set_group.jsp(78,13) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f1.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_group.jsp(78,13) '${groups}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${groups}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/views/control/class/set_group.jsp(78,13) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/control/class/set_group.jsp(79,13) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f1.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/class/set_group.jsp(79,13) '${groups}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${groups}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/views/control/class/set_group.jsp(79,13) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f1.setVar("group");
     int[] _jspx_push_body_count_c_005fforEach_005f1 = new int[] { 0 };
     try {
@@ -292,10 +290,12 @@ public final class set_005fgroup_jsp extends org.apache.jasper.runtime.HttpJspBa
           out.write("\t\t\t\t\t\t\t</td>\r\n");
           out.write("\t\t\t\t\t\t</tr>\r\n");
           out.write("\t\t\t\t\t\t<tr class=\"child\">\r\n");
-          out.write("\t\t\t\t\t\t\t<td colspan=\"4\">\r\n");
+          out.write("\t\t\t\t\t\t\t<td colspan=\"5\">\r\n");
           out.write("\t\t\t\t\t\t\t\t<div class=\"content\">\r\n");
           out.write("\t\t\t\t\t\t\t\t\t<p>小组成员：</p>\r\n");
-          out.write("\t\t                        \t<table class=\"table\">\r\n");
+          out.write("\t\t                        \t<table class=\"table");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${group.id}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("\">\r\n");
           out.write("\t\t\t                            <tr></tr>\r\n");
           out.write("\t\t                        \t</table>\r\n");
           out.write("\t\t\t\t\t\t\t\t\t<div class=\"member\">\r\n");
