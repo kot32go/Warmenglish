@@ -13,10 +13,14 @@ public class Grade {
 	@GeneratedValue
 	private int id;
 	private float selectGrade;
-	
+	private float readingGrade;
+	private float clozeGrade;
+	private float essayGrade;
 	@ManyToOne
 	private Student student;
-
+	@ManyToOne
+	private Homework homework;
+	
 	public int getId() {
 		return id;
 	}
@@ -40,6 +44,39 @@ public class Grade {
 	public void setStudent(Student student) {
 		this.student = student;
 	}
+
+	public float getReadingGrade() {
+		return readingGrade;
+	}
+
+	public void setReadingGrade(float readingGrade) {
+		this.readingGrade = readingGrade;
+	}
+
+	public float getClozeGrade() {
+		return clozeGrade;
+	}
+
+	public void setClozeGrade(float clozeGrade) {
+		this.clozeGrade = clozeGrade;
+	}
+
+	public float getEssayGrade() {
+		return essayGrade;
+	}
+
+	public void setEssayGrade(float essayGrade) {
+		this.essayGrade = essayGrade;
+	}
+
+	public Homework getHomework() {
+		return homework;
+	}
+
+	public void setHomework(Homework homework) {
+		this.homework = homework;
+	}
+	
 
 	
 	

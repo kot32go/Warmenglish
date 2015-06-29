@@ -1,6 +1,8 @@
 package com.kot32.warmenglish.controller;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +12,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.kot32.warmenglish.dao.MessageDAO;
 import com.kot32.warmenglish.domain.Class;
+import com.kot32.warmenglish.domain.EssayAnswer;
+import com.kot32.warmenglish.domain.Grade;
 import com.kot32.warmenglish.domain.Group;
+import com.kot32.warmenglish.domain.Homework;
 import com.kot32.warmenglish.domain.User;
 import com.kot32.warmenglish.exception.ClassException;
 import com.kot32.warmenglish.service.ClassService;
@@ -31,7 +37,8 @@ public class MainController {
 	ClassService classService;
 	@Autowired
 	MessageService messageService;
-
+	@Autowired
+	HomeworkService homeworkService;
 	private User logined_user;
 
 	// 跳转到主页
@@ -153,7 +160,17 @@ public class MainController {
 	// 跳转到成绩页面
 	@RequestMapping(value = "/grade", method = RequestMethod.GET)
 	public String point(Model model) {
-		model.addAttribute("classes",  classService.listClass(logined_user));
+		model.addAttribute("classes", classService.listClass(logined_user));
+		return "/control/homework/grade";
+	}
+
+	// 跳转到成绩页面并列出小组的成绩
+	@RequestMapping(value = "/grade", method = RequestMethod.POST)
+	public String grade(Model model, String homework_uuid) {
+		// 因为homework的id对应唯一的这次作业的小组
+		model.addAttribute("classes", classService.listClass(logined_user));
+		List<Grade> grades=homeworkService.listGrades(homework_uuid);
+		model.addAttribute("grades", grades);
 		return "/control/homework/grade";
 	}
 
@@ -167,13 +184,25 @@ public class MainController {
 	// 跳转到打分页面
 	@RequestMapping(value = "/mark", method = RequestMethod.GET)
 	public String mark(Model model) {
+		model.addAttribute("classes", classService.listClass(logined_user));
+		return "/control/homework/mark";
+	}
+
+	// 跳转到打分页面并列出所有作文列表
+	@RequestMapping(value = "/mark", method = RequestMethod.POST)
+	public String list_homeworks(Model model, String homework_uuid) {
+		ModelAndView mv = new ModelAndView();
+		List<EssayAnswer> essayAnswers = homeworkService
+				.listEssayAnswers(homework_uuid);
+		model.addAttribute("essayanswers", essayAnswers);
+		model.addAttribute("classes", classService.listClass(logined_user));
 		return "/control/homework/mark";
 	}
 
 	// 跳转到控制面板
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String jump(Model model,String type) {
-		model.addAttribute("type", "../control/"+type);
+	public String jump(Model model, String type) {
+		model.addAttribute("type", "../control/" + type);
 		return "/control/main";
 	}
 }

@@ -24,6 +24,9 @@ table tr.hover .actions{
     display: inline-block;
     width: 200px;
 }
+.row .col-md-6 .input-group{
+    margin-left: 80px;
+}
 .content{
     margin: 20px 100px;
     text-align: center;
@@ -39,9 +42,8 @@ table tr.hover .actions{
     display: none;
 }
 .homework{
-    margin-left: 150px;
-    border:solid 1px #dcdcdc;
-    height: 600px;
+    margin-left: 50px;
+    height: 500px;
     margin-bottom: 20px;
 }
 .content .btn{

@@ -17,6 +17,8 @@
 		<mapping class="com.kot32.warmenglish.domain.Message" />
 		<mapping class="com.kot32.warmenglish.domain.ReadingProblem" />
 		<mapping class="com.kot32.warmenglish.domain.EssayProblem"/>
+		<mapping class="com.kot32.warmenglish.domain.SelectAnswer"/>
+		<mapping class="com.kot32.warmenglish.domain.EssayAnswer"/>
 	</session-factory>
 	
 </hibernate-configuration>

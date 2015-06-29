@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name = "t_homework")
 public class Homework {
@@ -22,20 +24,32 @@ public class Homework {
 
 	// 本次作业的要求描述
 	private String des;
+	@JsonIgnore
 	// 布置的小组
 	@ManyToOne
 	private Group group;
 	// 布置的时间
 	private Date date;
+
 	// 选择题
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "homework", cascade = { CascadeType.ALL })
 	private Set<SelectProblem> selectProblems = new HashSet<SelectProblem>();
+
 	// 阅读题
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "homework", cascade = { CascadeType.ALL })
 	private Set<ReadingProblem> readingProblems = new HashSet<ReadingProblem>();
+
 	// 作文
+	@JsonIgnore
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "homework", cascade = { CascadeType.ALL })
 	private Set<EssayProblem> essayProblems = new HashSet<EssayProblem>();
+
+	// 作文
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "homework", cascade = { CascadeType.ALL })
+	private Set<Grade> grades = new HashSet<Grade>();
 	// 学生的答案
 	private String student_answer;
 
@@ -97,12 +111,9 @@ public class Homework {
 		this.uuid = uuid;
 	}
 
-
 	public Homework() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	public Set<ReadingProblem> getReadingProblems() {
 		return readingProblems;
@@ -119,7 +130,7 @@ public class Homework {
 		this.date = date;
 		this.uuid = uuid;
 	}
-	
+
 	public Set<EssayProblem> getEssayProblems() {
 		return essayProblems;
 	}

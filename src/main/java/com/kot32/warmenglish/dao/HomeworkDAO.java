@@ -18,11 +18,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.kot32.warmenglish.domain.Class;
+import com.kot32.warmenglish.domain.EssayAnswer;
 import com.kot32.warmenglish.domain.EssayProblem;
+import com.kot32.warmenglish.domain.Grade;
 import com.kot32.warmenglish.domain.Group;
 import com.kot32.warmenglish.domain.Homework;
 import com.kot32.warmenglish.domain.ReadingProblem;
 import com.kot32.warmenglish.domain.SelectProblem;
+import com.kot32.warmenglish.domain.Student;
 import com.kot32.warmenglish.util.Global;
 import com.kot32.warmenglish.util.HibernateUtil;
 
@@ -163,17 +166,69 @@ public class HomeworkDAO {
 		session.update(homework);
 
 	}
-	public void addEssay(String homework_uuid,  String content) {
+
+	public void addEssay(String homework_uuid, String content) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
 		Query query = session.createQuery("from Homework h where h.uuid=:uuid");
 		query.setParameter("uuid", homework_uuid);
 		Homework homework = (Homework) query.list().get(0);
 		EssayProblem essayProblem = new EssayProblem(content, homework);
-		System.out.println(content);
+
 		session.save(essayProblem);
 		homework.getEssayProblems().add(essayProblem);
 		session.update(homework);
 	}
-	
+
+	public List<Homework> listHomeworks(int group_id) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		Query q1 = session.createQuery("from Group g where g.id=:id");
+		q1.setParameter("id", group_id);
+		Group group = (Group) q1.list().get(0);
+		Query q2 = session.createQuery("from Homework h where h.group=:group");
+		q2.setParameter("group", group);
+		return q2.list();
+	}
+
+	public List<EssayAnswer> listEssayAnswers(String homework_uuid) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		Homework homework = HibernateUtil.getCurrentHomework(session,
+				homework_uuid);
+		Query query = session
+				.createQuery("from EssayAnswer e where e.essayProblem.homework=:h");
+		query.setParameter("h", homework);
+		return query.list();
+	}
+
+	public List<Grade> listGrades(String homework_uuid) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from Grade g where g.homework.uuid=:uuid");
+		query.setParameter("uuid", homework_uuid);
+		return query.list();
+	}
+
+	public void dafen(String homeworkuuid, int studentid, float fenshu) {
+		// TODO Auto-generated method stub
+		Session session = sessionFactory.getCurrentSession();
+		Homework homework=HibernateUtil.getCurrentHomework(session, homeworkuuid);
+		Student student=HibernateUtil.getCurrentStudent(session, studentid);
+		Query query=session.createQuery("from Grade g where g.homework=:homework and g.student=:student");
+		query.setParameter("homework", homework);
+		query.setParameter("student", student);
+		if(query.list().size()==0){
+			Grade grade=new Grade();
+			grade.setHomework(homework);
+			grade.setStudent(student);
+			grade.setEssayGrade(fenshu);
+			session.save(grade);
+		}else{
+			Grade grade=(Grade) query.list().get(0);
+			grade.setEssayGrade(fenshu);
+			session.update(grade);
+		}
+	}
+
 }

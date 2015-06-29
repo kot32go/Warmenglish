@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
+
 @Entity
 @Table(name = "t_student")
 public class Student {
@@ -23,14 +25,18 @@ public class Student {
 	private String username;
 	private String password;
 	private String adult_email;
+	@JsonIgnore
 	@ManyToOne
 	private Class clazz;
+	@JsonIgnore
 	@ManyToOne
 	private User user;
+	@JsonIgnore
 	@ManyToOne
 	private Group group;
 	// 学生有很多次成绩
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "student",cascade={CascadeType.ALL})
+	@JsonIgnore
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "student", cascade = { CascadeType.ALL })
 	private Set<Grade> homeworks = new HashSet<Grade>();
 
 	public int getId() {
@@ -88,7 +94,7 @@ public class Student {
 	public void setGroup(Group group) {
 		this.group = group;
 	}
-	
+
 	public Set<Grade> getHomeworks() {
 		return homeworks;
 	}
@@ -96,7 +102,7 @@ public class Student {
 	public void setHomeworks(Set<Grade> homeworks) {
 		this.homeworks = homeworks;
 	}
-	
+
 	public String getAdult_email() {
 		return adult_email;
 	}

@@ -115,12 +115,63 @@ public class ClassDAO {
 		return groups;
 	}
 	
-	public List<Student> list_members(String clazz,String group){
+	public List<Student> list_members(int group){
 		Session session = sessionFactory.getCurrentSession();
-		Query query = session.createQuery("from Student s where s.clazz=:clazz and s.group=:group");
-		query.setParameter("clazz", clazz);
-		query.setParameter("group", group);
+		Query query = session.createQuery("from Student s where s.group=:group");
+		Query q=session.createQuery("from Group p where p.id=:id");
+		q.setParameter("id", group);
+		Group g=(Group) q.list().get(0);
+		query.setParameter("group", g);
 		return query.list();
 	}
+	//根据name找到class
+		//再根据class找到默认小组
+		public List<Student> list_unmembers(int clazz_id){
+			Session session = sessionFactory.getCurrentSession();
+			Query query1 = session.createQuery("from Class c where c.id=:id");
+			query1.setParameter("id", clazz_id);
+			Class l=(Class) query1.list().get(0);
+			Query query2=session.createQuery("from Group g where g.clazz=:clazz and g.name=:name");
+			query2.setParameter("clazz", l);
+			query2.setParameter("name", "默认小组");
+			Group p=(Group)query2.list().get(0);
+			Query query=session.createQuery("from Student s where s.group=:group");
+			query.setParameter("group", p);
+			return query.list();
+		}
+		
+		//根据班级id找到班级
+		//再根据班级找到默认小组id
+		//把学生的小组改为默认小组
+		public void delete_members(int[] student_id,int clazz_id){
+			Session session = sessionFactory.getCurrentSession();
+			Query query1 = session.createQuery("from Class c where c.id=:id");
+			query1.setParameter("id", clazz_id);
+			Class l=(Class) query1.list().get(0);
+			Query query2=session.createQuery("from Group g where g.clazz=:clazz and g.name=:name");
+			query2.setParameter("clazz", l);
+			query2.setParameter("name", "默认小组");
+			Group p=(Group)query2.list().get(0);
+			for(int i=0;i<student_id.length;i++){
+				Query query=session.createQuery("update Student s set s.group=:group where s.id=:id");
+				query.setParameter("group", p);
+				query.setParameter("id", student_id[i]);
+				query.executeUpdate();
+			}	
+		}
+
+		//根据studen_id把这些学生的小组改为group_id
+		public void add_members(int[] student_id,int group_id){
+			Session session = sessionFactory.getCurrentSession();
+			Query query1=session.createQuery("from Group g where g.id=:id");
+			query1.setParameter("id", group_id);
+			Group g=(Group) query1.list().get(0);
+			for(int i=0;i<student_id.length;i++){
+				Query query=session.createQuery("update Student s set s.group=:group where s.id=:id");
+				query.setParameter("group", g);
+				query.setParameter("id", student_id[i]);
+				query.executeUpdate();
+			}	
+		}
 
 }

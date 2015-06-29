@@ -1,6 +1,7 @@
 package com.kot32.warmenglish.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,7 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.kot32.warmenglish.dao.APPDAO;
 import com.kot32.warmenglish.dao.HomeworkDAO;
+import com.kot32.warmenglish.domain.EssayAnswer;
+import com.kot32.warmenglish.domain.Grade;
 import com.kot32.warmenglish.domain.Group;
+import com.kot32.warmenglish.domain.Homework;
 import com.kot32.warmenglish.domain.Student;
 import com.kot32.warmenglish.domain.User;
 import com.kot32.warmenglish.exception.UserException;
@@ -73,5 +77,25 @@ public class HomeworkService {
 			isSuccess=false;
 		}
 		return isSuccess;
+	}
+	@Transactional
+	public List<Homework> listHomeworks(int group_id) {
+		// TODO Auto-generated method stub
+		return HomeworkDAO.listHomeworks(group_id);
+	}
+	@Transactional
+	public List<EssayAnswer> listEssayAnswers(String homework_uuid) {
+		// TODO Auto-generated method stub
+		return HomeworkDAO.listEssayAnswers(homework_uuid);
+	}
+	@Transactional
+	public List<Grade> listGrades(String homework_uuid) {
+		// TODO Auto-generated method stub
+		return HomeworkDAO.listGrades(homework_uuid);
+	}
+	@Transactional
+	public void dafen(String homeworkuuid, int studentid, float fenshu) {
+		// TODO Auto-generated method stub
+		HomeworkDAO.dafen(homeworkuuid,studentid,fenshu);
 	}
 }

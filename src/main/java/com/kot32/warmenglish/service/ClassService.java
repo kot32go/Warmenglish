@@ -50,7 +50,19 @@ public class ClassService {
 		return groupDAO.listAllGroup(teacher);
 	}
 	@Transactional
-	public List<Student> list_members(String clazz,String group){
-		return groupDAO.list_members(clazz,group);
+	public List<Student> list_members(int group_id){
+		return groupDAO.list_members(group_id);
+	}
+	@Transactional
+	public List<Student> list_unmembers(int clazz_id){
+		return groupDAO.list_unmembers(clazz_id);
+	}
+	@Transactional
+	public void delete_members(int[] student_id,int clazz_id){
+		groupDAO.delete_members(student_id,clazz_id);
+	}
+	@Transactional
+	public void add_members(int[] student_id,int group_id){
+		groupDAO.add_members(student_id,group_id);
 	}
 }

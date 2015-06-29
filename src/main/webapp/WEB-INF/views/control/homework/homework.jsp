@@ -34,11 +34,13 @@
 					class="form-control form-homeworkGroup" id="homeworkGroup">
 				</select>
 			</div>
-			<div class="col-md-2">
-				<label for="homeworkGroup"> 确认</label>
-				<button class="btn btn-primary" id="confirmGroup">确认发布对象</button>
+			<div class="col-md-4">
+				<label for="homeworkGroup" style="width:80px"> 作业描述</label>
+				<input type="text" class="form-control" id="homeworkDes">
 			</div>
 		</div>
+		<button class="btn btn-primary" id="confirmGroup" style="text-align:center; margin-top:20px;float:right">确认发布对象</button>
+		<div class="clearfix"></div>
 		<!--导航栏-->
 		<ul id="myTab1" class="nav nav-pills" style="margin-top: 20px">
 			<li class="active"><a href="#choose" data-toggle="tab">选择题</a></li>
@@ -357,8 +359,9 @@
 		group_id = $(this).val();
 	});
 	$("#confirmGroup").click(function() {
-		group_id = $("#homeworkGroup").val()
-		addZuoye();
+		group_id = $("#homeworkGroup").val();
+		var des=$("#homeworkDes").val();
+		addZuoye(des);
 		$(this).attr({"disabled":"disabled"});
 		$("#homeworkClass").attr({"disabled":"disabled"});
 		$("#homeworkGroup").attr({"disabled":"disabled"});
@@ -427,13 +430,14 @@
 			}
 		});
 	}
-	function addZuoye() {
+	function addZuoye(des) {
 		$.ajax({
 			url : "../homework/addZuoye", //请求的url地址
 			dataType : "json", //返回格式为json
 			async : true, //请求是否异步
 			data : {
 				"group_id" : group_id,
+				"des":encodeURI(des),
 				"format" : "json"
 			}, //参数值
 			type : "GET", //请求方式
