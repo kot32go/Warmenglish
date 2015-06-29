@@ -14,11 +14,6 @@ body {
     margin-right: 35px;
     margin-left: 35px;
 }
-.form-inline .form-control {
-    display: inline-block;
-    width: 200px;
-    vertical-align: middle;
-}
 table tr .actions{
     display: none;
 }

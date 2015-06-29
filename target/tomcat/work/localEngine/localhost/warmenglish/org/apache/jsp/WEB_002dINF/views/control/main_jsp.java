@@ -84,6 +84,8 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${logined_user.name}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("用户名：");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${logined_user.username}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("已建班级：");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${class_count}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("\">\r\n");
       out.write("\t\t\t<span class=\"glyphicon glyphicon-user\"></span>\r\n");
       out.write("\t\t\t</a></li>\r\n");
