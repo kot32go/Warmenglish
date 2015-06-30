@@ -84,7 +84,7 @@ public final class mark_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\t\t\t\t\t</select>\n");
       out.write("\t\t\t\t</div>\n");
-      out.write("\t\t\t\t<div class=\"col-md-2\">\n");
+      out.write("\t\t\t\t<div class=\"col-md-3\">\n");
       out.write("\t\t\t\t\t<label for=\"homeworkGroup\">小组</label> <select\n");
       out.write("\t\t\t\t\t\tclass=\"form-control form-homeworkGroup\" id=\"homeworkGroup\">\n");
       out.write("\t\t\t\t\t</select>\n");
@@ -95,9 +95,8 @@ public final class mark_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\tname=\"homework_uuid\">\n");
       out.write("\t\t\t\t\t</select>\n");
       out.write("\t\t\t\t</div>\n");
-      out.write("\t\t\t\t<div class=\"col-md-2\">\n");
-      out.write("\t\t\t\t\t<label for=\"homeworkGroup\">确认</label>\n");
-      out.write("\t\t\t\t\t<button class=\"btn btn-primary\" type=\"submit\" id=\"confirmGroup\">开始批改</button>\n");
+      out.write("\t\t\t\t<div class=\"col-md-3\">\n");
+      out.write("\t\t\t\t\t<button class=\"btn btn-primary\" type=\"submit\" id=\"confirmGroup\" style=\"margin-top: 30px\">开始批改</button>\n");
       out.write("\t\t\t\t</div>\n");
       out.write("\t\t\t</form>\n");
       out.write("\t\t</div>\n");
@@ -169,6 +168,7 @@ public final class mark_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t\t\t\t\t\t\t+ \"</option>\");\n");
       out.write("\t\t\t\t\t\tif (index == 0) {\n");
       out.write("\t\t\t\t\t\t\tgroup_id = item.id;\n");
+      out.write("\t\t\t\t\t\t\tgetHomeworks();\n");
       out.write("\t\t\t\t\t\t}\n");
       out.write("\t\t\t\t\t})\n");
       out.write("\n");
@@ -179,6 +179,7 @@ public final class mark_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t});\n");
       out.write("\t\t}\n");
       out.write("\t\tfunction getHomeworks() {\n");
+      out.write("\t\t\tgroup_id=$(\"#homeworkGroup\").val();\n");
       out.write("\t\t\t$.ajax({\n");
       out.write("\t\t\t\turl : \"../homework/list_homeworks\", //请求的url地址\n");
       out.write("\t\t\t\tdataType : \"json\", //返回格式为json\n");
@@ -289,9 +290,9 @@ public final class mark_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f1 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f1.setParent(null);
-    // /WEB-INF/views/control/homework/mark.jsp(59,5) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f1.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/homework/mark.jsp(59,5) '${essayanswers}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${essayanswers}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/views/control/homework/mark.jsp(59,5) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/views/control/homework/mark.jsp(58,5) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f1.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/views/control/homework/mark.jsp(58,5) '${essayanswers}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${essayanswers}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/views/control/homework/mark.jsp(58,5) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f1.setVar("essay");
     int[] _jspx_push_body_count_c_005fforEach_005f1 = new int[] { 0 };
     try {

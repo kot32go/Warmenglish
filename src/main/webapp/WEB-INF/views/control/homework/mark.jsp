@@ -28,7 +28,7 @@
 						</c:forEach>
 					</select>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<label for="homeworkGroup">小组</label> <select
 						class="form-control form-homeworkGroup" id="homeworkGroup">
 					</select>
@@ -39,9 +39,8 @@
 						name="homework_uuid">
 					</select>
 				</div>
-				<div class="col-md-2">
-					<label for="homeworkGroup">确认</label>
-					<button class="btn btn-primary" type="submit" id="confirmGroup">开始批改</button>
+				<div class="col-md-3">
+					<button class="btn btn-primary" type="submit" id="confirmGroup" style="margin-top: 30px">开始批改</button>
 				</div>
 			</form>
 		</div>
@@ -136,6 +135,7 @@
 										+ "</option>");
 						if (index == 0) {
 							group_id = item.id;
+							getHomeworks();
 						}
 					})
 
@@ -146,6 +146,7 @@
 			});
 		}
 		function getHomeworks() {
+			group_id=$("#homeworkGroup").val();
 			$.ajax({
 				url : "../homework/list_homeworks", //请求的url地址
 				dataType : "json", //返回格式为json

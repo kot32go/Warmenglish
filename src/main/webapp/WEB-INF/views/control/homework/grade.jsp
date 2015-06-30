@@ -28,7 +28,7 @@
 						</c:forEach>
 					</select>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<label for="homeworkGroup">小组</label> <select
 						class="form-control form-homeworkGroup" id="homeworkGroup">
 					</select>
@@ -39,9 +39,9 @@
 						name="homework_uuid">
 					</select>
 				</div>
-				<div class="col-md-2">
-					<label for="homeworkGroup">确认</label>
-					<button class="btn btn-primary" type="submit" id="confirmGroup">查看</button>
+				<div class="col-md-3">
+					<button class="btn btn-primary" type="submit" id="confirmGroup"
+						style="margin-top: 30px">查看</button>
 				</div>
 			</form>
 		</div>
@@ -60,6 +60,7 @@
 							<td>${grade.student.name}</td>
 							<td style="padding: 3px 0 0 0">
 								<button class="actions btn btn-default btn-primary">查看成绩</button>
+
 							</td>
 						</tr>
 						<tr class="child">
@@ -119,11 +120,25 @@
 												</td>
 												<td><span class="badge bg-green">${grade.essayGrade}分</span></td>
 											</tr>
+											<tr>
+												<td></td>
+												<td><button
+														onclick="sendMail('${grade.student.adult_email}','${grade.homework.date}','${grade.selectGrade}','${grade.essayGrade}')">将成绩发送给家长</button></td>
+												<td></td>
+												<td></td>
+
+											</tr>
+
+											<tr>
 										</tbody>
 									</table>
+
 								</div>
+
 							</td>
+
 						</tr>
+
 					</c:forEach>
 				</tbody>
 
@@ -179,6 +194,7 @@
 										+ "</option>");
 						if (index == 0) {
 							group_id = item.id;
+							getHomeworks();
 						}
 					})
 
@@ -211,6 +227,15 @@
 					alert("error")
 				}
 			});
+		}
+		function sendMail(mail, date, selectGrade, essayGrade) {
+			who = prompt("Enter recipient's email address: ", mail);
+			what = prompt("Enter the subject: ", "您孩子在"+date+"测试的成绩单,选择题成绩："+selectGrade+"分，作文："+essayGrade+"分");
+			if (confirm("Are you sure you want to mail " + who
+					+ " with the subject of " + what + "?") == true) {
+				parent.location.href = 'mailto:' + who + '?subject=' + what
+						+ '';
+			}
 		}
 	</script>
 	<script src="../resources/bootstrap/js/bootstrap.min.js"></script>

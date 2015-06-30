@@ -395,7 +395,6 @@
 
 			},
 			error : function() {
-				alert("error")
 			}
 		});
 	}
@@ -458,12 +457,12 @@
 			async : true, //请求是否异步
 			data : {
 				"homework_uuid" : homework_uuid,
-				"tigan" : tigan,
-				"a" : a,
-				"b" : b,
-				"c" : c,
-				"d" : d,
-				"rightAnswer" : rightAnswer,
+				"tigan" : encodeURI(tigan),
+				"a" : encodeURI(a),
+				"b" : encodeURI(b),
+				"c" : encodeURI(c),
+				"d" : encodeURI(d),
+				"rightAnswer" : encodeURI(rightAnswer),
 				"format" : "json"
 			}, //参数值
 			type : "GET", //请求方式
@@ -486,7 +485,7 @@
 			async : true, //请求是否异步
 			data : {
 				"homework_uuid" : homework_uuid,
-				"content" : read,
+				"content" : encodeURI(read),
 				"format" : "json"
 			}, //参数值
 			type : "GET", //请求方式
@@ -532,7 +531,7 @@
 			async : true, //请求是否异步
 			data : {
 				"homework_uuid" : homework_uuid,
-				"content" : essay,
+				"content" : encodeURI(essay),
 				"format" : "json"
 			}, //参数值
 			type : "GET", //请求方式

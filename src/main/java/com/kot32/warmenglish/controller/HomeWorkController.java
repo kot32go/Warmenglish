@@ -116,6 +116,8 @@ public class HomeWorkController {
 	public ModelAndView addessay(String homework_uuid, String content)
 			throws UnsupportedEncodingException {
 		content = URLDecoder.decode(content, "UTF-8");
+		System.out.println(content);
+		System.out.println(homework_uuid);
 		ModelAndView mv = new ModelAndView();
 		if (homeworkService.addEssay(homework_uuid, content)) {
 			mv.addObject("status", "success");

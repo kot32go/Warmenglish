@@ -14,6 +14,7 @@ import org.apache.commons.io.FileUtils;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -173,9 +174,10 @@ public class HomeworkDAO {
 		Query query = session.createQuery("from Homework h where h.uuid=:uuid");
 		query.setParameter("uuid", homework_uuid);
 		Homework homework = (Homework) query.list().get(0);
-		EssayProblem essayProblem = new EssayProblem(content, homework);
-
+		EssayProblem essayProblem = new EssayProblem(1,content, homework);
+		session.flush();
 		session.save(essayProblem);
+		
 		homework.getEssayProblems().add(essayProblem);
 		session.update(homework);
 	}

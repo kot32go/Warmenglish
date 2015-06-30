@@ -87,7 +87,6 @@ public class Student implements Serializable {
 
 	public static Student copyFromStudent(com.kot32.warmenglish.domain.Student s) {
 		Student student = new Student();
-		;
 		student.id = s.getId();
 		student.username = s.getUsername();
 		student.password = s.getPassword();

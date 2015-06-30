@@ -451,7 +451,6 @@ public final class homework_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\t\t\t},\n");
       out.write("\t\t\terror : function() {\n");
-      out.write("\t\t\t\talert(\"error\")\n");
       out.write("\t\t\t}\n");
       out.write("\t\t});\n");
       out.write("\t}\n");
@@ -514,12 +513,12 @@ public final class homework_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\tasync : true, //请求是否异步\n");
       out.write("\t\t\tdata : {\n");
       out.write("\t\t\t\t\"homework_uuid\" : homework_uuid,\n");
-      out.write("\t\t\t\t\"tigan\" : tigan,\n");
-      out.write("\t\t\t\t\"a\" : a,\n");
-      out.write("\t\t\t\t\"b\" : b,\n");
-      out.write("\t\t\t\t\"c\" : c,\n");
-      out.write("\t\t\t\t\"d\" : d,\n");
-      out.write("\t\t\t\t\"rightAnswer\" : rightAnswer,\n");
+      out.write("\t\t\t\t\"tigan\" : encodeURI(tigan),\n");
+      out.write("\t\t\t\t\"a\" : encodeURI(a),\n");
+      out.write("\t\t\t\t\"b\" : encodeURI(b),\n");
+      out.write("\t\t\t\t\"c\" : encodeURI(c),\n");
+      out.write("\t\t\t\t\"d\" : encodeURI(d),\n");
+      out.write("\t\t\t\t\"rightAnswer\" : encodeURI(rightAnswer),\n");
       out.write("\t\t\t\t\"format\" : \"json\"\n");
       out.write("\t\t\t}, //参数值\n");
       out.write("\t\t\ttype : \"GET\", //请求方式\n");
@@ -542,7 +541,7 @@ public final class homework_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\tasync : true, //请求是否异步\n");
       out.write("\t\t\tdata : {\n");
       out.write("\t\t\t\t\"homework_uuid\" : homework_uuid,\n");
-      out.write("\t\t\t\t\"content\" : read,\n");
+      out.write("\t\t\t\t\"content\" : encodeURI(read),\n");
       out.write("\t\t\t\t\"format\" : \"json\"\n");
       out.write("\t\t\t}, //参数值\n");
       out.write("\t\t\ttype : \"GET\", //请求方式\n");
@@ -588,7 +587,7 @@ public final class homework_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\tasync : true, //请求是否异步\n");
       out.write("\t\t\tdata : {\n");
       out.write("\t\t\t\t\"homework_uuid\" : homework_uuid,\n");
-      out.write("\t\t\t\t\"content\" : essay,\n");
+      out.write("\t\t\t\t\"content\" : encodeURI(essay),\n");
       out.write("\t\t\t\t\"format\" : \"json\"\n");
       out.write("\t\t\t}, //参数值\n");
       out.write("\t\t\ttype : \"GET\", //请求方式\n");

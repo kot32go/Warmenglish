@@ -39,8 +39,9 @@ public class EssayProblem {
 	}
 	
 	
-	public EssayProblem(String des, Homework homework) {
+	public EssayProblem(int id,String des, Homework homework) {
 		super();
+		this.id=id;
 		this.des = des;
 		this.homework = homework;
 	}

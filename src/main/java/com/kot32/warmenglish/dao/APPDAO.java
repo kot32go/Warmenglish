@@ -41,6 +41,7 @@ public class APPDAO {
 		if (size > 0) {
 			student = (Student) query.list().get(0);
 		}
+		System.out.println("size:" + query.list().size());
 		return student;
 	}
 
@@ -181,14 +182,15 @@ public class APPDAO {
 		grade.setStudent(student);
 		grade.setHomework(homework);
 		// 根据提交来的选择题判定选择题成绩
-		int count=selectProblems.size();//总数
-		int right=0;
-		for(SelectProblem selectProblem:selectProblems){
-			if(selectProblem.answer.equals(selectProblem.studentAnswer)){
+		int count = selectProblems.size();// 总数
+		int right = 0;
+		for (SelectProblem selectProblem : selectProblems) {
+			if (selectProblem.answer.trim().equals(
+					selectProblem.studentAnswer.trim())) {
 				right++;
 			}
 		}
-		grade.setSelectGrade((float)(right/count)*100);
+		grade.setSelectGrade(((float) ((float) right / (float) count)) * 100);
 		session.saveOrUpdate(grade);
 	}
 
@@ -226,6 +228,20 @@ public class APPDAO {
 		essayAnswer.setEssayProblem(essayProblem);
 		essayAnswer.setStudent(student);
 		session.save(essayAnswer);
+
+		// 保存这次成绩为0
+		query = session
+				.createQuery("from Grade g where g.homework=:homework and g.student=:student");
+		query.setParameter("homework", essayProblem.getHomework());
+		query.setParameter("student", student);
+		if (query.list().size() == 0) {
+			Grade grade = new Grade();
+			grade.setHomework(essayProblem.getHomework());
+			grade.setStudent(student);
+			grade.setEssayGrade(0);
+			session.save(grade);
+		}
+
 	}
 
 }
